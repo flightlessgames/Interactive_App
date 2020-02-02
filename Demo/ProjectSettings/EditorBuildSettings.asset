@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/CraftingTable.unity
     guid: 7eac4cd27345dc144bc411b4b7c4371a
+  - enabled: 1
+    path: Assets/_Scenes/Achievement.unity
+    guid: 6cce58b0c4c176b4da6eeb831852e9b8
+  - enabled: 1
+    path: Assets/_Scenes/Shop.unity
+    guid: 8f948d5ecd51a4d4fb9399330453e830
+  - enabled: 1
+    path: Assets/_Scenes/Journal.unity
+    guid: 6efae50ac3b878e4c8cbea4ed84390a8
   m_configObjects: {}
