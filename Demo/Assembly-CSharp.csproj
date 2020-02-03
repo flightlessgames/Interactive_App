@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopState.cs" />
+    <None Include="Assets\__ReadMe.txt.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/College/20_Spring/4379 Topics/Interactives_App01_Repository/Interactive_App/Demo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
