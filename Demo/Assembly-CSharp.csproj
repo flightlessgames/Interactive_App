@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ScriptableObjects\Ingredients_sObj.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Potion_sObj.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementsController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementsUIController.cs" />
