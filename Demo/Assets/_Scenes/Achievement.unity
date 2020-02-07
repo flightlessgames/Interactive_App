@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 490382911}
   - component: {fileID: 490382910}
   m_Layer: 0
-  m_Name: LevelController_Achievements
+  m_Name: LevelController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,6 +800,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959653135513875040, guid: 3d9a9476fa4ae4946bd56410386fffc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Heart_btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176534943154465420, guid: 3d9a9476fa4ae4946bd56410386fffc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Craftin_btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129700405278694168, guid: 3d9a9476fa4ae4946bd56410386fffc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Star_btn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d9a9476fa4ae4946bd56410386fffc5, type: 3}

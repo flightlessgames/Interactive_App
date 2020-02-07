@@ -5,17 +5,19 @@ public class ShopMenuUIController : MonoBehaviour
 {
     private void OnEnable()
     {
-        ShopMenuController.StateChanged += OnStateChanged;
+        StateController.StateChanged += OnStateChanged;
     }
 
     private void OnDisable()
     {
-        ShopMenuController.StateChanged -= OnStateChanged;
+        StateController.StateChanged -= OnStateChanged;
     }
 
-    private void OnStateChanged(ShopState state)
+    private void OnStateChanged(int state)
     {
-        switch (state)
+        ShopState enumState = (ShopState)state;
+
+        switch (enumState)
         {
             case ShopState.Shop:
                 Debug.Log("Load Shop deals of the day");

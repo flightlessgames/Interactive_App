@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuUIController : MonoBehaviour
@@ -10,29 +9,26 @@ public class MainMenuUIController : MonoBehaviour
     [SerializeField] GameObject _loadDataConfirmPanel = null;
     [SerializeField] GameObject _creditsPanel = null;
 
-    [SerializeField] Text _missionTextUI = null;
-
-
     private void OnEnable()
     {
-        MainMenuController.StateChanged += OnStateChanged;
-        MainMenuController.MissionChanged += OnMissionChanged;
+        StateController.StateChanged += OnStateChanged;
     }
 
 
     private void OnDisable()
     {
-        MainMenuController.StateChanged -= OnStateChanged;
-        MainMenuController.MissionChanged -= OnMissionChanged;
+        StateController.StateChanged -= OnStateChanged;
     }
 
 
-    void OnStateChanged(MenuState newState)
+    void OnStateChanged(int newState)
     {
         //disable all, then turn on proper case.
         DisablePanels();
 
-        switch (newState)
+        MenuState enumState = (MenuState)newState;
+
+        switch (enumState)
         //most switch statements can be solved with proper inheritance or interface properties
         {
             case MenuState.Root:
@@ -58,12 +54,6 @@ public class MainMenuUIController : MonoBehaviour
                 //all panels will become disabled and none will become enabled. Look into player lock-out
                 break;
         }
-    }
-
-
-    private void OnMissionChanged(string newMission)
-    {
-        _missionTextUI.text = newMission;
     }
 
     private void DisablePanels()
