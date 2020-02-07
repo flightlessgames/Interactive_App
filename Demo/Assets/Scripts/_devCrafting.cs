@@ -12,25 +12,36 @@ public class _devCrafting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            string output = "";
-
-            foreach (var ingredients in _ingredients)
-            {
-                output += ingredients.Ingredient.Name + ", ";
-                _potionScore += ingredients.Ingredient.Values;
-            }
-
-            Debug.Log("New Potion using " + output + ". Score is " + _potionScore);
-            ReadCSVFile();
+            CraftPotion();
         }
+    }
+
+    private void CraftPotion()
+    {
+        string output = "";
+        _potionScore = Vector3.zero;
+
+        foreach (var ingredients in _ingredients)
+        {
+            output += ingredients.Ingredient.Name + ", ";
+            _potionScore += ingredients.Ingredient.Values;
+
+            //can decrease Quantity, but is not checking quantity before hand. 
+            //TODO Check Quantity during drag+drop onto crafting zone.
+            ingredients.Ingredient.DecreaseQuantity(1);
+        }
+
+        Debug.Log("New Potion using " + output + ". Score is " + _potionScore);
+        ReadCSVFile();
     }
 
     void ReadCSVFile()
     {
         StreamReader strReader = new StreamReader("Assets/Potions.csv");
         bool endOfFile = false;
+        bool foundMatch = false;
 
-        while (!endOfFile)
+        while (!endOfFile && !foundMatch)
         {
             Debug.Log("new line");
             string data_String = strReader.ReadLine();
@@ -48,18 +59,25 @@ public class _devCrafting : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 int parsedInt;
-                bool attempt = int.TryParse(data_values[0], out parsedInt);
+                bool attempt = int.TryParse(data_values[i], out parsedInt);
 
-                if (attempt) { parsedIntValues[i] = parsedInt; }
+                if (attempt)
+                    parsedIntValues[i] = parsedInt;
+                else
+                    Debug.Log("Found a Bad Potion Value");
+                
             }
 
-            Vector3 compareScore =new Vector3(parsedIntValues[0], parsedIntValues[1], parsedIntValues[2]);
+            Vector3 compareScore = new Vector3(parsedIntValues[0], parsedIntValues[1], parsedIntValues[2]);
             Debug.Log("compareScore " + compareScore);
 
-            if(compareScore == _potionScore)
+            if (compareScore != _potionScore)   //instead of nesting the rest of the code in an if{} we can use a !if{}
             {
-                Debug.Log("Match!\n" + data_values[3]);
+                continue;
             }
+
+            Debug.Log("Match!\n" + data_values[3]);
+            foundMatch = true;
         }
     }
 }
