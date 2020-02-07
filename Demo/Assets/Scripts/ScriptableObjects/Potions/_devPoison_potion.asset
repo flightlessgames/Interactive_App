@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d25170bfaf4f545ba018efd2515e1f, type: 3}
   m_Name: _devPoison_potion
   m_EditorClassIdentifier: 
-  Recipe: {x: 4, y: 1, z: 0}
+  Recipe: {x: 2, y: 1, z: 0}
   Name: Murder Poison
   Image: {fileID: 0}

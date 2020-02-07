@@ -169,16 +169,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6385737824003665368, guid: 86616a6b3058c9e438b7b7e38b7d592a,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385737824003665368, guid: 86616a6b3058c9e438b7b7e38b7d592a,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 6385737823138359690, guid: 86616a6b3058c9e438b7b7e38b7d592a,
         type: 3}
       propertyPath: m_AnchorMin.y
