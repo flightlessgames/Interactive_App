@@ -2,47 +2,33 @@
 
 Each Scene must have:
 
-	1) SceneState
+	1) SceneState.cs
 
-public enum mysceneState
+public enum mySceneState
 {
 	None = 0,
 	State1 = 1,
 	etc
 }
 
-	2) SceneMenuController
+	2) SceneMenuUIController.cs
 
-public static event Action<mysceneState> StateChanged = delegate { };
-public static mysceneState State = None;
-
-public void ChangeState(int newState)
-{
-	State = (mysceneState)newState;
-	StateChanged.Invoke(State);
-}
-
-//optional
-private void Start()
-{
-	ChangeState(1);
-}
-
-	3) SceneMenuUIController
-
+public SceneMenuUIController : Monobehaviour {
 void OnEnable()
 {
-	mysceneMenuController.StateChanged += OnStateChanged;
+	StateController.StateChanged += OnStateChanged;
 }
 
 void OnDisable()
 {
-	mysceneMenuController.StateChanged -= OnStateChanged;
+	StateController.StateChanged -= OnStateChanged;
 }
 
-private void OnStateChanged(mysceneState state)
+private void OnStateChanged(int state)
 {
-	switch(state)
+	mySceneState enumState = (mySceneState)state;
+	
+	switch(enumState)
 	{
 		/*
 		This is where you add cases for each state of your scene
@@ -51,7 +37,9 @@ private void OnStateChanged(mysceneState state)
 			break;
 	}
 }
+}
 
 === ===
 
-The Code feels redundant here, but it inherently requires small hard-coded changes like mysceneState enum being written in. I don't see a way to inherit these behaviours or change them modularly without rewriting them like this. If you can find a better solution go ahead, but don't blindly trouble-shoot, the core scenes are already set-up and there's no need to fix what's not broken.
+All LevelController gameObjects have the StateController.cs component, and all UI Root gameObjects have the SceneMenuUIController.cs component.
+All actions are driven from the SceneMenuUIController.cs unique to each scene, as well as the unique mySceneState enum. 

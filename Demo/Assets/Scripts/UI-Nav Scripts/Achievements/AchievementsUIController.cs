@@ -8,19 +8,20 @@ public class AchievementsUIController : MonoBehaviour
 
     private void OnEnable()
     {
-        AchievementsController.StateChanged += OnStateChanged;
+        StateController.StateChanged += OnStateChanged;
     }
 
     private void OnDisable()
     {
-        AchievementsController.StateChanged -= OnStateChanged;
+        StateController.StateChanged -= OnStateChanged;
     }
 
-    private void OnStateChanged(AchievementState state)
+    private void OnStateChanged(int state)
     {
         DisablePanels();
+        AchievementState enumState = (AchievementState)state;
 
-        switch (state)
+        switch (enumState)
         {
             case AchievementState.PotionHistory:
                 _potionHistoryPanel.SetActive(true);

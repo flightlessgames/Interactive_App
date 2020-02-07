@@ -6,18 +6,19 @@ public class CraftingUIController : MonoBehaviour
 
     private void OnEnable()
     {
-        CraftingController.StateChanged += OnStateChanged;
+        StateController.StateChanged += OnStateChanged;
     }
 
     private void OnDisable()
     {
-        CraftingController.StateChanged -= OnStateChanged;
+        StateController.StateChanged -= OnStateChanged;
     }
 
-    private void OnStateChanged(CraftingState state)
+    private void OnStateChanged(int state)
     {
+        CraftingState enumState = (CraftingState)state;
 
-        switch (state)
+        switch (enumState)
         {
             case CraftingState.Achievements:
                 SceneManager.LoadScene("Achievement");

@@ -62,23 +62,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\_devCrafting.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\displayIngredient.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Ingredients_sObj.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Potion_sObj.cs" />
-    <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementsController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementsUIController.cs" />
-    <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalMenuController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalState.cs" />
-    <Compile Include="Assets\Scripts\UI-Nav Scripts\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\MainMenu\MainMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\MainMenu\MenuState.cs" />
-    <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopState.cs" />
+    <Compile Include="Assets\Scripts\UI-Nav Scripts\StateController.cs" />
     <None Include="Assets\__ReadMe.txt.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/College/20_Spring/4379 Topics/Interactives_App01_Repository/Interactive_App/Demo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

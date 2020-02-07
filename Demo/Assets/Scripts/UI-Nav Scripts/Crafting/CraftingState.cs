@@ -5,8 +5,8 @@ using UnityEngine;
 public enum CraftingState
 {
     None = 0,
-    Crafting = 1,
-    Achievements = 2,
-    Store = 3,
-    Journal = 4
+    Crafting,
+    Achievements,
+    Store,
+    Journal
 }
