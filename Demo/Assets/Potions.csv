@@ -1,4 +1,5 @@
-SOCIAL,PHYSICAL,MENTAL,NAME
-1,1,1,Love
-2,1,0,MurderPoison
-3,0,0,Luck
+S-low,S-high,P-low,P-high,M-low,M-high,Nmae
+0,3,0,3,0,3,Love
+4,7,4,7,4,7,MurderPoison
+8,10,8,10,8,10,Luck
+0,3,0,3,4,7,HornyLove
