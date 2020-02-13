@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class _devCrafting : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class _devCrafting : MonoBehaviour
         public string Name;
     }
 
-    [SerializeField] private displayIngredient[] _ingredients = new displayIngredient[3];
+    [SerializeField] private Text _displayText = null;
+    [SerializeField] private StateController _stateController = null;
+    [SerializeField] private craftingSlotController[] _ingredients = new craftingSlotController[3];
     private Vector3 _targetPotion = Vector3.zero;
 
     private void Update()
@@ -34,17 +37,17 @@ public class _devCrafting : MonoBehaviour
         }
     }
 
-    private void CraftPotion()  //first we combine the ingredients into a "TargetPotion"
+    public void CraftPotion()  //first we combine the ingredients into a "TargetPotion"
     {
         _targetPotion = Vector3.zero; //reset the "Target" to 0 before each crafting.
 
-        foreach (var ingredients in _ingredients)
+        foreach (craftingSlotController slot in _ingredients)
         {
-            _targetPotion += ingredients.Ingredient.Values; //during each craft, we're adding vector values from ingredient scores instead of "creating a new vector of combined scores"
+            _targetPotion += slot.ScoreIngredient(); //during each craft, we're adding vector values from ingredient scores instead of "creating a new vector of combined scores"
 
             //can decrease Quantity, but is not checking quantity before hand. 
             //TODO Check Quantity during drag+drop onto crafting zone.
-            ingredients.Ingredient.DecreaseQuantity(1);
+            //ingredients.IngredientData.DecreaseQuantity(1);
         }
 
         ReadCSVFile();
@@ -114,6 +117,18 @@ public class _devCrafting : MonoBehaviour
 
             Debug.Log("Match!\n" + data_values[6]);
             foundMatch = true;
+
+            _displayText.text = "Your Potion's Score was: " + _targetPotion + "\nYou made a " + data_values[6] + " potion!";
+            _stateController?.ChangeState(5);
+        }
+    }
+
+    public void Clear()
+    {
+        //after each craft, set all ingredient slots to Clear
+        foreach(craftingSlotController slot in _ingredients)
+        {
+            slot.ClearIngredients();
         }
     }
 }

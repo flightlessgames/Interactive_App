@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d25170bfaf4f545ba018efd2515e1f, type: 3}
-  m_Name: _devLove_potion
+  m_Script: {fileID: 11500000, guid: cf583143b05c134449195250e763bf29, type: 3}
+  m_Name: _emptyCraftingSlot_ingred
   m_EditorClassIdentifier: 
-  Recipe: {x: 1, y: 1, z: 1}
-  Name: Love Potion
-  Image: {fileID: 0}
+  _values: {x: 0, y: 0, z: 0}
+  _name: '...'
+  _image: {fileID: 0}
+  _quantity: -1

@@ -8,5 +8,6 @@ public enum CraftingState
     Crafting,
     Achievements,
     Store,
-    Journal
+    Journal,
+    PotionResult
 }
