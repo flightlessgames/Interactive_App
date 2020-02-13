@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class _devCrafting : MonoBehaviour
 {
@@ -28,7 +29,22 @@ public class _devCrafting : MonoBehaviour
     [SerializeField] private StateController _stateController = null;
     [SerializeField] private craftingSlotController[] _ingredients = new craftingSlotController[3];
     private Vector3 _targetPotion = Vector3.zero;
+    public string _potionCsvPath = "...";
+    UnityWebRequest _potionPath;
 
+    private void Start()
+    {
+        
+            //for Android "Handheld" we need to use a URL path
+            Debug.Log("We're on Android");
+            _potionCsvPath = Path.Combine("jar: file://" + Application.dataPath + "/StreamingAssets/Potions.csv");
+            _potionPath = new UnityWebRequest(_potionCsvPath);
+            //for windows, assume we're in editor, use the folder directory
+            Debug.Log("We're on Desktop");
+            Debug.Log(_potionPath.url);
+            _potionCsvPath = Application.streamingAssetsPath + "/Potions.csv";
+        
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -55,8 +71,19 @@ public class _devCrafting : MonoBehaviour
 
     void ReadCSVFile()  //now that we have a "targetpotion" we can compare that to our Potion.csv to read the recipe.
     {
+        Debug.Log("Attempting a read");
+        StreamReader strReader = null;
+
         //code adapted from RapidGaming on YouTube: https://www.youtube.com/watch?v=xwnL4meq-j8&feature=youtu.be
-        StreamReader strReader = new StreamReader("Assets/Potions.csv");
+        if(SystemInfo.deviceType == DeviceType.Desktop)
+        {
+             strReader = new StreamReader(_potionCsvPath);
+        }else if(SystemInfo.deviceType == DeviceType.Handheld)
+        {
+             strReader = new StreamReader(_potionPath.url);
+        }
+
+        Debug.Log("We're reading");
         bool endOfFile = false;
         bool foundMatch = false;    //both endOfFile and foundMatch are our 2 cases to end reading
 
