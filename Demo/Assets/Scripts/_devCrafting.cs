@@ -29,22 +29,29 @@ public class _devCrafting : MonoBehaviour
     [SerializeField] private StateController _stateController = null;
     [SerializeField] private craftingSlotController[] _ingredients = new craftingSlotController[3];
     private Vector3 _targetPotion = Vector3.zero;
-    public string _potionCsvPath = "...";
+
+    [SerializeField] Text _debugText = null;
+    private string _potionCsvPath = "...";
     UnityWebRequest _potionPath;
 
     private void Start()
     {
         
-            //for Android "Handheld" we need to use a URL path
-            Debug.Log("We're on Android");
-            _potionCsvPath = Path.Combine("jar: file://" + Application.dataPath + "/StreamingAssets/Potions.csv");
-            _potionPath = new UnityWebRequest(_potionCsvPath);
-            //for windows, assume we're in editor, use the folder directory
-            Debug.Log("We're on Desktop");
-            Debug.Log(_potionPath.url);
-            _potionCsvPath = Application.streamingAssetsPath + "/Potions.csv";
+        //for Android "Handheld" we need to use a URL path
+        Debug.Log("We're on Android");
+        _potionCsvPath = Application.streamingAssetsPath + "!/assets/Potions.csv";
+        _potionPath = new UnityWebRequest(_potionCsvPath);
+        Debug.Log(_potionPath.url);
+        _debugText.text = _potionPath.url;
+
+        //for windows, assume we're in editor, use the folder directory
+        Debug.Log("We're on Desktop");
+        _potionCsvPath = Application.streamingAssetsPath + "/Potions.csv";
+        Debug.Log(_potionCsvPath);
         
+
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -72,17 +79,24 @@ public class _devCrafting : MonoBehaviour
     void ReadCSVFile()  //now that we have a "targetpotion" we can compare that to our Potion.csv to read the recipe.
     {
         Debug.Log("Attempting a read");
+        _debugText.text = "Attempting a read";
         StreamReader strReader = null;
 
-        //code adapted from RapidGaming on YouTube: https://www.youtube.com/watch?v=xwnL4meq-j8&feature=youtu.be
+
         if(SystemInfo.deviceType == DeviceType.Desktop)
         {
              strReader = new StreamReader(_potionCsvPath);
-        }else if(SystemInfo.deviceType == DeviceType.Handheld)
+        }
+        else if(SystemInfo.deviceType == DeviceType.Handheld)
         {
-             strReader = new StreamReader(_potionPath.url);
+            TextAsset txtPotions = Resources.Load<TextAsset>("Potions.csv");
+            if (txtPotions != null)
+            {
+                strReader = new StreamReader(new MemoryStream(txtPotions.bytes));
+            }
         }
 
+        //code adapted from RapidGaming on YouTube: https://www.youtube.com/watch?v=xwnL4meq-j8&feature=youtu.be
         Debug.Log("We're reading");
         bool endOfFile = false;
         bool foundMatch = false;    //both endOfFile and foundMatch are our 2 cases to end reading
@@ -146,8 +160,9 @@ public class _devCrafting : MonoBehaviour
             foundMatch = true;
 
             _displayText.text = "Your Potion's Score was: " + _targetPotion + "\nYou made a " + data_values[6] + " potion!";
-            _stateController?.ChangeState(5);
+            _debugText.text = "Made: " + data_values[6];
         }
+        _stateController?.ChangeState(5);
     }
 
     public void Clear()

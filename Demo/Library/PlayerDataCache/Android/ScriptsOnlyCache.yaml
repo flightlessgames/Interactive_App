@@ -15,7 +15,6 @@ ScriptsOnlyBuild:
     - displayIngredient
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -233,6 +232,8 @@ ScriptsOnlyBuild:
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -496,7 +497,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 1c249851a202f1c8153a99a9305dc017
+      Hash: b49059cc35f771e293011c6cbdba675e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: _devCrafting
@@ -837,4 +838,4 @@ ScriptsOnlyBuild:
   - Assets/_Scenes/Achievement.unity
   - Assets/_Scenes/Shop.unity
   - Assets/_Scenes/Journal.unity
-  playerPath: C:/Users/bdf170030/Desktop/Interactives/Interactive_App/Demo/Builds/v0.1.5_Crafting.apk
+  playerPath: D:/College/20_Spring/4379 Topics/Builds/v0.1.5_Crafting.apk

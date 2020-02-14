@@ -1,0 +1,38 @@
+S-low,S-high,P-low,P-high,M-low,M-high,Name,Notes
+0,1,-10,-6,-1,1,Death
+3,3,-4,-4,0,0,Poison,From sickness group
+2,4,-5,-2,-1,1,Sickness,(Bulls-eye is Poison)
+3,5,-1,1,-1,1,Protection
+2,4,2,5,-1,1,Guarding
+0,2,6,10,-1,1,Healing
+-10,-3,0,2,3,10,Nightmares
+-10,-3,8,10,3,10,Hypnosis
+-10,-9,3,7,3,10,Calming
+-8,-5,3,7,3,10,Sleep
+-4,-3,3,7,3,10,Dreams
+4,5,4,10,-5,1,Malevolent/Devils
+6,4,10,-5,1,Speaking, People
+7,4,10,-5,1,Telepathy,Long Distance phone calls
+8,4,10,-5,1,Trees & Magic
+9,10,4,10,-5,1,Benevolent/Angels
+0,3,-10,-1,7,10,Possesion
+0,3,-10,-1,2,6,Breaking Wards,(Defeating Defences)
+4,6,-10,-1,1,10,Visions
+7,10,-10,-1,2,6,Breaking Hexes,(Heal from Harm)
+7,10,-10,-1,7,10,Astral Projection
+0,3,7,10,0,10,Sex Drive
+2,3,4,5,5,6,7,8,0,10,Aphrodisiac
+4,6,4,6,0,10,Become Physically attractive
+5,6,7,8,2,3,4,5,0,10,More Interesting,(Social attractive)
+7,10,0,3,0,10,Make someone fall in love with you
+0,2,-10,-1,-7,-5,Steal Luck
+0,2,-10,-1,-7,-5,Take away a persons Luck,(Hex)
+3,5,-10,-1,-4,-1,Attacts Success
+3,5,-10,-1,-4,-1,Luck potion
+-7,-5,-10,-3,-10,-8,Transform into Element
+-10,-7,-10,-3,-4,-3,Transform into plants
+-3,-4,-10,-3,-10,-7,Transform into animals
+-10.-8,-10,-3,-7,-5,Transform into abominations
+-10,-8,-10,-8,-10,-8,Transform into God
+-10,-3,-10,3,-10,-3,Transform into people
+-10,10,-10,10,-10,10,Mud,Fills in the gaps like a case:default;
