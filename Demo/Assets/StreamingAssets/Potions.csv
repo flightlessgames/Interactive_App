@@ -21,9 +21,11 @@ S-low,S-high,P-low,P-high,M-low,M-high,Name,Notes
 7,10,-10,-1,2,6,Breaking Hexes,(Heal from Harm)
 7,10,-10,-1,7,10,Astral Projection
 0,3,7,10,0,10,Sex Drive
-2,3,4,5,5,6,7,8,0,10,Aphrodisiac
+4,5,7,8,0,10,Aphrodisiac
+2,3,5,6,0,10,Aphrodisiac
 4,6,4,6,0,10,Become Physically attractive
-5,6,7,8,2,3,4,5,0,10,More Interesting,(Social attractive)
+7,8,4,5,0,10,More Interesting,(Social attractive)
+5,6,2,3,0,10,More Interesting
 7,10,0,3,0,10,Make someone fall in love with you
 0,2,-10,-1,-7,-5,Steal Luck
 0,2,-10,-1,-7,-5,Take away a persons Luck,(Hex)
@@ -32,7 +34,7 @@ S-low,S-high,P-low,P-high,M-low,M-high,Name,Notes
 -7,-5,-10,-3,-10,-8,Transform into Element
 -10,-7,-10,-3,-4,-3,Transform into plants
 -3,-4,-10,-3,-10,-7,Transform into animals
--10.-8,-10,-3,-7,-5,Transform into abominations
+-10,-8,-10,-3,-7,-5,Transform into abominations
 -10,-8,-10,-8,-10,-8,Transform into God
 -10,-3,-10,3,-10,-3,Transform into people
 -10,10,-10,10,-10,10,Mud,Fills in the gaps like a case:default;

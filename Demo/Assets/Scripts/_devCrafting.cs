@@ -32,23 +32,31 @@ public class _devCrafting : MonoBehaviour
 
     [SerializeField] Text _debugText = null;
     private string _potionCsvPath = "...";
-    UnityWebRequest _potionPath;
 
     private void Start()
     {
-        
-        //for Android "Handheld" we need to use a URL path
-        Debug.Log("We're on Android");
-        _potionCsvPath = Application.streamingAssetsPath + "!/assets/Potions.csv";
-        _potionPath = new UnityWebRequest(_potionCsvPath);
-        Debug.Log(_potionPath.url);
-        _debugText.text = _potionPath.url;
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            //for Android "Handheld" we need to use a URL path
+            string tempPath = Path.Combine(Application.streamingAssetsPath, "Potions.csv");
 
-        //for windows, assume we're in editor, use the folder directory
-        Debug.Log("We're on Desktop");
-        _potionCsvPath = Application.streamingAssetsPath + "/Potions.csv";
-        Debug.Log(_potionCsvPath);
-        
+            // Android only use WWW to read file
+            WWW reader = new WWW(tempPath);   //www is obsolete, UnityWebReader is the same functionality I hope
+            while (!reader.isDone) { }
+
+            _potionCsvPath = Application.persistentDataPath + "/db";
+            File.WriteAllBytes(_potionCsvPath, reader.bytes);
+        }
+        else if (SystemInfo.deviceType == DeviceType.Desktop)
+        { 
+            //for windows, assume we're in editor, use the folder directory
+            Debug.Log("We're on Desktop");
+            _potionCsvPath = Application.streamingAssetsPath + "/Potions.csv";
+        }
+
+        Debug.Log("Creatd a path: " + _potionCsvPath);
+        _debugText.text = _potionCsvPath;
+
 
     }
 
@@ -80,21 +88,7 @@ public class _devCrafting : MonoBehaviour
     {
         Debug.Log("Attempting a read");
         _debugText.text = "Attempting a read";
-        StreamReader strReader = null;
-
-
-        if(SystemInfo.deviceType == DeviceType.Desktop)
-        {
-             strReader = new StreamReader(_potionCsvPath);
-        }
-        else if(SystemInfo.deviceType == DeviceType.Handheld)
-        {
-            TextAsset txtPotions = Resources.Load<TextAsset>("Potions.csv");
-            if (txtPotions != null)
-            {
-                strReader = new StreamReader(new MemoryStream(txtPotions.bytes));
-            }
-        }
+        StreamReader strReader = new StreamReader(_potionCsvPath);
 
         //code adapted from RapidGaming on YouTube: https://www.youtube.com/watch?v=xwnL4meq-j8&feature=youtu.be
         Debug.Log("We're reading");

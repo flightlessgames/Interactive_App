@@ -15,6 +15,7 @@ ScriptsOnlyBuild:
     - displayIngredient
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -232,8 +233,6 @@ ScriptsOnlyBuild:
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -838,4 +837,4 @@ ScriptsOnlyBuild:
   - Assets/_Scenes/Achievement.unity
   - Assets/_Scenes/Shop.unity
   - Assets/_Scenes/Journal.unity
-  playerPath: D:/College/20_Spring/4379 Topics/Builds/v0.1.5_Crafting.apk
+  playerPath: D:/College/20_Spring/4379 Topics/Builds/v0.1.6_Crafting_test2.apk
