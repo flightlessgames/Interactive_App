@@ -56,6 +56,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 689680828762805903}
     m_Modifications:
+    - target: {fileID: 5205435224660530997, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: m_Name
+      value: CraftingHotbar_cvs
+      objectReference: {fileID: 0}
     - target: {fileID: 6302411154877630911, guid: 527548fbe613b2a488376a8baf2a03b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -161,17 +166,7 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5205435224660530997, guid: 527548fbe613b2a488376a8baf2a03b9,
-        type: 3}
-      propertyPath: m_Name
-      value: CraftingHotbar_cvs
-      objectReference: {fileID: 0}
-    - target: {fileID: 3340872982276163333, guid: 527548fbe613b2a488376a8baf2a03b9,
-        type: 3}
-      propertyPath: _craftingController
-      value: 
-      objectReference: {fileID: 5375444716440611596}
-    - target: {fileID: 1311111692406807610, guid: 527548fbe613b2a488376a8baf2a03b9,
+    - target: {fileID: 8352182170016433819, guid: 527548fbe613b2a488376a8baf2a03b9,
         type: 3}
       propertyPath: _craftingController
       value: 
@@ -181,7 +176,12 @@ PrefabInstance:
       propertyPath: _craftingController
       value: 
       objectReference: {fileID: 5375444716440611596}
-    - target: {fileID: 8352182170016433819, guid: 527548fbe613b2a488376a8baf2a03b9,
+    - target: {fileID: 1311111692406807610, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 3340872982276163333, guid: 527548fbe613b2a488376a8baf2a03b9,
         type: 3}
       propertyPath: _craftingController
       value: 
@@ -201,6 +201,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 689680828762805903}
     m_Modifications:
+    - target: {fileID: 7017117252268414510, guid: 9a26570d4d92aff45b6f711f0c8b6181,
+        type: 3}
+      propertyPath: m_Name
+      value: CraftingMenuHeader_cvs
+      objectReference: {fileID: 0}
     - target: {fileID: 7017117252268414506, guid: 9a26570d4d92aff45b6f711f0c8b6181,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -305,11 +310,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7017117252268414510, guid: 9a26570d4d92aff45b6f711f0c8b6181,
-        type: 3}
-      propertyPath: m_Name
-      value: CraftingMenuHeader_cvs
       objectReference: {fileID: 0}
     - target: {fileID: 7017117252036026044, guid: 9a26570d4d92aff45b6f711f0c8b6181,
         type: 3}
@@ -466,6 +466,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftingArea_cvs
       objectReference: {fileID: 0}
+    - target: {fileID: 7389729329886199593, guid: 60febe75c4bb9814493cb3907e5bcc47,
+        type: 3}
+      propertyPath: _displayText
+      value: 
+      objectReference: {fileID: 5085039135248444131}
+    - target: {fileID: 7389729329886199593, guid: 60febe75c4bb9814493cb3907e5bcc47,
+        type: 3}
+      propertyPath: _rawPotionColor
+      value: 
+      objectReference: {fileID: 4289787549145945798}
     - target: {fileID: 330354369677784623, guid: 60febe75c4bb9814493cb3907e5bcc47,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -571,12 +581,7 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7389729329886199593, guid: 60febe75c4bb9814493cb3907e5bcc47,
-        type: 3}
-      propertyPath: _displayText
-      value: 
-      objectReference: {fileID: 5085039135248444131}
-    - target: {fileID: 5239762926508152239, guid: 60febe75c4bb9814493cb3907e5bcc47,
+    - target: {fileID: 8585158531517704919, guid: 60febe75c4bb9814493cb3907e5bcc47,
         type: 3}
       propertyPath: _craftingController
       value: 
@@ -591,12 +596,12 @@ PrefabInstance:
       propertyPath: _craftingController
       value: 
       objectReference: {fileID: 5375444716440611596}
-    - target: {fileID: 2813352022924990600, guid: 60febe75c4bb9814493cb3907e5bcc47,
+    - target: {fileID: 5239762926508152239, guid: 60febe75c4bb9814493cb3907e5bcc47,
         type: 3}
       propertyPath: _craftingController
       value: 
       objectReference: {fileID: 5375444716440611596}
-    - target: {fileID: 8585158531517704919, guid: 60febe75c4bb9814493cb3907e5bcc47,
+    - target: {fileID: 2813352022924990600, guid: 60febe75c4bb9814493cb3907e5bcc47,
         type: 3}
       propertyPath: _craftingController
       value: 
@@ -767,5 +772,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4289787549145945798 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4771304470674256299, guid: c5f448bdfa6a2c34cba13f09ca0d188e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8772861642040502125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

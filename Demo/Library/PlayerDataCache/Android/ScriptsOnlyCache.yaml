@@ -25,6 +25,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
@@ -132,6 +133,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10352}
     - Class: 114
       Script: {instanceID: 10556}
+    - Class: 114
+      Script: {instanceID: 10576}
     - Class: 114
       Script: {instanceID: 10636}
     - Class: 114
@@ -496,7 +499,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: b49059cc35f771e293011c6cbdba675e
+      Hash: 60d53b1c68ab435bae803d68c09b9346
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: _devCrafting

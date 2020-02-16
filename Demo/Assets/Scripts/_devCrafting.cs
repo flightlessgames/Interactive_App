@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
-using UnityEngine.Networking;
 
 public class _devCrafting : MonoBehaviour
 {
@@ -26,17 +25,18 @@ public class _devCrafting : MonoBehaviour
     }
 
     [SerializeField] private Text _displayText = null;
+    [SerializeField] private RawImage _rawPotionColor = null;
     [SerializeField] private StateController _stateController = null;
     [SerializeField] private craftingSlotController[] _ingredients = new craftingSlotController[3];
     private Vector3 _targetPotion = Vector3.zero;
-
-    [SerializeField] Text _debugText = null;
     private string _potionCsvPath = "...";
 
     private void Start()
     {
         if (SystemInfo.deviceType == DeviceType.Handheld)
         {
+            //borrowing code from Unity Answers user RobertCigna: https://answers.unity.com/questions/1087159/reading-text-file-on-android.html
+            //still using code from 2015, including outdated WWW object type, might look into UnityWebRequest type, but don't want to break system.
             //for Android "Handheld" we need to use a URL path
             string tempPath = Path.Combine(Application.streamingAssetsPath, "Potions.csv");
 
@@ -53,11 +53,6 @@ public class _devCrafting : MonoBehaviour
             Debug.Log("We're on Desktop");
             _potionCsvPath = Application.streamingAssetsPath + "/Potions.csv";
         }
-
-        Debug.Log("Creatd a path: " + _potionCsvPath);
-        _debugText.text = _potionCsvPath;
-
-
     }
 
     private void Update()
@@ -87,7 +82,6 @@ public class _devCrafting : MonoBehaviour
     void ReadCSVFile()  //now that we have a "targetpotion" we can compare that to our Potion.csv to read the recipe.
     {
         Debug.Log("Attempting a read");
-        _debugText.text = "Attempting a read";
         StreamReader strReader = new StreamReader(_potionCsvPath);
 
         //code adapted from RapidGaming on YouTube: https://www.youtube.com/watch?v=xwnL4meq-j8&feature=youtu.be
@@ -106,30 +100,7 @@ public class _devCrafting : MonoBehaviour
             }
 
             var data_values = data_String.Split(',');
-
-            #region compareScore v1 for Posterity
-            /*int[] parsedIntValues = new int[3];
-            for (int i = 0; i < 3; i++)
-            {
-                int parsedInt;
-                bool attempt = int.TryParse(data_values[i], out parsedInt);
-
-                if (attempt)
-                    parsedIntValues[i] = parsedInt;
-                else
-                    Debug.Log("Found a Bad Potion Value");
-                
-            }
-
-            Vector3 compareScore = new Vector3(parsedIntValues[0], parsedIntValues[1], parsedIntValues[2]);
-            Debug.Log("compareScore " + compareScore);
-
-            if (compareScore != _targetPotion)   //instead of nesting the rest of the code in an if{} we can use a !if{}
-            {
-                continue;
-            */
-            #endregion
-
+            
             //might need to REDO or overhaul when moving onto PlayerJournal scripts. Might convert all entries into .sObjs to store player entry data.
             //feels redundant, look into consolidating into a function
             Potion readPotion = new Potion();
@@ -154,7 +125,13 @@ public class _devCrafting : MonoBehaviour
             foundMatch = true;
 
             _displayText.text = "Your Potion's Score was: " + _targetPotion + "\nYou made a " + data_values[6] + " potion!";
-            _debugText.text = "Made: " + data_values[6];
+
+            float spriteColorR = (_targetPotion.x + 10) / 20;   //-10, +10 = 0, /20 = 0    //0, +10 = 10, /20 = 0.5    //10, +10 = 20, /20 = 1    //Maps values into 0-1 decimals.
+            float spriteColorG = (_targetPotion.y + 10) / 20;
+            float spriteColorB = (_targetPotion.z + 10) / 20;
+            Color spriteColor = new Color(spriteColorR, spriteColorG, spriteColorB);
+            Debug.Log("sprite color: " + spriteColor);
+            _rawPotionColor.color = spriteColor;
         }
         _stateController?.ChangeState(5);
     }
