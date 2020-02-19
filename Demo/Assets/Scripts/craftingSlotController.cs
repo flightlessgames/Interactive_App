@@ -33,17 +33,27 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     {
         Debug.Log("OnClicked()");
 
-        if (!_craftingController.CurrIngredient)
-        {
-            //if there is no ingredient held, assume player is trying to ERASE a slot value, then set to prescribed null value.
-            Debug.Log("No Ingredient Held");
-            ClearIngredients();
+        //if our current ingredient IS the ingredient held, do NOTHING
+        if (_ingredient.IngredientData == _craftingController.CurrIngredient)
             return;
-        }
 
-        //if there IS an ingredient held by the controller, then apply that ingredient to the slot, then DROP that ingredient.
-        //to set our ingredient's data, we tell the displayIngredient object to update /its/ data to the new _ingred
-        _ingredient.SetIngredient(_craftingController.CurrIngredient);
+        //otherwise (our ingredient is different than _crafting.controller's, make the swap
+        Ingredients_sObj currIngredient = _craftingController.CurrIngredient;
+
+        if (currIngredient.Quantity != 0)    //>0 would exclude our -1 values, which are our Infinite values
+        {
+            //set our ingredient to the new Ingredient_sObj
+            _ingredient.SetIngredient(_craftingController.CurrIngredient);
+            currIngredient.DecreaseQuantity(1);
+        }
+        else
+        {
+            //if our ingredient IS == 0, we have run out of a natural ingredient type
+            //we force the _craftingController to "drop" the ingredient and return to NULL
+            _craftingController.HoldIngredient(_nullIngredient);
+            Debug.Log("Cannot use " + currIngredient.Name);
+        }
+        
     }
 
     //this is roughly the OnClick() functionality of a Button
@@ -57,7 +67,7 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     override public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("OnPointerEnter");
-        _debugText.text += "\nOnPointerEnter()";
+        //_debugText.text += "\nOnPointerEnter()";
         OnClick();
     }
 
@@ -65,5 +75,9 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     public void ClearIngredients()
     {
         _ingredient.SetIngredient(_nullIngredient);
+
+        //this line of code is run up to 5 times through _devCrafting list of ALL craftingSlotControllers,
+        //dont currently reference the _craftingController through _devCrafting, so we're leaving it like this until we do
+        _craftingController.HoldIngredient(_nullIngredient);
     }
 }

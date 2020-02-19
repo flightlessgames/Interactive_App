@@ -30,19 +30,23 @@ public class CraftingUIController : MonoBehaviour
                 _potionResultsUI.SetActive(false);
                 _crafing.Clear();
                 break;
+
             case CraftingState.Achievements:
                 SceneManager.LoadScene("Achievement");
                 break;
+
             case CraftingState.Store:
                 SceneManager.LoadScene("Shop");
                 break;
+
             case CraftingState.Journal:
                 SceneManager.LoadScene("Journal");
                 break;
+
             case CraftingState.PotionResult:
-                Debug.Log("Display Result");
                 _potionResultsUI.SetActive(true);
                 break;
+
             default:
                 Debug.Log("state not implemented");
                 break;
@@ -55,11 +59,4 @@ public class CraftingUIController : MonoBehaviour
         Debug.Log("Set Held ingredient to: " + ingredient);
         CurrIngredient = ingredient;
     }
-
-    /*public void DropIngredient()
-    {
-        //called from the Slot script, tells the controller to forget its current data
-        Debug.Log("Dropping Help ingredient");
-        CurrIngredient = null;
-    }*/
 }

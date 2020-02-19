@@ -27,7 +27,9 @@ public class _devCrafting : MonoBehaviour
     [SerializeField] private Text _displayText = null;
     [SerializeField] private RawImage _rawPotionColor = null;
     [SerializeField] private StateController _stateController = null;
-    [SerializeField] private craftingSlotController[] _ingredients = new craftingSlotController[3];
+
+    [SerializeField] private List<craftingSlotController> _ingredients = new List<craftingSlotController>();
+
     private Vector3 _targetPotion = Vector3.zero;
     private string _potionCsvPath = "...";
 
@@ -70,10 +72,6 @@ public class _devCrafting : MonoBehaviour
         foreach (craftingSlotController slot in _ingredients)
         {
             _targetPotion += slot.ScoreIngredient(); //during each craft, we're adding vector values from ingredient scores instead of "creating a new vector of combined scores"
-
-            //can decrease Quantity, but is not checking quantity before hand. 
-            //TODO Check Quantity during drag+drop onto crafting zone.
-            //ingredients.IngredientData.DecreaseQuantity(1);
         }
 
         ReadCSVFile();
@@ -126,6 +124,7 @@ public class _devCrafting : MonoBehaviour
 
             _displayText.text = "Your Potion's Score was: " + _targetPotion + "\nYou made a " + data_values[6] + " potion!";
 
+            //create a "unique" potion sprite by generating a color (R/G/B btwn 0-1)
             float spriteColorR = (_targetPotion.x + 10) / 20;   //-10, +10 = 0, /20 = 0    //0, +10 = 10, /20 = 0.5    //10, +10 = 20, /20 = 1    //Maps values into 0-1 decimals.
             float spriteColorG = (_targetPotion.y + 10) / 20;
             float spriteColorB = (_targetPotion.z + 10) / 20;
