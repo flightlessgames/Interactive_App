@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(displayIngredient))]
-
-//we're requiring type of Button, but not using in the script. Use Designer/Component interface to link the Button's OnClick to this script's OnClick();
-[RequireComponent(typeof(Button))]
-public class craftingSlotController : MonoBehaviour
+public class craftingSlotController : Selectable    //by using the Selectable parent object, we inherit the properties of a button.
 {
     //initialise with none/null, displayIngredient is Empty.
     private displayIngredient _ingredient = null;
@@ -16,8 +14,9 @@ public class craftingSlotController : MonoBehaviour
     private Ingredients_sObj _nullIngredient = null;
 
     [SerializeField] CraftingUIController _craftingController = null;
+    [SerializeField] private Text _debugText = null;
 
-    private void Awake()
+    override protected void Awake()
     {
         _ingredient = GetComponent<displayIngredient>();
         _nullIngredient = _ingredient.IngredientData;
@@ -43,14 +42,23 @@ public class craftingSlotController : MonoBehaviour
         }
 
         //if there IS an ingredient held by the controller, then apply that ingredient to the slot, then DROP that ingredient.
-        Debug.Log("Set slot to Ingredient being held: " + _craftingController.CurrIngredient);
-
         //to set our ingredient's data, we tell the displayIngredient object to update /its/ data to the new _ingred
         _ingredient.SetIngredient(_craftingController.CurrIngredient);
+    }
 
-        //after using an ingredient ONCE we tell the controller to stop using it, and DROP that _ingred
-        //possible to remove this clause? let the player multi-set ingredients. Might add a _null to the HotBar if we do.
-        _craftingController.DropIngredient();
+    //this is roughly the OnClick() functionality of a Button
+    override public void OnSelect(BaseEventData eventData)
+    {
+        Debug.Log("OnSelect");
+        OnClick();
+    }
+
+    //this detects player input as HOVER or HIGHLIGHT, useful for drag/swirl crafting
+    override public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("OnPointerEnter");
+        _debugText.text += "\nOnPointerEnter()";
+        OnClick();
     }
 
     //public to clearIngredients after each craft using _devCrafting script

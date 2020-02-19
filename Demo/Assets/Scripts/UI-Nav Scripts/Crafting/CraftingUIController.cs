@@ -7,6 +7,8 @@ public class CraftingUIController : MonoBehaviour
 
     [SerializeField] GameObject _potionResultsUI = null;
     [SerializeField] _devCrafting _crafing = null;
+    private Vector3 _clickDown = Vector3.zero;
+    
 
     private void OnEnable()
     {
@@ -54,10 +56,10 @@ public class CraftingUIController : MonoBehaviour
         CurrIngredient = ingredient;
     }
 
-    public void DropIngredient()
+    /*public void DropIngredient()
     {
         //called from the Slot script, tells the controller to forget its current data
         Debug.Log("Dropping Help ingredient");
         CurrIngredient = null;
-    }
+    }*/
 }

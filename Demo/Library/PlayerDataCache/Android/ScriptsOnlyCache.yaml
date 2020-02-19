@@ -619,7 +619,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 6c1c9b28e13553db64bb3b070943ea0d
+      Hash: e20c150c8eca4eedb2662ebe72606d49
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: craftingSlotController

@@ -7,8 +7,7 @@ public class displayIngredient : MonoBehaviour
     [SerializeField] Ingredients_sObj _ingredientData = null;
     public Ingredients_sObj IngredientData { get { return _ingredientData; } }
 
-    private Image _myImage = null;
-    
+    private Image _myImage = null;    
 
     private void Awake()
     {

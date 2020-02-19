@@ -337,6 +337,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &886780909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5375444716440611596, guid: 486b866324848f64184348a56e9b63af,
+    type: 3}
+  m_PrefabInstance: {fileID: 689680829030342568}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d35fa764b8285d4bae646229ab95d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570789374
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,45 +582,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 490382910}
-    - target: {fileID: 5085039135340424969, guid: 486b866324848f64184348a56e9b63af,
+    - target: {fileID: 4451527326649374529, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 3092409698415741324, guid: 486b866324848f64184348a56e9b63af,
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 886780909}
+    - target: {fileID: 6637717375884709344, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2533616343864695402, guid: 486b866324848f64184348a56e9b63af,
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 886780909}
+    - target: {fileID: 6166827885957245300, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2189646862430760225, guid: 486b866324848f64184348a56e9b63af,
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 886780909}
+    - target: {fileID: 6949832322506708703, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1547424698257274612, guid: 486b866324848f64184348a56e9b63af,
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 886780909}
+    - target: {fileID: 6553066682005338941, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846730807274896339, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 651729195792791062, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320723602042320621, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 886780909}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 486b866324848f64184348a56e9b63af, type: 3}
