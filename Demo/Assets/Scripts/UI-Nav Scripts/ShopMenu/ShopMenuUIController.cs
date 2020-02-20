@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ShopMenuUIController : MonoBehaviour
 {
+
     private void OnEnable()
     {
         StateController.StateChanged += OnStateChanged;
@@ -33,4 +38,6 @@ public class ShopMenuUIController : MonoBehaviour
                 break;
         }
     }
+
+
 }

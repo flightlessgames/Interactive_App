@@ -14,7 +14,7 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     private Ingredients_sObj _nullIngredient = null;
 
     [SerializeField] CraftingUIController _craftingController = null;
-    [SerializeField] private Text _debugText = null;
+    
 
     override protected void Awake()
     {
