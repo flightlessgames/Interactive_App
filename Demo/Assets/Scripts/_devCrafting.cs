@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class _devCrafting : MonoBehaviour
 {
+    //TODO make a not bad backend potion/gold reward
+    [SerializeField] Gold currGold;
     public class Potion
     {
         public Potion(int a, int b, int c, int d, int e, int f, string name)
@@ -77,6 +79,8 @@ public class _devCrafting : MonoBehaviour
         }
 
         ReadCSVFile();
+
+        currGold.currentGold += 5;
     }
 
     void ReadCSVFile()  //now that we have a "targetpotion" we can compare that to our Potion.csv to read the recipe.
@@ -127,6 +131,8 @@ public class _devCrafting : MonoBehaviour
             _displayText.text = "Your Potion's Score was: " + _targetPotion + "\nYou made a " + data_values[6] + " potion!";
 
             //create a "unique" potion sprite by generating a color (R/G/B btwn 0-1)
+
+            //TODO (Lillianna): see if having this + ie updating _targetPotion values AS THE PLAYER ADD/REMOVES ITEMS is too much of a hassle
             float spriteColorR = (_targetPotion.x + 10) / 20;   //-10, +10 = 0, /20 = 0    //0, +10 = 10, /20 = 0.5    //10, +10 = 20, /20 = 1    //Maps values into 0-1 decimals.
             float spriteColorG = (_targetPotion.y + 10) / 20;
             float spriteColorB = (_targetPotion.z + 10) / 20;
@@ -149,6 +155,7 @@ public class _devCrafting : MonoBehaviour
         bool destroyedSlots = false;
         foreach(hotbarSlotController slot in _hotSlotsController.GetComponentsInChildren<hotbarSlotController>())
         {
+            //NOTE: has some issue with destroying until you hit create potion, which makes sense but could be confusing for players (they'll figure it out tho when they can't add anymore items)
             if(slot.Ingredient.IngredientData.Quantity == 0)
             {
                 //first we remove from list to avoid null errors? then destroy

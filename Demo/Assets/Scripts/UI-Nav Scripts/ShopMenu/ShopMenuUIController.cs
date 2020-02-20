@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ShopMenuUIController : MonoBehaviour
 {
+
     private void OnEnable()
     {
         StateController.StateChanged += OnStateChanged;
@@ -33,4 +34,6 @@ public class ShopMenuUIController : MonoBehaviour
                 break;
         }
     }
+
+
 }

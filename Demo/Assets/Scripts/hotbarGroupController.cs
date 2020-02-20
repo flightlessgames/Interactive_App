@@ -9,8 +9,6 @@ public class hotbarGroupController : MonoBehaviour
     private HorizontalLayoutGroup _horizontalGroup = null;
     private RectTransform _rectTransform = null;
 
-    [SerializeField] Button _leftButton = null;
-    [SerializeField] Button _rightButton = null;
 
     private float _scrollUnit = 0;
     private List<hotbarSlotController> _hotSlots = new List<hotbarSlotController>();

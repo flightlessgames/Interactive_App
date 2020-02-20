@@ -13,6 +13,10 @@ public class Ingredients_sObj : ScriptableObject
     [SerializeField] private Sprite _image = null;
     public Sprite Image { get { return _image; } }
 
+    //ADDED: COST OF ITEM (lillianna)
+    [SerializeField] private int _cost = 0;
+    public int Cost { get { return _cost; } }
+
     #endregion
 
     #region Dynamic/Gameplay Values

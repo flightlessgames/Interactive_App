@@ -62,19 +62,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ActivatePage.cs" />
+    <Compile Include="Assets\PageManager.cs" />
     <Compile Include="Assets\Scripts\_devCrafting.cs" />
     <Compile Include="Assets\Scripts\craftingSlotController.cs" />
     <Compile Include="Assets\Scripts\hotbarGroupController.cs" />
     <Compile Include="Assets\Scripts\hotbarSlotController.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\displayIngredient.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Gold.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Ingredients_sObj.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Shop.cs" />
+    <Compile Include="Assets\Scripts\ShopFunctionController.cs" />
+    <Compile Include="Assets\Scripts\ShopIngredientHolder.cs" />
+    <Compile Include="Assets\Scripts\ShopSlot.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementsUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingUIController.cs" />
+    <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalButtonPress.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalMenuController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalState.cs" />
+    <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\MenuOpener_Journal.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\MainMenu\MainMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\MainMenu\MenuState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuUIController.cs" />
@@ -101,6 +110,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/College/20_Spring/4379 Topics/Interactives_App01_Repository/Interactive_App/Demo/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/College/20_Spring/4379 Topics/Interactives_App01_Repository/Interactive_App/Demo/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/College/20_Spring/4379 Topics/Interactives_App01_Repository/Interactive_App/Demo/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
