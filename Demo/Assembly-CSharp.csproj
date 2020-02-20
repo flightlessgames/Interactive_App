@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ActivatePage.cs" />
+    <Compile Include="Assets\PageManager.cs" />
     <Compile Include="Assets\Scripts\_devCrafting.cs" />
     <Compile Include="Assets\Scripts\craftingSlotController.cs" />
     <Compile Include="Assets\Scripts\hotbarGroupController.cs" />
@@ -72,9 +74,11 @@
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementsUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingUIController.cs" />
+    <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalButtonPress.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalMenuController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\JournalState.cs" />
+    <Compile Include="Assets\Scripts\UI-Nav Scripts\Journal\MenuOpener_Journal.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\MainMenu\MainMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\MainMenu\MenuState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuUIController.cs" />
