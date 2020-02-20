@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Shop
   m_EditorClassIdentifier: Assembly-CSharp::ShopTemplate
   shopInventory:
-  - item: {fileID: 11400000, guid: a8466b2b18fa5604fae68712ab24c3fc, type: 2}
-    shopSlot: {fileID: 0}
-  - item: {fileID: 11400000, guid: c90b6d8a1c41d704cb1d910b75bc1251, type: 2}
-    shopSlot: {fileID: 0}
-  - item: {fileID: 11400000, guid: ef20068836f13094f9a6dd72c47e1f60, type: 2}
-    shopSlot: {fileID: 0}
-  - item: {fileID: 11400000, guid: 1f9b45e956a665a4c9ce6cce6b275506, type: 2}
-    shopSlot: {fileID: 0}
+  - {fileID: 11400000, guid: a8466b2b18fa5604fae68712ab24c3fc, type: 2}
+  - {fileID: 11400000, guid: c90b6d8a1c41d704cb1d910b75bc1251, type: 2}
+  - {fileID: 11400000, guid: ef20068836f13094f9a6dd72c47e1f60, type: 2}
+  - {fileID: 11400000, guid: 1f9b45e956a665a4c9ce6cce6b275506, type: 2}

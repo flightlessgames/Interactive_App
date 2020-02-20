@@ -10,28 +10,28 @@ using UnityEngine.UI;
 public class ShopSlot : MonoBehaviour
 {
     //TODO reference whole UI, add button reference to that UI, fill button here
-    public Text title, price;
-    public Button purchaseButton;       //forgot why I put this here, not deleting just in case
-    public Image itemImage;
-    public int selfIngredientIndex;
-    public ShopSlot selfIngredientsObj;
+    [SerializeField] private Text title, price;
+    [SerializeField] private Image itemImage;
 
-    public Ingredients_sObj selfIngredient; 
+    private Ingredients_sObj selfIngredient; 
 
-    [SerializeField] ShopUI slotSelectionController;
+    [SerializeField] private ShopFunctionController slotSelectionController;
 
     //TODO see ShopUI script, can't pass current game object (panel/button/slot UI group that this script is attached to) into ShopUI current selection script
     public void OnClick()
     {
         Debug.Log(gameObject);
-        Debug.Log(selfIngredientIndex);
 
-        Debug.Log(selfIngredientsObj);
-        Debug.Log(selfIngredient);
+        slotSelectionController.CurrIngredient = selfIngredient;
+        Debug.Log("thing " + slotSelectionController.CurrIngredient);
+    }
 
-        slotSelectionController.currIngredientSelection = selfIngredient;
-
-        Debug.Log("thing " + slotSelectionController.currIngredientSelection);
+    public void InitializeData(Ingredients_sObj ingredient)
+    {
+        title.text = ingredient.Name;
+        price.text = ingredient.Cost.ToString();
+        itemImage.sprite = ingredient.Image;
+        selfIngredient = ingredient;
     }
 
 }
