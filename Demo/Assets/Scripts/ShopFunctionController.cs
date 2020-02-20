@@ -10,10 +10,11 @@ public class ShopFunctionController : MonoBehaviour
     [SerializeField] Shop _shopReference;
     [SerializeField] private List<ShopSlot> _purchaseSlots;
     [SerializeField] private Gold _gold_sObj;
+    [SerializeField] Text _feedbackText = null;
 
     private List<Ingredients_sObj> _shopInventory;
 
-    public Ingredients_sObj CurrIngredient;
+    public Ingredients_sObj _currIngredient;
 
     private void Awake()
     {
@@ -31,23 +32,34 @@ public class ShopFunctionController : MonoBehaviour
             shopSlot.InitializeData(_shopReference.shopInventory[shopIndex]);
         }
     }
-    
-    public void buyItem() 
+
+    public void SelectItem(Ingredients_sObj item)
     {
-        Debug.Log("attempting to buy" + CurrIngredient);
+        _currIngredient = item;
+        _feedbackText.text = "You are trying to buy a: " + _currIngredient.Name;
+    }
+    
+    public void BuyItem() 
+    {
+        Debug.Log("attempting to buy" + _currIngredient);
 
-        if (CurrIngredient != null) 
+        if (_currIngredient != null) 
         {
-            if (_gold_sObj.currentGold >= CurrIngredient.Cost) {
-                Debug.Log("bought " + CurrIngredient);
-                CurrIngredient.IncreaseQuantity(1);
-
-                _gold_sObj.currentGold -= CurrIngredient.Cost;
+            if (_gold_sObj.currentGold >= _currIngredient.Cost) {
+                Debug.Log("bought " + _currIngredient);
+                _currIngredient.IncreaseQuantity(1);
+                _gold_sObj.currentGold -= _currIngredient.Cost;
+                _feedbackText.text = "BOUGHT: " + _currIngredient.Name + 
+                    "\nYou have: " + _gold_sObj.currentGold + " gold" + 
+                    "\nYou have: " + _currIngredient.Quantity + " " + _currIngredient.Name;
             }
             else
             {
                 Debug.Log("cannot buy, not enough gold");
-                CurrIngredient = null;
+                _feedbackText.text = "Cannot afford a " + _currIngredient.Name + "," +
+                    "\nYou have: " + _gold_sObj.currentGold + " gold" +
+                    "\nYou need: " + _currIngredient.Cost + " gold";
+                _currIngredient = null;
             }
         }
     }

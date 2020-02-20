@@ -15,15 +15,14 @@ public class ShopSlot : MonoBehaviour
 
     private Ingredients_sObj selfIngredient; 
 
-    [SerializeField] private ShopFunctionController slotSelectionController;
+    [SerializeField] private ShopFunctionController _shopController;
 
     //TODO see ShopUI script, can't pass current game object (panel/button/slot UI group that this script is attached to) into ShopUI current selection script
     public void OnClick()
     {
         Debug.Log(gameObject);
 
-        slotSelectionController.CurrIngredient = selfIngredient;
-        Debug.Log("thing " + slotSelectionController.CurrIngredient);
+        _shopController.SelectItem(selfIngredient);
     }
 
     public void InitializeData(Ingredients_sObj ingredient)

@@ -16,4 +16,4 @@ MonoBehaviour:
   _name: Durian
   _image: {fileID: 21300000, guid: fc32b3efa3cc21d4cbc139943e39c196, type: 3}
   _cost: 3
-  _quantity: 2
+  _quantity: 10
