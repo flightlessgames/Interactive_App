@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Scenes/Shop.unity
+=======
+- path: Assets/_Scenes/MainMenu.unity
+>>>>>>> Feature_Journal
   isLoaded: 1
   isActive: 1
   isSubScene: 0

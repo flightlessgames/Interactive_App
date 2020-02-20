@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":106.90557861328125,"y":242.58831787109376,"z":3.56829833984375},"rotation":{"x":-0.15857169032096864,"y":0.028726564720273019,"z":-0.004609718453139067,"w":-0.9869290590286255},"size":498.6396789550781,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":92.85990142822266,"y":186.91940307617188,"z":19.277191162109376},"rotation":{"x":-0.0824207067489624,"y":0.08420871943235398,"z":-0.006983275059610605,"w":-0.9930188059806824},"size":347.259033203125,"orthographic":false}
+>>>>>>> Feature_Journal
