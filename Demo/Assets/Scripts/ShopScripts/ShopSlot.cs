@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 [Serializable] 
 [RequireComponent(typeof(Button))]
-[RequireComponent(typeof(displayIngredient))]
 public class ShopSlot : MonoBehaviour
 {
     //TODO reference whole UI, add button reference to that UI, fill button here

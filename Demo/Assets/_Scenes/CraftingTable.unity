@@ -641,5 +641,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeState
       objectReference: {fileID: 0}
+    - target: {fileID: 5375444716440611596, guid: 486b866324848f64184348a56e9b63af,
+        type: 3}
+      propertyPath: _gold
+      value: 
+      objectReference: {fileID: 11400000, guid: e34fb62be3de1624584c420a5967809c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 486b866324848f64184348a56e9b63af, type: 3}

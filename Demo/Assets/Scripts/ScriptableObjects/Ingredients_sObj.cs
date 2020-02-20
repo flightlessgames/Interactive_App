@@ -25,7 +25,8 @@ public class Ingredients_sObj : ScriptableObject
 
     public void IncreaseQuantity(int value)
     {
-        if (_quantity < 0) { _quantity = 0; }
+        if (_quantity < 0) return; 
+
         _quantity += value;
     }
 

@@ -164,6 +164,8 @@ public class _devCrafting : MonoBehaviour
                 //if we destroy any set "flag" to destroyed, and have hotbarGroup check its new children.
                 destroyedSlots = true;
             }
+
+            slot.GetComponent<displayIngredient>().AdjustQuanttiy();
         }
         if (destroyedSlots)
             _hotSlotsController.CountHotbar();

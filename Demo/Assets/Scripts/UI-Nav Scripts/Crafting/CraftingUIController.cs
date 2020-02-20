@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CraftingUIController : MonoBehaviour
 {
@@ -7,8 +8,10 @@ public class CraftingUIController : MonoBehaviour
 
     [SerializeField] GameObject _potionResultsUI = null;
     [SerializeField] _devCrafting _crafing = null;
+    [SerializeField] private Gold _gold = null;
+    [SerializeField] Text _goldText = null;
+
     private Vector3 _clickDown = Vector3.zero;
-    
 
     private void OnEnable()
     {
@@ -22,6 +25,7 @@ public class CraftingUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
+        _goldText.text = _gold.currentGold.ToString();
         CraftingState enumState = (CraftingState)state;
 
         switch (enumState)
@@ -45,6 +49,8 @@ public class CraftingUIController : MonoBehaviour
 
             case CraftingState.PotionResult:
                 _potionResultsUI.SetActive(true);
+                _gold.currentGold += 10;
+
                 break;
 
             default:

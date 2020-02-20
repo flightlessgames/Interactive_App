@@ -95,8 +95,7 @@ MonoBehaviour:
   title: {fileID: 1376340379097128640}
   price: {fileID: 8752396430131323687}
   itemImage: {fileID: 7761581223669036524}
-  slotSelectionController: {fileID: 7497341237594561579, guid: e5d129945ecdf3245aa0d72097c216c3,
-    type: 3}
+  _shopController: {fileID: 0}
 --- !u!114 &7783998600545319602
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -69,6 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81209b1df2b34774ca099ef935b350de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gold: {fileID: 11400000, guid: e34fb62be3de1624584c420a5967809c, type: 2}
+  _goldText: {fileID: 326678697439732703}
 --- !u!1001 &2055535988226232303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76,31 +78,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7367254429709459510}
     m_Modifications:
+    - target: {fileID: 2064736628744564515, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
+        type: 3}
+      propertyPath: slotSelectionController
+      value: 
+      objectReference: {fileID: 7497341237594561579}
+    - target: {fileID: 2064736628744564515, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
+        type: 3}
+      propertyPath: _shopController
+      value: 
+      objectReference: {fileID: 7497341237594561579}
+    - target: {fileID: 1527977933252140840, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
+        type: 3}
+      propertyPath: slotSelectionController
+      value: 
+      objectReference: {fileID: 7497341237594561579}
+    - target: {fileID: 1527977933252140840, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
+        type: 3}
+      propertyPath: _shopController
+      value: 
+      objectReference: {fileID: 7497341237594561579}
     - target: {fileID: 4333401533373650433, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
         type: 3}
       propertyPath: m_Name
       value: ShopBody_cvs
       objectReference: {fileID: 0}
-    - target: {fileID: 2064736628744564515, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
-        type: 3}
-      propertyPath: slotSelectionController
-      value: 
-      objectReference: {fileID: 7497341237594561579}
-    - target: {fileID: 2064736628744564515, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
-        type: 3}
-      propertyPath: _shopController
-      value: 
-      objectReference: {fileID: 7497341237594561579}
-    - target: {fileID: 1527977933252140840, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
-        type: 3}
-      propertyPath: slotSelectionController
-      value: 
-      objectReference: {fileID: 7497341237594561579}
-    - target: {fileID: 1527977933252140840, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
-        type: 3}
-      propertyPath: _shopController
-      value: 
-      objectReference: {fileID: 7497341237594561579}
     - target: {fileID: 3347264160602553897, guid: a7e842a7abfb62e42b2ebc7d336d6fdb,
         type: 3}
       propertyPath: slotSelectionController
@@ -536,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 4305618974140257102, guid: 72495624a9114d247905d7c87b5b5edb,
         type: 3}
       propertyPath: m_Name
-      value: ShopMenuUI_cvs
+      value: ShopHeaderUI_cvs
       objectReference: {fileID: 0}
     - target: {fileID: 4305618974140257098, guid: 72495624a9114d247905d7c87b5b5edb,
         type: 3}
@@ -721,3 +723,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6772604030573868724}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &326678697439732703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6446207909770483051, guid: 72495624a9114d247905d7c87b5b5edb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6772604030573868724}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

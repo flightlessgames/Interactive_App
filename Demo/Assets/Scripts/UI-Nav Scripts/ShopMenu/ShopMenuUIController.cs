@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShopMenuUIController : MonoBehaviour
 {
-
+    [SerializeField] Gold _gold = null;
+    [SerializeField] Text _goldText = null;
     private void OnEnable()
     {
         StateController.StateChanged += OnStateChanged;
@@ -16,6 +18,8 @@ public class ShopMenuUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
+        _goldText.text = _gold.currentGold.ToString();
+
         ShopState enumState = (ShopState)state;
 
         switch (enumState)
