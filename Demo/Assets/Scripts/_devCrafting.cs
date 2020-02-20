@@ -27,8 +27,10 @@ public class _devCrafting : MonoBehaviour
     [SerializeField] private Text _displayText = null;
     [SerializeField] private RawImage _rawPotionColor = null;
     [SerializeField] private StateController _stateController = null;
+    [SerializeField] private hotbarGroupController _hotSlotsController = null;
 
     [SerializeField] private List<craftingSlotController> _ingredients = new List<craftingSlotController>();
+    
 
     private Vector3 _targetPotion = Vector3.zero;
     private string _potionCsvPath = "...";
@@ -137,10 +139,27 @@ public class _devCrafting : MonoBehaviour
 
     public void Clear()
     {
+        Debug.Log("attempting clear");
         //after each craft, set all ingredient slots to Clear
         foreach(craftingSlotController slot in _ingredients)
         {
             slot.ClearIngredients();
         }
+
+        bool destroyedSlots = false;
+        foreach(hotbarSlotController slot in _hotSlotsController.GetComponentsInChildren<hotbarSlotController>())
+        {
+            if(slot.Ingredient.IngredientData.Quantity == 0)
+            {
+                //first we remove from list to avoid null errors? then destroy
+                Destroy(slot.gameObject);
+
+                //if we destroy any set "flag" to destroyed, and have hotbarGroup check its new children.
+                destroyedSlots = true;
+            }
+        }
+        if (destroyedSlots)
+            _hotSlotsController.CountHotbar();
+
     }
 }

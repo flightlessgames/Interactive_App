@@ -63,8 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\_devCrafting.cs" />
-    <Compile Include="Assets\Scripts\craftingHotbarController.cs" />
     <Compile Include="Assets\Scripts\craftingSlotController.cs" />
+    <Compile Include="Assets\Scripts\hotbarGroupController.cs" />
+    <Compile Include="Assets\Scripts\hotbarSlotController.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\displayIngredient.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Ingredients_sObj.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementState.cs" />

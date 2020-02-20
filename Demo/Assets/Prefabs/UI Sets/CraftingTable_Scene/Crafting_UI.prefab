@@ -166,6 +166,76 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8352182170016433819, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 1998209155268835502, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 1503853211766696679, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 1311111692406807610, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 3340872982276163333, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 7590280472094643242, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 4845527212379076413, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 4400131885482505940, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 4382732323756424999, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 4590755504043646729, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 751316813087710720, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 2597281185873938070, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 6896075708622449186, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 6084184437417078044, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 527548fbe613b2a488376a8baf2a03b9, type: 3}
 --- !u!224 &1826561939182966885 stripped
@@ -174,6 +244,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5633978851098825178}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4087588387026209981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8544997625315368295, guid: 527548fbe613b2a488376a8baf2a03b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5633978851098825178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdb297e5a89f5541a2129c1ecc0f1e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7562656451529917805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,6 +538,11 @@ PrefabInstance:
       propertyPath: _rawPotionColor
       value: 
       objectReference: {fileID: 4289787549145945798}
+    - target: {fileID: 7389729329886199593, guid: 60febe75c4bb9814493cb3907e5bcc47,
+        type: 3}
+      propertyPath: _hotSlotsController
+      value: 
+      objectReference: {fileID: 4087588387026209981}
     - target: {fileID: 330354369677784623, guid: 60febe75c4bb9814493cb3907e5bcc47,
         type: 3}
       propertyPath: m_LocalPosition.x

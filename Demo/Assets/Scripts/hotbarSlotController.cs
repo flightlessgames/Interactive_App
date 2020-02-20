@@ -6,12 +6,14 @@ using UnityEngine.EventSystems;
 //we're requiring type of Button, but not using in the script. Use Designer/Component interface to link the Button's OnClick to this script's OnClick();
 [RequireComponent(typeof(Button))]
 [RequireComponent(typeof(displayIngredient))]
-public class craftingHotbarController : MonoBehaviour, IDragHandler, IEndDragHandler
+public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     [SerializeField] CraftingUIController _craftingController = null;
     
     //using displayIngredient script to Visualise the Ingredient_sObj data
     private displayIngredient _ingredient = null;
+    public displayIngredient Ingredient { get { return _ingredient; } }
+
     private Vector3 _startPosition = Vector3.zero;
 
     List<RaycastResult> _hitObjects = new List<RaycastResult>();
