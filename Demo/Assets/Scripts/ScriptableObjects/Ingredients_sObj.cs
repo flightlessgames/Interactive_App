@@ -25,7 +25,7 @@ public class Ingredients_sObj : ScriptableObject
         _quantity += value;
     }
 
-    public void DecreaseQuantity(int value) //currently no check on Quantity, 0 functions like -1 in _devCrafting
+    public void DecreaseQuantity(int value)
     {
         if (_quantity < 0)   //using -1 as inf value
         {
