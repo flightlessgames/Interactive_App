@@ -26,6 +26,8 @@ public class CraftingUIController : MonoBehaviour
     private void OnStateChanged(int state)
     {
         _goldText.text = _gold.currentGold.ToString();
+        fileUtility.SaveObject.SetGoldValue(_gold.currentGold);
+
         CraftingState enumState = (CraftingState)state;
 
         switch (enumState)
@@ -49,8 +51,9 @@ public class CraftingUIController : MonoBehaviour
 
             case CraftingState.PotionResult:
                 _potionResultsUI.SetActive(true);
-                _gold.currentGold += 10;
 
+                //temp fix to add gold for playtesting, adding 10
+                _gold.currentGold += 10;
                 break;
 
             default:
@@ -62,7 +65,6 @@ public class CraftingUIController : MonoBehaviour
     public void HoldIngredient(Ingredients_sObj ingredient)
     {
         //called from the HotBar script, tells the controller to remember the data passed from the HotBar's _ingred
-        Debug.Log("Set Held ingredient to: " + ingredient);
         CurrIngredient = ingredient;
     }
 }

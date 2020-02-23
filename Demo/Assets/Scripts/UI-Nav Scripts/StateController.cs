@@ -14,7 +14,7 @@ public class StateController: MonoBehaviour
         //cause a save every time we try to change the state, might be too many??
         //ensures data is persistant between all scenes, and saves often so data is probably not lost on exit
         fileUtility.Save();
-
+        
         State = stateIndex;
         StateChanged.Invoke(State);
     }

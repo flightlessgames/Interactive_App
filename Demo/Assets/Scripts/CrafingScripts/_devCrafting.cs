@@ -94,11 +94,9 @@ public class _devCrafting : MonoBehaviour
 
     void ReadCSVFile()  //now that we have a "targetpotion" we can compare that to our Potion.csv to read the recipe.
     {
-        Debug.Log("Attempting a read");
         StreamReader strReader = new StreamReader(fileUtility.POTIONS_LOCATION);
 
         //code adapted from RapidGaming on YouTube: https://www.youtube.com/watch?v=xwnL4meq-j8&feature=youtu.be
-        Debug.Log("We're reading");
         bool endOfFile = false;
         bool foundMatch = false;    //both endOfFile and foundMatch are our 2 cases to end reading
 
@@ -161,7 +159,6 @@ public class _devCrafting : MonoBehaviour
 
     public void Clear()
     {
-        Debug.Log("attempting clear");
         //after each craft, set all ingredient slots to Clear
         foreach(craftingSlotController slot in _craftingSlots)
         {

@@ -67,14 +67,12 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     //this is roughly the OnClick() functionality of a Button
     override public void OnSelect(BaseEventData eventData)
     {
-        Debug.Log("OnSelect");
         OnClick();
     }
 
     //this detects player input as HOVER or HIGHLIGHT, useful for drag/swirl crafting
     override public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("OnPointerEnter");
         //_debugText.text += "\nOnPointerEnter()";
         OnClick();
     }
