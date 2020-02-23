@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName ="New_Ingredient_sObj", menuName = "sObj/Ingredient")]
+[serializable][CreateAssetMenu(fileName ="New_Ingredient_sObj", menuName = "sObj/Ingredient")]
 public class Ingredients_sObj : ScriptableObject
 {
     #region Static/Designer Values

@@ -8,7 +8,6 @@ public class CraftingUIController : MonoBehaviour
 
     [SerializeField] GameObject _potionResultsUI = null;
     [SerializeField] _devCrafting _crafing = null;
-    [SerializeField] private Gold _gold = null;
     [SerializeField] Text _goldText = null;
 
     private Vector3 _clickDown = Vector3.zero;
@@ -25,8 +24,7 @@ public class CraftingUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
-        _goldText.text = _gold.currentGold.ToString();
-        fileUtility.SaveObject.SetGoldValue(_gold.currentGold);
+        _goldText.text = fileUtility.SaveObject.gold.ToString();
 
         CraftingState enumState = (CraftingState)state;
 
@@ -51,9 +49,6 @@ public class CraftingUIController : MonoBehaviour
 
             case CraftingState.PotionResult:
                 _potionResultsUI.SetActive(true);
-
-                //temp fix to add gold for playtesting, adding 10
-                _gold.currentGold += 10;
                 break;
 
             default:

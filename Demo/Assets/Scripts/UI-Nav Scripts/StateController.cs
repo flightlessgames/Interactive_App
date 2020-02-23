@@ -31,7 +31,11 @@ public class StateController: MonoBehaviour
 
     public void ChangeLoadFile(int load)
     {
+        //permanent load pointer change
         LoadFilePosition = load;
         Debug.Log("Now load file " + LoadFilePosition);
+
+        //initialize -> then run a new Load();
+        fileUtility.InitializeLoadSettings();
     }
 }

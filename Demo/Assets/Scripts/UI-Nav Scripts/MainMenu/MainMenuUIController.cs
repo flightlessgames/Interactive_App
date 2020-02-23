@@ -1,7 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUIController : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class MainMenuUIController : MonoBehaviour
     [SerializeField] private GameObject _rootPanel = null;
     [SerializeField] private GameObject _loadDataSelectPanel = null;
     [SerializeField] private GameObject _loadDataConfirmPanel = null;
+    [SerializeField] private Text _confirmText = null;
     [SerializeField] private GameObject _creditsPanel = null;
 
     public int LoadFileSetting { get; private set; } = 0;
@@ -41,15 +42,14 @@ public class MainMenuUIController : MonoBehaviour
                 //TODO Animations
                 break;
             case MenuState.BeginPlay:
-                //Begin Play Scene and Initialize Load File
-                fileUtility.InitializeLoadSettings();
-
+                //Begin Play Scene
                 SceneManager.LoadScene("CraftingTable");
                 break;
             case MenuState.LoadSaveData:
                 _loadDataSelectPanel.gameObject.SetActive(true);
                 break;
             case MenuState.LoadDataConfirm:
+                StartCoroutine(AssignTextData());
                 _loadDataConfirmPanel.gameObject.SetActive(true);
                 break;
             case MenuState.Credits:
@@ -62,8 +62,31 @@ public class MainMenuUIController : MonoBehaviour
         }
     }
 
+    IEnumerator AssignTextData()
+    {
+        if (fileUtility.SearchForSaveData(LoadFileSetting) != null)
+        {
+            int unlockCount = 0;
+            foreach(bool state in fileUtility._searchObject.unlockedIngredients)
+            {
+                if (state) { unlockCount++; }
+            }
+            float AchievementPercent = unlockCount / fileUtility._searchObject.unlockedIngredients.Length;
+
+            yield return new WaitForEndOfFrame();
+
+            _confirmText.text =
+           "File Creation: " + fileUtility._searchObject.CreationTime +
+           "\nLast Save: " + fileUtility._searchObject.RecentSaveTime +
+           "\n" +
+           "\nCurrent $: " + fileUtility._searchObject.gold +
+           "\nAchievements: " + (int)(AchievementPercent*100) + "%";
+        }
+    }
+
     public void ChangeLoadFile(int fileNum)
     {
+        //temporary load setting, must be confirmed to move to StateController -> fileUtility
         LoadFileSetting = fileNum;
     }
 

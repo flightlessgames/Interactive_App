@@ -9,7 +9,6 @@ public class ShopFunctionController : MonoBehaviour
 {
     [SerializeField] Shop _shopReference;
     [SerializeField] private List<ShopSlot> _purchaseSlots;
-    [SerializeField] private Gold _gold_sObj;
     [SerializeField] Text _feedbackText = null;
 
     private List<Ingredients_sObj> _shopInventory;
@@ -45,20 +44,25 @@ public class ShopFunctionController : MonoBehaviour
 
         if (_currIngredient != null) 
         {
-            if (_gold_sObj.currentGold >= _currIngredient.Cost) {
+            if (fileUtility.SaveObject.gold >= _currIngredient.Cost) {
+
                 Debug.Log("bought " + _currIngredient);
                 _currIngredient.IncreaseQuantity(1);
-                _gold_sObj.currentGold -= _currIngredient.Cost;
+
+                fileUtility.SaveObject.gold -= _currIngredient.Cost;
+
                 _feedbackText.text = "BOUGHT: " + _currIngredient.Name + 
-                    "\nYou have: " + _gold_sObj.currentGold + " gold" + 
+                    "\nYou have: " + fileUtility.SaveObject.gold + " gold" + 
                     "\nYou have: " + _currIngredient.Quantity + " " + _currIngredient.Name;
             }
             else
             {
                 Debug.Log("cannot buy, not enough gold");
+
                 _feedbackText.text = "Cannot afford a " + _currIngredient.Name + "," +
-                    "\nYou have: " + _gold_sObj.currentGold + " gold" +
+                    "\nYou have: " + fileUtility.SaveObject.gold + " gold" +
                     "\nYou need: " + _currIngredient.Cost + " gold";
+
                 _currIngredient = null;
             }
         }

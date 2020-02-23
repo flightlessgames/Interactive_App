@@ -20,7 +20,10 @@ public class LoadButton : MonoBehaviour
 
     public void OnClick()
     {
-        _stateController.ChangeLoadFile(_mainMenuController.LoadFileSetting);
+        //cause save funtion first
         _stateController.ChangeState((int)MenuState.Menu);
+
+        //then change load poiter settings
+        _stateController.ChangeLoadFile(_mainMenuController.LoadFileSetting);
     }
 }

@@ -26,7 +26,7 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private void Start()
     {
-        _startPosition = transform.localPosition;
+        NewPosition();
     }
 
     //using a generic OnClick() function to link the Button component's commands to this script. Useful for Computer & Touch Devices.
@@ -34,6 +34,11 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         Debug.Log("OnClick()");
         _craftingController.HoldIngredient(_ingredient.IngredientData);
+    }
+
+    public void NewPosition()
+    {
+        _startPosition = transform.localPosition;
     }
 
     #region Drag + Drop

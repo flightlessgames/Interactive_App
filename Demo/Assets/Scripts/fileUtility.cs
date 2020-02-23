@@ -8,6 +8,7 @@ public static class fileUtility
     public static string POTIONS_LOCATION { get; private set; } = "...";
 
     public static SaveFile SaveObject = new SaveFile();
+    public static SaveFile _searchObject = new SaveFile();
 
     private static bool _isInitialized = false;
 
@@ -30,8 +31,7 @@ public static class fileUtility
 
         _isInitialized = true;
 
-        //after setting paths, write to current SaveObject our previous SaveFile. Don't allow a new save to overwrite on accident
-        Debug.Log("setting first Load");
+        //after initializing which file to pull from, do one pull
         Load();
     }
 
@@ -65,21 +65,11 @@ public static class fileUtility
             string saveString = File.ReadAllText(SAVE_LOCATION);
             Debug.Log("loaddata test, saveString: " + saveString);
 
-            SaveObject = JsonUtility.FromJson<SaveFile>(saveString);
-            /*
-            Debug.Log("loaddata test, SaveObject data 'gold' = " + SaveObject.Gold);
-            Debug.Log("SaveObject data 'ingredients' = " + SaveObject.UnlockedIngredients + ". Count: " + SaveObject.UnlockedIngredients.Length);
-            Debug.Log("SaveObject data 'recent recipes' = " + SaveObject.RecentRecipesAsArray + ". Count: " + SaveObject.RecentRecipesAsArray.Length);
-            */
+            JsonUtility.FromJsonOverwrite(saveString, SaveObject);
         }
         else
         {
-            Debug.Log("failed, creating save");
-            Save();
-
-            Debug.Log("new load");
-            //dangerous, check for Save() to write to same location as Load()
-            Load();
+            Debug.Log("Could not Load from File");
         }
         
     }
@@ -90,88 +80,41 @@ public static class fileUtility
 
         if (!_isInitialized) { InitializeLoadSettings(); }
 
-        //SaveObject should have values at this point
-        /*
-        Debug.Log("savedata test, SaveObject data 'gold' = " + SaveObject.Gold);
-        Debug.Log("SaveObject data 'ingredients' = " + SaveObject.UnlockedIngredients + ". Count: " + SaveObject.UnlockedIngredients.Length);
-        Debug.Log("SaveObject data 'recent recipes' = " + SaveObject.RecentRecipesAsArray + ". Count: " + SaveObject.RecentRecipesAsArray.Length);
-        */
+        //assuming we have a SaveObject
+        SaveObject.RecentSaveTime = Time.time;
 
-        string saveString = JsonUtility.ToJson(SaveObject);
+        string saveString = JsonUtility.ToJson(SaveObject, true);
         Debug.Log("savedata test, saveString: " + saveString);
 
+        //if File Does Not Exist, it will create a file at location
         File.WriteAllText(SAVE_LOCATION, saveString);
-
-        Load();
     }
 
-    [serializable]
-    public class SaveFile
+    //to use for LoadScreenConfirm preview data
+    public static SaveFile SearchForSaveData(int FileToSearch)
     {
-        //list of previous specific potions crafted, up to a limit for Achievement-History Page
-        public List<_devCrafting.Recipe> recentRecipes;
-        public _devCrafting.Recipe[] RecentRecipesAsArray { get { return recentRecipes.ToArray(); } }
+        string searchPath = "...";
 
-        //list of previous "unlocked" potion recipes "known" for Achievement-Achievements Page
-        public bool[] unlockedIngredients;
-        public bool[] UnlockedIngredients { get { return unlockedIngredients; } }
+        //code taken from Initializer
+        if (SystemInfo.deviceType == DeviceType.Handheld)
+        { CreateAPKPath(searchPath, "LoadFileData" + FileToSearch + ".txt"); }
 
-        //all ingredient_sObj quantities
-        //TODO get ALL ingredient_sObj into a List<> somehow?
+        else if (SystemInfo.deviceType == DeviceType.Desktop)
+        { searchPath = Application.streamingAssetsPath + "/LoadFileData" + FileToSearch + ".txt"; }
 
-        //all edited ingredient_sObj / journal_sObj datapoints (vector3)?
-        //TOGO get ALL journal_sObj? or re-use ingredient_sObj list to calculate this value
-
-        //current gold amount
-        public int gold;
-        public int Gold { get { return gold; } }
-
-        //time spent playing?
-
-        public SaveFile()
+        //code taken from loader
+        if (File.Exists(searchPath))
         {
-            //default values if no data used for constructor
+            string saveString = File.ReadAllText(searchPath);
 
-            //new empty list of recipes
-            recentRecipes = new List<_devCrafting.Recipe>();
-
-            //default empty recipe
-            _devCrafting.Recipe recipe = new _devCrafting.Recipe("Baby's First Recipe", Color.white, new List<Ingredients_sObj>());
-            AddRecipe(recipe);
-
-            //new array of all ingredient/bool set to false
-            unlockedIngredients = new bool[60];
-            foreach (bool potionState in unlockedIngredients)
-            {
-                potionState.Equals(false);
-            }
-
-            //start with 100g
-            gold = 100;
+            JsonUtility.FromJsonOverwrite(saveString, _searchObject);
+        }
+        else
+        {
+            Debug.Log("Could not Load from File");
+            _searchObject = new SaveFile();
         }
 
-        public void AddRecipe(_devCrafting.Recipe recipe)
-        {
-            Debug.Log("Adding a Recipe");
-            //adds a recipe to the list
-            recentRecipes.Add(recipe);
-
-            //retains only the last 5 recipes crafted
-            while (recentRecipes.Count > 5)
-            {
-                recentRecipes.RemoveAt(0);
-            }
-        }
-
-        ///<summary>
-        ///Only Call using Gold_sObj.currentGold
-        ///</summary>
-        public void SetGoldValue(int amount)
-        {
-            //only call function using gold_sObj.currentGold
-            Debug.Log("Changing Gold Amount");
-            gold = amount;
-        }
-        
+        return _searchObject;
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
@@ -25,38 +24,29 @@ public class _devCrafting : MonoBehaviour
         public string Name;
     }
 
-    public struct Recipe
+    public class Recipe :MonoBehaviour
     {
-        public string name { get; private set; }
-        public Color color { get; private set; }
-        public List<Ingredients_sObj> input { get; private set; }
+        //public for JsomUtility... not happy with this
+        public string recipeName;
+        public Vector3 color;
+        public List<string> input;
+        public Vector3 value;
 
-        //score is determined dynamically, not by input
-        public Vector3 score
-        {
-            get
-            {
-                Vector3 value = Vector3.zero;
-                foreach(Ingredients_sObj item in input)
-                {
-                    value += item.Values;
-                }
-                return value;
-            }
-            //no set values
-        }
-
+        //from _decraftingInput to serializable information
         public Recipe(string n, Color c, List<Ingredients_sObj> i)
         {
-            name = n;
-            color = c;
-            input = i;
+            recipeName = n;
+            color = new Vector3(c.r, c.g, c.b);
+            input = new List<string>();
+            value = Vector3.zero;
+
+            foreach (Ingredients_sObj obj in i)
+            {
+                input.Add(obj.Name);
+                value += obj.Values;
+            }
         }
     }
-
-    //TODO make a not bad backend potion/gold reward
-    [SerializeField] Gold currGold;
-
     [SerializeField] private Text _displayText = null;
     [SerializeField] private RawImage _rawPotionColor = null;
 
@@ -89,7 +79,7 @@ public class _devCrafting : MonoBehaviour
 
         ReadCSVFile();
 
-        currGold.currentGold += 5;
+        fileUtility.SaveObject.gold += 5;
     }
 
     void ReadCSVFile()  //now that we have a "targetpotion" we can compare that to our Potion.csv to read the recipe.
@@ -134,7 +124,9 @@ public class _devCrafting : MonoBehaviour
             if (readPotion.Mlow > _targetPotion.z || readPotion.Mhigh < _targetPotion.z)
                 continue;
 
-            Debug.Log("Match!\n" + data_values[6]);
+            readPotion.Name = data_values[6];
+
+            Debug.Log("Match!\n" + readPotion.Name);
             foundMatch = true;
 
             _displayText.text = "Your Potion's Score was: " + _targetPotion + "\nYou made a " + readPotion.Name + " potion!";
@@ -154,7 +146,7 @@ public class _devCrafting : MonoBehaviour
             fileUtility.SaveObject.AddRecipe(validRecipe);
         }
 
-        _stateController?.ChangeState(5);
+        _stateController?.ChangeState((int)CraftingState.PotionResult);
     }
 
     public void Clear()

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class ShopMenuUIController : MonoBehaviour
 {
-    [SerializeField] Gold _gold = null;
     [SerializeField] Text _goldText = null;
     private void OnEnable()
     {
@@ -18,7 +17,7 @@ public class ShopMenuUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
-        _goldText.text = _gold.currentGold.ToString();
+        _goldText.text = fileUtility.SaveObject.gold.ToString();
 
         ShopState enumState = (ShopState)state;
 

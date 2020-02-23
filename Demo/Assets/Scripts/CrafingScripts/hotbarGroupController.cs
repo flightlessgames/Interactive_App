@@ -30,6 +30,7 @@ public class hotbarGroupController : MonoBehaviour
     {
         //initialized values for scrolling by counting how many children hotbarslots exist, and the size of those slots
         _hotSlots.Clear();
+
         foreach (hotbarSlotController slot in GetComponentsInChildren<hotbarSlotController>())
         {
             _hotSlots.Add(slot);
@@ -67,6 +68,11 @@ public class hotbarGroupController : MonoBehaviour
 
         //waits until end of frame to let the LayoutGroup make changes, before turning off
         yield return new WaitForEndOfFrame();
+
         _horizontalGroup.enabled = false;
+        foreach (hotbarSlotController slot in _hotSlots)
+        {
+            slot.NewPosition();
+        }
     }
 }
