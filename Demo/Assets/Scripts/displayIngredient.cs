@@ -4,8 +4,14 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class displayIngredient : MonoBehaviour
 {
+    [Header("Required Initialized Setting")]
+    [Tooltip("Can be _nullObject")]
     [SerializeField] Ingredients_sObj _ingredientData = null;
+
+    [Header("Optional")]
+    [Tooltip("For Hotbar Use Primarily")]
     [SerializeField] Text _qtyText = null;
+
     public Ingredients_sObj IngredientData { get { return _ingredientData; } }
 
     private Image _myImage = null;    

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5212257405807486381}
   - component: {fileID: 5212257405807486380}
+  - component: {fileID: 8622092491679445375}
   m_Layer: 0
   m_Name: MainMenu_UI
   m_TagString: Untagged
@@ -51,6 +52,18 @@ MonoBehaviour:
   _loadDataSelectPanel: {fileID: 5212257406593418873}
   _loadDataConfirmPanel: {fileID: 5212257406548971504}
   _creditsPanel: {fileID: 5212257406638731943}
+--- !u!114 &8622092491679445375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212257405807486354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7cf8974a3ab014ebe9e300fd9272a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1210090377449930428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,6 +814,11 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 1078964415783401860, guid: bd1ba416cc3ad1a4fa055372b12c3804,
+        type: 3}
+      propertyPath: _mainMenuController
+      value: 
+      objectReference: {fileID: 5212257405807486380}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd1ba416cc3ad1a4fa055372b12c3804, type: 3}
 --- !u!1 &5212257406548971504 stripped

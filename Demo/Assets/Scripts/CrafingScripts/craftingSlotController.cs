@@ -4,21 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(displayIngredient))]
 public class craftingSlotController : Selectable    //by using the Selectable parent object, we inherit the properties of a button.
 {
     //initialise with none/null, displayIngredient is Empty.
-    private displayIngredient _slotIngredient = null;
+    [SerializeField] private displayIngredient _slotIngredient = null;
+    [SerializeField] CraftingUIController _craftingController = null;
 
     //because displayIngredient is the _emptyIngredient_ingred object, we're saving that locally to re-use instead of null values
     private Ingredients_sObj _nullIngredient = null;
-
-    [SerializeField] CraftingUIController _craftingController = null;
+    public Ingredients_sObj Ingredient
+    {
+        get
+        {
+            return _slotIngredient.IngredientData;
+        }
+    }
+    
     
 
     override protected void Awake()
     {
-        _slotIngredient = GetComponent<displayIngredient>();
         _nullIngredient = _slotIngredient.IngredientData;
     }
 

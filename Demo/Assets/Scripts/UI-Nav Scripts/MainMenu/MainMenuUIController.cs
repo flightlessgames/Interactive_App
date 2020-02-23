@@ -1,13 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuUIController : MonoBehaviour
 {
     //in theory we would want to identify the particular panel and avoid mis-matching by having a custom script on "rootPanel" and assign RootPanel _rootPanel, etc.
-    [SerializeField] GameObject _rootPanel = null;
-    [SerializeField] GameObject _loadDataSelectPanel = null;
-    [SerializeField] GameObject _loadDataConfirmPanel = null;
-    [SerializeField] GameObject _creditsPanel = null;
+    [SerializeField] private GameObject _rootPanel = null;
+    [SerializeField] private GameObject _loadDataSelectPanel = null;
+    [SerializeField] private GameObject _loadDataConfirmPanel = null;
+    [SerializeField] private GameObject _creditsPanel = null;
+
+    public int LoadFileSetting { get; private set; } = 0;
 
     private void OnEnable()
     {
@@ -31,13 +35,15 @@ public class MainMenuUIController : MonoBehaviour
         switch (enumState)
         //most switch statements can be solved with proper inheritance or interface properties
         {
-            case MenuState.Root:
+            case MenuState.Menu:
                 //TODO RootUI Script
                 _rootPanel.gameObject.SetActive(true);
                 //TODO Animations
                 break;
             case MenuState.BeginPlay:
-                //Begin Play Scene
+                //Begin Play Scene and Initialize Load File
+
+                fileUtility.InitializeLoadSettings();
                 SceneManager.LoadScene("CraftingTable");
                 break;
             case MenuState.LoadSaveData:
@@ -54,6 +60,11 @@ public class MainMenuUIController : MonoBehaviour
                 //all panels will become disabled and none will become enabled. Look into player lock-out
                 break;
         }
+    }
+
+    public void ChangeLoadFile(int fileNum)
+    {
+        LoadFileSetting = fileNum;
     }
 
     private void DisablePanels()

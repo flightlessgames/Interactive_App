@@ -5,7 +5,7 @@ using UnityEngine;
 public enum MenuState
 { 
     None = 0,
-    Root, 
+    Menu, 
     BeginPlay,
     LoadSaveData,
     LoadDataConfirm,

@@ -132,12 +132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe72b9379f733e49acbd44cf6d9a664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currGold: {fileID: 0}
+  currGold: {fileID: 11400000, guid: e34fb62be3de1624584c420a5967809c, type: 2}
   _displayText: {fileID: 0}
   _rawPotionColor: {fileID: 0}
   _stateController: {fileID: 0}
   _hotSlotsController: {fileID: 0}
-  _ingredients:
+  _craftingSlots:
   - {fileID: 5239762926508152239}
   - {fileID: 9144515794542016817}
   - {fileID: 4876798295545351802}

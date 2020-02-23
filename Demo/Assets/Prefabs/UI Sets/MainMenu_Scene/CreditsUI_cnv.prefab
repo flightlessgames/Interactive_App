@@ -358,9 +358,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "PotionMama v0.1\nUsing Unity 2019.2.0f1\n\nMade for the \nUniversity of
-    Texas at Dallas\ncourse curriculum ATCM 4379\n\nBen Friedman - Lillianna Jones
-    - Charlotte Royal\nLast Edit: Feb 2, 2020"
+  m_Text: "PotionMama v0.2.4\nUsing Unity 2019.2.0f1\n\nMade for the \nUniversity
+    of Texas at Dallas\ncourse curriculum ATCM 4379\n\nBen Friedman - Lillianna Jones
+    - Charlotte Royal\nLast Edit: Feb 22, 2020"
 --- !u!1 &7808743768279110078
 GameObject:
   m_ObjectHideFlags: 0
