@@ -15,5 +15,4 @@ MonoBehaviour:
   _values: {x: 0, y: 0, z: 0}
   _name: '...'
   _image: {fileID: 21300000, guid: 5e1b7bdc22ef57a4d9780fb82f3e30cc, type: 3}
-  _cost: 0
   _quantity: -1

@@ -11,8 +11,8 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
     [SerializeField] CraftingUIController _craftingController = null;
     
     //using displayIngredient script to Visualise the Ingredient_sObj data
-    private displayIngredient _ingredient = null;
-    public displayIngredient Ingredient { get { return _ingredient; } }
+    private displayIngredient _display = null;
+    public displayIngredient Display { get { return _display; } }
 
     private Vector3 _startPosition = Vector3.zero;
 
@@ -21,7 +21,7 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private void Awake()
     {
-        _ingredient = GetComponent<displayIngredient>();
+        _display = GetComponent<displayIngredient>();
     }
 
     private void Start()
@@ -33,11 +33,12 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
     public void OnClick()
     {
         Debug.Log("OnClick()");
-        _craftingController.HoldIngredient(_ingredient.IngredientData);
+        _craftingController.HoldIngredient(_display.IngredientData);
     }
 
     public void NewPosition()
     {
+        //using local position without HotBarGroup parent, as parent "scrolls" our local position will remain the same
         _startPosition = transform.localPosition;
     }
 
@@ -54,10 +55,10 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
             transform.position = Input.touches[0].position;
 
         //when we start draging, if there's no ingredient we add ours
-        if (_craftingController.CurrIngredient != _ingredient.IngredientData)
+        if (_craftingController.CurrIngredient != _display.IngredientData)
         {
             Debug.Log("OnDrag() {CurrIngredient}");
-            _craftingController.HoldIngredient(_ingredient.IngredientData);
+            _craftingController.HoldIngredient(_display.IngredientData);
         }
     }
 

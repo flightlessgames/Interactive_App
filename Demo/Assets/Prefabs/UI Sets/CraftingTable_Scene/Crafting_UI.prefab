@@ -49,7 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _potionResultsUI: {fileID: 5085039135639834140}
   _crafing: {fileID: 1487746726744247400}
-  _gold: {fileID: 11400000, guid: e34fb62be3de1624584c420a5967809c, type: 2}
   _goldText: {fileID: 4431309594600041318}
 --- !u!1001 &5633978851098825178
 PrefabInstance:
@@ -294,6 +293,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5375444716440611596}
     - target: {fileID: 7195381731325306095, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 1892985516882549077, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 6898901682986788540, guid: 527548fbe613b2a488376a8baf2a03b9,
+        type: 3}
+      propertyPath: _craftingController
+      value: 
+      objectReference: {fileID: 5375444716440611596}
+    - target: {fileID: 5499809536438754472, guid: 527548fbe613b2a488376a8baf2a03b9,
         type: 3}
       propertyPath: _craftingController
       value: 
@@ -626,8 +640,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currGold
       value: 
-      objectReference: {fileID: 11400000, guid: e34fb62be3de1624584c420a5967809c,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 9144515794542016817, guid: 60febe75c4bb9814493cb3907e5bcc47,
         type: 3}
       propertyPath: _craftingController

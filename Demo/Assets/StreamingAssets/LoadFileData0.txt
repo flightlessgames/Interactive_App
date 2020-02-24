@@ -1,21 +1,88 @@
 {
     "CreationTime": 0.0,
-    "RecentSaveTime": 7.389330863952637,
+    "RecentSaveTime": 12.985212326049805,
     "recentRecipes": [
         {
-            "instanceID": 0
+            "recipeName": "Name",
+            "color": {
+                "r": 0.5,
+                "g": 0.5,
+                "b": 0.5,
+                "a": 1.0
+            },
+            "input": [
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                }
+            ]
         },
         {
-            "instanceID": 0
+            "recipeName": "Protection",
+            "color": {
+                "r": 0.75,
+                "g": 0.5,
+                "b": 0.5,
+                "a": 1.0
+            },
+            "input": [
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                },
+                {
+                    "instanceID": 12804
+                }
+            ]
         },
         {
-            "instanceID": 0
+            "recipeName": "Baby's First Recipe",
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "input": []
         },
         {
-            "instanceID": 0
+            "recipeName": "",
+            "color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            },
+            "input": []
         },
         {
-            "instanceID": 0
+            "recipeName": "",
+            "color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            },
+            "input": []
         }
     ],
     "unlockedIngredients": [
@@ -80,5 +147,5 @@
         false,
         false
     ],
-    "gold": 0
+    "gold": 108
 }

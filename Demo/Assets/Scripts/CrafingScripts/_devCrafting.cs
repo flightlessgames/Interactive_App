@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ public class _devCrafting : MonoBehaviour
             Mhigh = f;
             Name = name;
         }
+
         public Potion() { }
 
         //all values are from reading .csv, no harm in corrupting temporary Potion class values
@@ -24,35 +26,28 @@ public class _devCrafting : MonoBehaviour
         public string Name;
     }
 
-    public class Recipe :MonoBehaviour
+    [Serializable]
+    public class Recipe
     {
         //public for JsomUtility... not happy with this
         public string recipeName;
-        public Vector3 color;
-        public List<string> input;
-        public Vector3 value;
+        public Color color;
+        public List<Ingredients_sObj> input;
 
         //from _decraftingInput to serializable information
         public Recipe(string n, Color c, List<Ingredients_sObj> i)
         {
             recipeName = n;
-            color = new Vector3(c.r, c.g, c.b);
-            input = new List<string>();
-            value = Vector3.zero;
-
-            foreach (Ingredients_sObj obj in i)
-            {
-                input.Add(obj.Name);
-                value += obj.Values;
-            }
+            color = c;
+            input = i;
         }
     }
+
     [SerializeField] private Text _displayText = null;
     [SerializeField] private RawImage _rawPotionColor = null;
 
     [SerializeField] private StateController _stateController = null;
 
-    [SerializeField] private hotbarGroupController _hotSlotsController = null;
     [SerializeField] private List<craftingSlotController> _craftingSlots = new List<craftingSlotController>();
 
     private Vector3 _targetPotion = Vector3.zero;
@@ -148,32 +143,15 @@ public class _devCrafting : MonoBehaviour
 
         _stateController?.ChangeState((int)CraftingState.PotionResult);
     }
-
+    
+    //code is here isntead of in a PentagramController because this script already houses a list of all craftinSlots, so might as well *shrug* :/
     public void Clear()
     {
+
         //after each craft, set all ingredient slots to Clear
-        foreach(craftingSlotController slot in _craftingSlots)
+        foreach (craftingSlotController slot in _craftingSlots)
         {
             slot.ClearIngredients();
         }
-
-        bool destroyedSlots = false;
-        foreach(hotbarSlotController slot in _hotSlotsController.GetComponentsInChildren<hotbarSlotController>())
-        {
-            //NOTE: has some issue with destroying until you hit create potion, which makes sense but could be confusing for players (they'll figure it out tho when they can't add anymore items)
-            if(slot.Ingredient.IngredientData.Quantity == 0)
-            {
-                //first we remove from list to avoid null errors? then destroy
-                Destroy(slot.gameObject);
-
-                //if we destroy any set "flag" to destroyed, and have hotbarGroup check its new children.
-                destroyedSlots = true;
-            }
-
-            slot.GetComponent<displayIngredient>().AdjustQuanttiy();
-        }
-        if (destroyedSlots)
-            _hotSlotsController.CountHotbar();
-
     }
 }

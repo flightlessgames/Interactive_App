@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-[serializable]
+[Serializable]
 public class SaveFile
 {
     //all values must be public for JsomUtility to work... not happy with exposed values...
@@ -41,7 +42,11 @@ public class SaveFile
 
         //default empty recipe
         Debug.Log("No recipe");
-        _devCrafting.Recipe recipe = new _devCrafting.Recipe("Baby's First Recipe", Color.white, new List<Ingredients_sObj>());
+        _devCrafting.Recipe recipe = new _devCrafting.Recipe(
+            "Baby's First Recipe",
+            Color.white,
+            new List<Ingredients_sObj>());
+
         AddRecipe(recipe);
 
         //new array of all ingredient/bool set to false

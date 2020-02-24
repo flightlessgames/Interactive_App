@@ -6,13 +6,12 @@ public class displayIngredient : MonoBehaviour
 {
     [Header("Required Initialized Setting")]
     [Tooltip("Can be _nullObject")]
-    [SerializeField] Ingredients_sObj _ingredientData = null;
+    [SerializeField] private Ingredients_sObj _ingredientData = null;
+    public Ingredients_sObj IngredientData { get { return _ingredientData; } }
 
     [Header("Optional")]
     [Tooltip("For Hotbar Use Primarily")]
-    [SerializeField] Text _qtyText = null;
-
-    public Ingredients_sObj IngredientData { get { return _ingredientData; } }
+    [SerializeField] private Text _qtyText = null;
 
     private Image _myImage = null;    
 
@@ -26,23 +25,23 @@ public class displayIngredient : MonoBehaviour
         UpdateDisplaySprite();
     }
 
-    private void UpdateDisplaySprite()
-    {
-        _myImage.sprite = _ingredientData.Image;
-        AdjustQuanttiy();
-    }
-
     public void SetIngredient(Ingredients_sObj ingredient)
     {
         _ingredientData = ingredient;
         UpdateDisplaySprite();
     }
 
+    private void UpdateDisplaySprite()
+    {
+        _myImage.sprite = _ingredientData.Image;
+        AdjustQuanttiy();
+    }
+
     public void AdjustQuanttiy()
     {
         if(_qtyText != null)
-        {
-            if (_ingredientData.Quantity != -1)
+        { 
+            if (_ingredientData.Quantity < 1) //do NOT display non-active ingredient numbers, if 0 ingredient should be dynamically removed, if -1 it is infinite and should not display
                 _qtyText.text = _ingredientData.Quantity.ToString();
             else
                 _qtyText.text = "";

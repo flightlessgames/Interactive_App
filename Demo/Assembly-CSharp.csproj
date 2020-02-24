@@ -74,7 +74,6 @@
     <Compile Include="Assets\Scripts\SaveFile.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Ingredients_sObj.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Shop.cs" />
-    <Compile Include="Assets\Scripts\serializableAttribute.cs" />
     <Compile Include="Assets\Scripts\ShopScripts\ShopFunctionController.cs" />
     <Compile Include="Assets\Scripts\ShopScripts\ShopSlot.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementState.cs" />
@@ -92,7 +91,6 @@
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\StateController.cs" />
-    <None Include="Assets\StreamingAssets\LoadFileData1.txt" />
     <None Include="Assets\__ReadMe.txt.txt" />
     <None Include="Assets\StreamingAssets\LoadFileData0.txt" />
     <Reference Include="Unity.Timeline.Editor">

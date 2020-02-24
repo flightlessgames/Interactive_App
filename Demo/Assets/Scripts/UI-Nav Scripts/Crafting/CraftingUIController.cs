@@ -6,9 +6,13 @@ public class CraftingUIController : MonoBehaviour
 {
     public Ingredients_sObj CurrIngredient { get; private set; } = null;
 
-    [SerializeField] GameObject _potionResultsUI = null;
-    [SerializeField] _devCrafting _crafing = null;
-    [SerializeField] Text _goldText = null;
+    [SerializeField] private GameObject _potionResultsUI = null;
+
+    [SerializeField] private _devCrafting _crafing = null;
+    [SerializeField] private hotbarGroupController _hotSlotsController = null;
+
+
+    [SerializeField] private Text _goldText = null;
 
     private Vector3 _clickDown = Vector3.zero;
 
@@ -61,5 +65,12 @@ public class CraftingUIController : MonoBehaviour
     {
         //called from the HotBar script, tells the controller to remember the data passed from the HotBar's _ingred
         CurrIngredient = ingredient;
+    }
+
+    private void ResetScene()
+    {
+        _crafing.Clear();
+
+        _hotSlotsController.UpdateHotbar();
     }
 }
