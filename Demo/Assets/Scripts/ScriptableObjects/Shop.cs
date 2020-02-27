@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Shop", menuName = "Shop")]
 public class Shop : ScriptableObject
 {
-    public List<Ingredients_sObj> shopInventory;
+    [SerializeField] private List<Ingredients_sObj> _shopInventory;
+    public List<Ingredients_sObj> Inventory { get { return _shopInventory; } }
 }

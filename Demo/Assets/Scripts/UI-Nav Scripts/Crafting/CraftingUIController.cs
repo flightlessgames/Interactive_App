@@ -28,15 +28,20 @@ public class CraftingUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
-        _goldText.text = fileUtility.SaveObject.gold.ToString();
 
         CraftingState enumState = (CraftingState)state;
 
         switch (enumState)
         {
             case CraftingState.Crafting:
+                //hides results panel
                 _potionResultsUI.SetActive(false);
-                _crafing.Clear();
+
+                //clears away ingredients from pentagram, and updatesHotbar
+                ResetScene();
+
+                //update goldText
+                _goldText.text = fileUtility.SaveObject.gold.ToString();
                 break;
 
             case CraftingState.Achievements:

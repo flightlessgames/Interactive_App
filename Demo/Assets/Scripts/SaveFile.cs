@@ -15,11 +15,9 @@ public class SaveFile
     public _devCrafting.Recipe[] recentRecipes;
 
     /// <summary>
-    /// List of previous "Unlocked" potion recipes "known" for Achievements Page
+    /// array of all 58 unlockable ingredients
     /// </summary>
-    public bool[] unlockedIngredients;
-
-    //TODO get ALL ingrasdasdedient_sObj.Quantity into a List<> somehow?
+    public int[] ingredientsQuantity;
 
     //all edited ingredient_sObj / journal_sObj datapoints (vector3)?
     //TODO get ALL journal_sObj? or re-use ingredient_sObj list to calculate this value
@@ -35,33 +33,33 @@ public class SaveFile
     //default constructor, default starting game values
     public SaveFile()
     {
+        Debug.Log("Creating a NEW SaveFile");
+
         CreationTime = Time.time;
 
+        #region Recipe[]
         //new empty list of recipes
         recentRecipes = new _devCrafting.Recipe[5];
 
-        //default empty recipe
-        Debug.Log("No recipe");
         _devCrafting.Recipe recipe = new _devCrafting.Recipe(
             "Baby's First Recipe",
             Color.white,
             new List<Ingredients_sObj>());
 
         AddRecipe(recipe);
+        #endregion
 
-        //new array of all ingredient/bool set to false
-        unlockedIngredients = new bool[60]; //60 is stand-in of Ingredients_sObj size, will change to reflect Potion List size
-        for(int i=0; i<unlockedIngredients.Length; i++)
+        //double utility out of the ingredientsQty:
+        /*
+         * if == -2,    locked, 
+         * if == -1,    infinite
+         * if  < -1,    unlocked and read qty.
+         */
+        ingredientsQuantity = new int[58];
+        foreach(int i in ingredientsQuantity)
         {
-            //first 4 are Cancel, Freebie1, Freebie2, Freebie3, are always true? or we skip those for verifying states...
-            if (i < 4)
-            {
-                unlockedIngredients[i].Equals(true);
-            }
-            else
-            {
-                unlockedIngredients[i].Equals(false);
-            }
+            i.Equals(-2);
+            //using .Equals because of foreach properties
         }
 
         //start with 100g
@@ -74,7 +72,7 @@ public class SaveFile
         CreationTime = previousSave.CreationTime;
         RecentSaveTime = previousSave.RecentSaveTime;
         recentRecipes = previousSave.recentRecipes;
-        unlockedIngredients = previousSave.unlockedIngredients;
+        ingredientsQuantity = previousSave.ingredientsQuantity;
         gold = previousSave.gold;
     }
 
@@ -83,24 +81,22 @@ public class SaveFile
     /// </summary>
     public void AddRecipe(_devCrafting.Recipe newRecipe)
     {
-        //adds a recipe to the array
-        Debug.Log("Adding a Recipe");
-
+        //counting backwards for posterity
         for (int i = recentRecipes.Length - 1; i >= 0; i--)
         {
             //move each slot to overwrite next slot in list
-            if (i != 4)
+            if (i != recentRecipes.Length-1)
             {
+                //eg, starting with [3], [4] = [3], then [2], [3] = [2], so on...
                 recentRecipes[i + 1] = recentRecipes[i];
             }
 
-            //ignore last (i == [4]) as it is overwritten
+            //ignore last (i == [4]) as it is overwritten by [3]
 
             //set first recipe to new recipe
             if (i == 0)
             {
                 recentRecipes[0] = newRecipe;
-                Debug.Log(recentRecipes[0].recipeName + " recipe");
             }
         }
     }

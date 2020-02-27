@@ -119,15 +119,13 @@ public class _devCrafting : MonoBehaviour
             if (readPotion.Mlow > _targetPotion.z || readPotion.Mhigh < _targetPotion.z)
                 continue;
 
-            readPotion.Name = data_values[6];
-
-            Debug.Log("Match!\n" + readPotion.Name);
             foundMatch = true;
+
+            readPotion.Name = data_values[6];
 
             _displayText.text = "Your Potion's Score was: " + _targetPotion + "\nYou made a " + readPotion.Name + " potion!";
 
             //create a "unique" potion sprite by generating a color (R/G/B btwn 0-1)
-
             //TODO (Lillianna): see if having this + ie updating _targetPotion values AS THE PLAYER ADD/REMOVES ITEMS is too much of a hassle
             float spriteColorR = (_targetPotion.x + 10) / 20;   //-10, +10 = 0, /20 = 0    //0, +10 = 10, /20 = 0.5    //10, +10 = 20, /20 = 1    //Maps values into 0-1 decimals.
             float spriteColorG = (_targetPotion.y + 10) / 20;

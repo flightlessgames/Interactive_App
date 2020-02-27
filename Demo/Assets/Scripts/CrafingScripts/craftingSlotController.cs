@@ -36,7 +36,6 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     //using a generic OnClick() function to link the Button component's commands to this script. Useful for Computer & Touch Devices.
     public void OnClick()
     {
-        Debug.Log("OnClicked()");
 
         //if our current ingredient IS the ingredient held, do NOTHING
         if (_slotIngredient.IngredientData == _craftingController.CurrIngredient)

@@ -67,11 +67,12 @@ public class MainMenuUIController : MonoBehaviour
         if (fileUtility.SearchForSaveData(LoadFileSetting) != null)
         {
             int unlockCount = 0;
-            foreach(bool state in fileUtility._searchObject.unlockedIngredients)
+            foreach(int ingred in fileUtility._searchObject.ingredientsQuantity)
             {
-                if (state) { unlockCount++; }
+                if (ingred > -1)
+                    unlockCount++;
             }
-            float AchievementPercent = unlockCount / fileUtility._searchObject.unlockedIngredients.Length;
+            float AchievementPercent = unlockCount / fileUtility._searchObject.ingredientsQuantity.Length;
 
             yield return new WaitForEndOfFrame();
 

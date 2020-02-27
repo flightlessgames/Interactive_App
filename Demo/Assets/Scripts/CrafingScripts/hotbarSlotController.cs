@@ -32,7 +32,6 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
     //using a generic OnClick() function to link the Button component's commands to this script. Useful for Computer & Touch Devices.
     public void OnClick()
     {
-        Debug.Log("OnClick()");
         _craftingController.HoldIngredient(_display.IngredientData);
     }
 

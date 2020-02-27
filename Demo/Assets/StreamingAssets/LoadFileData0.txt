@@ -1,56 +1,30 @@
 {
     "CreationTime": 0.0,
-    "RecentSaveTime": 12.985212326049805,
+    "RecentSaveTime": 4.198689937591553,
     "recentRecipes": [
         {
-            "recipeName": "Name",
+            "recipeName": "Nightmares",
             "color": {
-                "r": 0.5,
+                "r": 0.25,
                 "g": 0.5,
-                "b": 0.5,
+                "b": 0.75,
                 "a": 1.0
             },
             "input": [
                 {
-                    "instanceID": 12804
+                    "instanceID": 12396
                 },
                 {
-                    "instanceID": 12804
+                    "instanceID": 12396
                 },
                 {
-                    "instanceID": 12804
+                    "instanceID": 12396
                 },
                 {
-                    "instanceID": 12804
+                    "instanceID": 12396
                 },
                 {
-                    "instanceID": 12804
-                }
-            ]
-        },
-        {
-            "recipeName": "Protection",
-            "color": {
-                "r": 0.75,
-                "g": 0.5,
-                "b": 0.5,
-                "a": 1.0
-            },
-            "input": [
-                {
-                    "instanceID": 12804
-                },
-                {
-                    "instanceID": 12804
-                },
-                {
-                    "instanceID": 12804
-                },
-                {
-                    "instanceID": 12804
-                },
-                {
-                    "instanceID": 12804
+                    "instanceID": 12396
                 }
             ]
         },
@@ -83,69 +57,77 @@
                 "a": 0.0
             },
             "input": []
+        },
+        {
+            "recipeName": "",
+            "color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            },
+            "input": []
         }
     ],
-    "unlockedIngredients": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+    "ingredientsQuantity": [
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        1,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2
     ],
-    "gold": 108
+    "gold": 106
 }

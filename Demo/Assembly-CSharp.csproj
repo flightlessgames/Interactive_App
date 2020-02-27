@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\CrafingScripts\hotbarSlotController.cs" />
     <Compile Include="Assets\Scripts\displayIngredient.cs" />
     <Compile Include="Assets\Scripts\fileUtility.cs" />
+    <Compile Include="Assets\Scripts\ImportantDoNotTouch.cs" />
     <Compile Include="Assets\Scripts\JournalScripts\ActivatePage.cs" />
     <Compile Include="Assets\Scripts\JournalScripts\PageManager.cs" />
     <Compile Include="Assets\Scripts\SaveFile.cs" />

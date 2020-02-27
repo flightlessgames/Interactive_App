@@ -26,32 +26,43 @@ public class Ingredients_sObj : ScriptableObject
     #endregion
 
     #region Dynamic/Gameplay Values
-    [SerializeField] private int _quantity = -1; //-1 is inf placeholder
+    [SerializeField] private int _quantity = -2; //-1 is inf placeholder
     public int Quantity { get { return _quantity; } }
 
     public void IncreaseQuantity(int value)
     {
-        if (_quantity < 0) return; 
+        //if quantity is ""inf"" then ignore additions
+        if (_quantity == -1)
+            return;
+
+        //if quantity is "locked" then unlock before adding
+        if (_quantity == -2)
+            _quantity = 0;
 
         _quantity += value;
     }
 
     public void DecreaseQuantity(int value)
     {
-        if (_quantity < 0)   //using -1 as inf value
+        //if our current quantity is ""inf"" then ignore subtractions
+        if (_quantity == -1)
+            return;
+
+        //if we're somehow setting a non-""inf"" value to -2, override other procedure and allow "lock"
+        if (_quantity - value == -2)
         {
-            Debug.Log("Used a[n] " + Name);
+            _quantity = -2;
             return;
         }
 
+        //if our quantity would become less than 0, and not -2, an error has occured
         if(_quantity - value < 0)
         {
-            Debug.Log("using too many " + Name);
+            Debug.Log("Decreasing by TOO MUCH");
             return;
         }
 
         _quantity -= value;
-        Debug.Log(Name + " quantity is now " + _quantity);
     }
 
     #endregion

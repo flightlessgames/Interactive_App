@@ -8,20 +8,28 @@ public class StateController: MonoBehaviour
 
     public int State { get; private set; } = 0;
     public static event Action<int> StateChanged = delegate { };
-    
-    public void ChangeState(int stateIndex)
+
+    [SerializeField] private Shop shop = null;
+
+    private void Awake()
     {
-        //cause a save every time we try to change the state, might be too many??
-        //ensures data is persistant between all scenes, and saves often so data is probably not lost on exit
-        fileUtility.Save();
-        
-        State = stateIndex;
-        StateChanged.Invoke(State);
+        if(fileUtility._shop == null)
+            fileUtility._shop = shop;
     }
 
     private void Start()
     {
         ChangeState(1);
+    }
+
+    public void ChangeState(int stateIndex)
+    {
+        //cause a save every time we try to change the state, might be too many??
+        //ensures data is persistant between all scenes, and saves often so data is probably not lost on exit
+        fileUtility.Save();
+
+        State = stateIndex;
+        StateChanged.Invoke(State);
     }
 
     public void QuitApp()

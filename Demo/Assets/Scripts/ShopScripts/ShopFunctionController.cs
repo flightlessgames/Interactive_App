@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class ShopFunctionController : MonoBehaviour
 {
-    [SerializeField] Shop _shopReference;
     [SerializeField] private List<ShopSlot> _purchaseSlots;
     [SerializeField] Text _feedbackText = null;
 
@@ -17,7 +16,7 @@ public class ShopFunctionController : MonoBehaviour
 
     private void Awake()
     {
-        _shopInventory = _shopReference.shopInventory;
+        _shopInventory = fileUtility._shop.Inventory;
         fillSlots();
     }
 
@@ -25,10 +24,10 @@ public class ShopFunctionController : MonoBehaviour
     public void fillSlots()
     {
         foreach (ShopSlot shopSlot in _purchaseSlots) {
-            int shopIndex = UnityEngine.Random.Range(0, _shopReference.shopInventory.Count);
+            int shopIndex = UnityEngine.Random.Range(0, _shopInventory.Count);
 
-            Debug.Log(_shopReference.shopInventory[shopIndex].Name);
-            shopSlot.InitializeData(_shopReference.shopInventory[shopIndex]);
+            Debug.Log(_shopInventory[shopIndex].Name);
+            shopSlot.InitializeData(_shopInventory[shopIndex]);
         }
     }
 
@@ -40,13 +39,10 @@ public class ShopFunctionController : MonoBehaviour
     
     public void BuyItem() 
     {
-        Debug.Log("attempting to buy" + _currIngredient);
-
         if (_currIngredient != null) 
         {
-            if (fileUtility.SaveObject.gold >= _currIngredient.Cost) {
-
-                Debug.Log("bought " + _currIngredient);
+            if (fileUtility.SaveObject.gold >= _currIngredient.Cost)
+            {
                 _currIngredient.IncreaseQuantity(1);
 
                 fileUtility.SaveObject.gold -= _currIngredient.Cost;
@@ -57,8 +53,6 @@ public class ShopFunctionController : MonoBehaviour
             }
             else
             {
-                Debug.Log("cannot buy, not enough gold");
-
                 _feedbackText.text = "Cannot afford a " + _currIngredient.Name + "," +
                     "\nYou have: " + fileUtility.SaveObject.gold + " gold" +
                     "\nYou need: " + _currIngredient.Cost + " gold";

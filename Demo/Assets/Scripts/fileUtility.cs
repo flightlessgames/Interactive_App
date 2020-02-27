@@ -11,11 +11,11 @@ public static class fileUtility
     public static SaveFile _searchObject = new SaveFile();
 
     private static bool _isInitialized = false;
+    public static Shop _shop = null;
 
     public static void InitializeLoadSettings()
     {
         Debug.Log("Initializing");
-
         if (SystemInfo.deviceType == DeviceType.Handheld)
         {
             //using wierd APK Web search to define our file path[s]
@@ -30,7 +30,7 @@ public static class fileUtility
         }
 
         _isInitialized = true;
-
+        Debug.Log("Done Initializing");
         //after initializing which file to pull from, do one pull
         Load();
     }
@@ -55,39 +55,68 @@ public static class fileUtility
     //mostly standard utility code, but I needed a reference to figure it out
     public static void Load()
     {
-        Debug.Log("Load");
-
+        Debug.Log("Loading");
         if (!_isInitialized) { InitializeLoadSettings(); }
 
         //SAVE_LOCATIOn is determined by the StateController.LoadFilePosition, which picks from our 4 predetermined locations
-        if (File.Exists(SAVE_LOCATION))
+        if (!File.Exists(SAVE_LOCATION))
         {
-            string saveString = File.ReadAllText(SAVE_LOCATION);
-            Debug.Log("loaddata test, saveString: " + saveString);
+            Debug.Log("Could not load from Save File Location");
+            return;
 
-            JsonUtility.FromJsonOverwrite(saveString, SaveObject);
         }
-        else
-        {
-            Debug.Log("Could not Load from File");
-        }
+
+        string saveString = File.ReadAllText(SAVE_LOCATION);
+
+        JsonUtility.FromJsonOverwrite(saveString, SaveObject);
         
+        //recall data from Ingredient Quantity
+        for (int i = 0; i < _shop.Inventory.Count; i++)
+        {
+            //if our saved quantity is DIFFERENT than the current reported quantity
+            if(SaveObject.ingredientsQuantity[i] != _shop.Inventory[i].Quantity)
+            {
+                //measure the difference
+                int diff = SaveObject.ingredientsQuantity[i] - _shop.Inventory[i].Quantity;
+
+                if (diff > 0)
+                {
+                    //if difference is positive (more in SaveData than Inventory), increase the difference
+                    _shop.Inventory[i].IncreaseQuantity(diff);
+                }
+                else
+                {
+                    //if negative, decrease
+                    _shop.Inventory[i].DecreaseQuantity(diff);
+                }
+            }
+            
+            //while still using loaded recall data we can unlock the jounral pages for ingredients with quantities >-2 (-1 is unlocked infifnite, and 0+ is unlocked finite)
+            //TODO Jounral Scripts
+        }
+
+        Debug.Log("Finished Load");
     }
 
     public static void Save()
     {
-        Debug.Log("Save");
-
+        Debug.Log("Saving");
         if (!_isInitialized) { InitializeLoadSettings(); }
 
-        //assuming we have a SaveObject
+        //assuming we have a SaveObject, update its SaveTime
         SaveObject.RecentSaveTime = Time.time;
 
+        //save each ingredient's qty to the SaveObject's int[]
+        for (int i = 0; i < _shop.Inventory.Count; i++)
+        {
+            SaveObject.ingredientsQuantity[i] = _shop.Inventory[i].Quantity;
+        }
+
         string saveString = JsonUtility.ToJson(SaveObject, true);
-        Debug.Log("savedata test, saveString: " + saveString);
 
         //if File Does Not Exist, it will create a file at location
         File.WriteAllText(SAVE_LOCATION, saveString);
+        Debug.Log("Finished Save");
     }
 
     //to use for LoadScreenConfirm preview data

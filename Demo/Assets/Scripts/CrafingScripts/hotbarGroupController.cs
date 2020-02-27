@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class hotbarGroupController : MonoBehaviour
 {
     [Header("Required")]
-    [SerializeField] private Shop _shopList = null;
     [SerializeField] private List<Ingredients_sObj> _defaultIngredients = new List<Ingredients_sObj>(3);
     [SerializeField] private hotbarSlotController _slotPrefab = null;
 
@@ -36,13 +35,14 @@ public class hotbarGroupController : MonoBehaviour
     {
         //set ALL INGREDIENTS to include Defaults as [0][1][2][3] and add ALL shoppableIngredients afterwards [4]...[61]
         _allIngredients.AddRange(_defaultIngredients);
-        _allIngredients.AddRange(_shopList.shopInventory);
+        _allIngredients.AddRange(fileUtility._shop.Inventory);
 
         CreateSlotPool();
 
         UpdateHotbar();
     }
 
+    #region Dynamic/Pooling Slot Update Functions
     private void CreateSlotPool()
     {
         //if there are an inequal amount of slots compared to possible ingredients in the SlotsPool, make adjustments
@@ -91,8 +91,8 @@ public class hotbarGroupController : MonoBehaviour
         //going through the list of all ingredients
         foreach (Ingredients_sObj i in _allIngredients)
         {
-            //if this particular ingredient has ANY quantity
-            if (i.Quantity != 0)
+            //if this non-locked ingredient has ANY quantity, aka ""inf"" or positive qty.
+            if (i.Quantity > 0 || i.Quantity == -1)
             {
                 //send it to the Hotbar
                 foreach(hotbarSlotController slot in _hotSlotsPool)
@@ -125,9 +125,6 @@ public class hotbarGroupController : MonoBehaviour
                 _currActiveSlots++;
 
         }
-
-        //adding together the first hotbar slot's Rect Width and Spacing from HorizontalLayoutGroup to assign a single "Unit" of "scroll," in case something changes at runtime
-        _scrollUnit += _hotSlotsPool[0].GetComponent<RectTransform>().rect.width + _horizontalGroup.spacing;
     }
 
     /// <summary>
@@ -136,6 +133,7 @@ public class hotbarGroupController : MonoBehaviour
     /// <returns></returns>
     IEnumerator FlickerLayoutGroup()
     {
+        _horizontalGroup.transform.localPosition = Vector3.zero;
         _horizontalGroup.enabled = true;
 
         //waits until end of frame to let the LayoutGroup make changes, before turning off
@@ -147,7 +145,11 @@ public class hotbarGroupController : MonoBehaviour
             if(slot.isActiveAndEnabled)
                 slot.NewPosition();
         }
+
+        //adding together the first hotbar slot's Rect Width and Spacing from HorizontalLayoutGroup to assign a single "Unit" of "scroll," in case something changes at runtime
+        _scrollUnit += _hotSlotsPool[0].GetComponent<RectTransform>().rect.width + _horizontalGroup.spacing;
     }
+    #endregion
 
     #region ScrollBar for Overflow HotbarSlots
     public void ScrollLeft()
@@ -162,7 +164,7 @@ public class hotbarGroupController : MonoBehaviour
     public void ScrollRight()
     {
         //using Mathf.Max lets us set 0 units to scroll if we have less than 6 hotbar slots. Otherwise the 7th will be offscreen and allow us to scroll 1 "unit"
-        if (_rectTransform.localPosition.x <= -_scrollUnit * Mathf.Max(_hotSlotsPool.Count - 6, 0))
+        if (_rectTransform.localPosition.x <= -_scrollUnit * Mathf.Max(_currActiveSlots - 6, 0))
             return;
 
         _rectTransform.localPosition += Vector3.left * _scrollUnit;

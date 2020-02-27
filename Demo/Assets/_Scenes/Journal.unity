@@ -237,9 +237,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 490382909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c09082218169a7428687209ba6cde7f, type: 3}
+  m_Script: {fileID: 11500000, guid: c5296fcfa17d091449c8311e4981a1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shop: {fileID: 11400000, guid: 0122fcf84bd1acd44a10c46e06ab7d49, type: 2}
 --- !u!4 &490382911
 Transform:
   m_ObjectHideFlags: 0
@@ -2793,7 +2794,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 490382910}
+      objectReference: {fileID: 0}
     - target: {fileID: 1225559404391625293, guid: 2a24b83c120d7f3479e2fab2b97f1f8e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2903,7 +2904,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 490382910}
+      objectReference: {fileID: 0}
     - target: {fileID: 334869711909919377, guid: 2a24b83c120d7f3479e2fab2b97f1f8e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
