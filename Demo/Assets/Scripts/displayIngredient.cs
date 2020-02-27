@@ -39,12 +39,15 @@ public class displayIngredient : MonoBehaviour
 
     public void AdjustQuanttiy()
     {
-        if(_qtyText != null)
-        { 
-            if (_ingredientData.Quantity < 1) //do NOT display non-active ingredient numbers, if 0 ingredient should be dynamically removed, if -1 it is infinite and should not display
+        //do NOT display non-active ingredient numbers, if 0 ingredient should be dynamically removed, if -1 it is infinite and should not display
+        if (_ingredientData.Quantity > 0)
+        {
+            //if qtyText exists, we will display, but Text is optional so check for null first
+            if (_qtyText != null)
+            {
                 _qtyText.text = _ingredientData.Quantity.ToString();
-            else
-                _qtyText.text = "";
+            }
         }
+
     }
 }

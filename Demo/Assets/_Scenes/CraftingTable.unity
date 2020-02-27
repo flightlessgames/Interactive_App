@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 11400000, guid: 0122fcf84bd1acd44a10c46e06ab7d49, type: 2}
-  _mobileDebug: {fileID: 1204484606}
 --- !u!4 &490382911
 Transform:
   m_ObjectHideFlags: 0
@@ -339,18 +338,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1204484606 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2618832098678757138, guid: 486b866324848f64184348a56e9b63af,
-    type: 3}
-  m_PrefabInstance: {fileID: 689680829030342568}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1570789374
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,92 +566,25 @@ PrefabInstance:
       propertyPath: _stateController
       value: 
       objectReference: {fileID: 490382910}
-    - target: {fileID: 1487746726744247400, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: currGold
-      value: 
-      objectReference: {fileID: 11400000, guid: e34fb62be3de1624584c420a5967809c,
-        type: 2}
     - target: {fileID: 5085039135340424969, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 490382910}
-    - target: {fileID: 5085039135340424969, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508450999619611652, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: _ingredientData
-      value: 
-      objectReference: {fileID: 11400000, guid: ad86c86c2a4e6134dbcd8b50853d7cf1,
-        type: 2}
-    - target: {fileID: 4070691011737623257, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: _ingredientData
-      value: 
-      objectReference: {fileID: 11400000, guid: c90b6d8a1c41d704cb1d910b75bc1251,
-        type: 2}
-    - target: {fileID: 293530630111527398, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: _ingredientData
-      value: 
-      objectReference: {fileID: 11400000, guid: 890c02d9e34907d4292aaa853487e140,
-        type: 2}
-    - target: {fileID: 1583680497228913130, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: _ingredientData
-      value: 
-      objectReference: {fileID: 11400000, guid: ef20068836f13094f9a6dd72c47e1f60,
-        type: 2}
-    - target: {fileID: 1684230160443125815, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: _ingredientData
-      value: 
-      objectReference: {fileID: 11400000, guid: 1f9b45e956a665a4c9ce6cce6b275506,
-        type: 2}
-    - target: {fileID: 689680828466109394, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 490382910}
     - target: {fileID: 689680828466109394, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 4656389802756809870, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 490382910}
     - target: {fileID: 4656389802756809870, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 6141058488175512658, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 490382910}
     - target: {fileID: 6141058488175512658, guid: 486b866324848f64184348a56e9b63af,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeState
-      objectReference: {fileID: 0}
-    - target: {fileID: 5375444716440611596, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: _gold
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: e34fb62be3de1624584c420a5967809c,
-        type: 2}
-    - target: {fileID: 363809007849658774, guid: 486b866324848f64184348a56e9b63af,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 490382910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 486b866324848f64184348a56e9b63af, type: 3}

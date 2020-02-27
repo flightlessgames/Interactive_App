@@ -5,6 +5,7 @@ public class AchievementsUIController : MonoBehaviour
 {
     [SerializeField] private GameObject _potionHistoryPanel = null;
     [SerializeField] private GameObject _unlocksPanel = null;
+    [SerializeField] private PotionHistoryController _historyController = null;
 
     private void OnEnable()
     {
@@ -18,6 +19,7 @@ public class AchievementsUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
+        _historyController.UpdateHistories();
         DisablePanels();
         AchievementState enumState = (AchievementState)state;
 

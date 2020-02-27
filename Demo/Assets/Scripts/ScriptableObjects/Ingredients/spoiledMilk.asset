@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _values: {x: 1, y: 0, z: -1}
   _name: Spoiled Millk
-  _image: {fileID: 21300000, guid: 372e5a9fa993ba54fb49cd9ac404d36e, type: 3}
+  _image: {fileID: 21300000, guid: e4b08f532d57ff7458e8ad34663b2d66, type: 3}
+  _description: Don't cry if you spill some
   _quantity: -1

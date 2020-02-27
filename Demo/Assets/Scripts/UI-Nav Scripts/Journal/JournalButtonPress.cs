@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class JournalButtonPress : MonoBehaviour
 {
-    public PageManager pageManager;
+    public PageDisplay pageDisplay;
 
     public void OnClick()
     {
         int index = transform.GetSiblingIndex();
         Debug.Log("INDEX IS " + index);
-        pageManager.AddPage(index);
+        pageDisplay.setPage(index);
     }
 }

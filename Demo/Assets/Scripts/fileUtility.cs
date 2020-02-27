@@ -18,7 +18,6 @@ public static class fileUtility
 
     public static void InitializeLoadSettings()
     {
-        Debug.Log("Initializing");
         if (SystemInfo.deviceType == DeviceType.Handheld)
         {
             //using wierd APK Web search to define our file path[s]
@@ -53,7 +52,6 @@ public static class fileUtility
         }
 
         _isInitialized = true;
-        Debug.Log("Done Initializing");
         //after initializing which file to pull from, do one pull
         Load();
     }
@@ -81,8 +79,6 @@ public static class fileUtility
     //mostly standard utility code, but I needed a reference to figure it out
     public static void Load()
     {
-        Debug.Log("Loading");
-
         if (!_isInitialized) { InitializeLoadSettings(); }
 
         //SAVE_LOCATIOn is determined by the StateController.LoadFilePosition, which picks from our 4 predetermined locations
@@ -121,13 +117,10 @@ public static class fileUtility
             //while still using loaded recall data we can unlock the jounral pages for ingredients with quantities >-2 (-1 is unlocked infifnite, and 0+ is unlocked finite)
             //TODO Jounral Scripts
         }
-
-        Debug.Log("Finished Load");
     }
 
     public static void Save()
     {
-        Debug.Log("Saving");
 
         if (!_isInitialized) { InitializeLoadSettings(); }
 
@@ -144,7 +137,6 @@ public static class fileUtility
 
         //if File Does Not Exist, it will create a file at location
         File.WriteAllText(SAVE_LOCATION, saveString);
-        Debug.Log("Finished Save");
     }
 
     //to use for LoadScreenConfirm preview data

@@ -1,0 +1,197 @@
+{
+    "CreationTime": 0.0,
+    "RecentSaveTime": 3.7373740673065187,
+    "recentRecipes": [
+        {
+            "recipeName": "Mud",
+            "color": {
+                "r": 0.75,
+                "g": 0.5,
+                "b": 0.25,
+                "a": 1.0
+            },
+            "input": [
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                }
+            ]
+        },
+        {
+            "recipeName": "Nightmares",
+            "color": {
+                "r": 0.25,
+                "g": 0.5,
+                "b": 0.75,
+                "a": 1.0
+            },
+            "input": [
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                },
+                {
+                    "instanceID": 13458
+                }
+            ]
+        },
+        {
+            "recipeName": "Nightmares",
+            "color": {
+                "r": 0.25,
+                "g": 0.5,
+                "b": 0.75,
+                "a": 1.0
+            },
+            "input": [
+                {
+                    "instanceID": 13412
+                },
+                {
+                    "instanceID": 13412
+                },
+                {
+                    "instanceID": 13412
+                },
+                {
+                    "instanceID": 13412
+                },
+                {
+                    "instanceID": 13412
+                }
+            ]
+        },
+        {
+            "recipeName": "More Interesting",
+            "color": {
+                "r": 0.800000011920929,
+                "g": 0.6499999761581421,
+                "b": 0.5,
+                "a": 1.0
+            },
+            "input": [
+                {
+                    "instanceID": 13324
+                },
+                {
+                    "instanceID": 13434
+                },
+                {
+                    "instanceID": 13434
+                },
+                {
+                    "instanceID": 13324
+                },
+                {
+                    "instanceID": 13324
+                }
+            ]
+        },
+        {
+            "recipeName": "Mud",
+            "color": {
+                "r": 0.30000001192092898,
+                "g": 0.6499999761581421,
+                "b": 0.550000011920929,
+                "a": 1.0
+            },
+            "input": [
+                {
+                    "instanceID": 13326
+                },
+                {
+                    "instanceID": 13434
+                },
+                {
+                    "instanceID": 13434
+                },
+                {
+                    "instanceID": 13434
+                },
+                {
+                    "instanceID": 13316
+                }
+            ]
+        }
+    ],
+    "ingredientsQuantity": [
+        -2,
+        2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        0,
+        -2,
+        -2,
+        0,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        1,
+        0,
+        -2,
+        1,
+        1,
+        1,
+        -2,
+        -2,
+        -2,
+        -2,
+        1,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        0,
+        -2,
+        -2,
+        -2,
+        0,
+        0,
+        -2,
+        0,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2
+    ],
+    "gold": 165
+}

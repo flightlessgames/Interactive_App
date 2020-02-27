@@ -15,6 +15,10 @@ public class Ingredients_sObj : ScriptableObject
     [SerializeField] private Sprite _image = null;
     public Sprite Image { get { return _image; } }
 
+    [TextArea]
+    [SerializeField] private string _description = "...";
+    public string Description { get { return _description; } }
+
     //ADDED: COST OF ITEM (lillianna)
     public int Cost
     {

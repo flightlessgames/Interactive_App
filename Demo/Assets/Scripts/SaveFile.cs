@@ -81,6 +81,7 @@ public class SaveFile
     /// </summary>
     public void AddRecipe(_devCrafting.Recipe newRecipe)
     {
+        Debug.Log("new recipe");
         //counting backwards for posterity
         for (int i = recentRecipes.Length - 1; i >= 0; i--)
         {

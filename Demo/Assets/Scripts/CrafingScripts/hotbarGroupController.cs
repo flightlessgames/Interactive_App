@@ -147,7 +147,7 @@ public class hotbarGroupController : MonoBehaviour
         }
 
         //adding together the first hotbar slot's Rect Width and Spacing from HorizontalLayoutGroup to assign a single "Unit" of "scroll," in case something changes at runtime
-        _scrollUnit += _hotSlotsPool[0].GetComponent<RectTransform>().rect.width + _horizontalGroup.spacing;
+        _scrollUnit += (_hotSlotsPool[0].GetComponent<RectTransform>().rect.width + _horizontalGroup.spacing) / 2;
     }
     #endregion
 
