@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public static class fileUtility
 {
@@ -12,6 +14,7 @@ public static class fileUtility
 
     private static bool _isInitialized = false;
     public static Shop _shop = null;
+    //public static Text _mobileDebug = null;
 
     public static void InitializeLoadSettings()
     {
@@ -19,11 +22,31 @@ public static class fileUtility
         if (SystemInfo.deviceType == DeviceType.Handheld)
         {
             //using wierd APK Web search to define our file path[s]
-            CreateAPKPath(SAVE_LOCATION, "LoadFileData" + StateController.LoadFilePosition + ".txt");
-            CreateAPKPath(POTIONS_LOCATION, "Potions.csv");
+
+            //borrowing code from Unity Answers user RobertCigna: https://answers.unity.com/questions/1087159/reading-text-file-on-android.html
+            //still using code from 2015, including outdated WWW object type, might look into UnityWebRequest type, but don't want to break system.
+            //for Android "Handheld" we need to use a URL path
+            string tempPath = Path.Combine(Application.streamingAssetsPath, StateController.LoadFilePosition + ".txt");
+            // Android only use WWW to read file
+            WWW reader = new WWW(tempPath);   //www is obsolete, UnityWebReader is the same functionality I hope
+            while (!reader.isDone) { }
+
+            SAVE_LOCATION = Application.persistentDataPath + StateController.LoadFilePosition + ".txt";
+            File.WriteAllBytes(SAVE_LOCATION, reader.bytes);
+
+            //not using CreateAPKPath because of Pointers/Reference
+            string potionTemp = Path.Combine(Application.streamingAssetsPath, "Potions.csv");
+            // Android only use WWW to read file
+            WWW potionReader = new WWW(potionTemp);   //www is obsolete, UnityWebReader is the same functionality I hope
+            while (!potionReader.isDone) { }
+
+            POTIONS_LOCATION = Application.persistentDataPath + "Potions.csv";
+            File.WriteAllBytes(POTIONS_LOCATION, potionReader.bytes);
         }
-        else if (SystemInfo.deviceType == DeviceType.Desktop)
+
+        if (SystemInfo.deviceType == DeviceType.Desktop)
         {
+            Debug.Log("Desktop");
             //for windows, assume we're in editor, use the folder directory
             SAVE_LOCATION = Application.streamingAssetsPath + "/LoadFileData" + StateController.LoadFilePosition + ".txt";
             POTIONS_LOCATION = Application.streamingAssetsPath + "/Potions.csv";
@@ -35,6 +58,7 @@ public static class fileUtility
         Load();
     }
 
+    //obsolete, but retained for posterity
     public static void CreateAPKPath(string overwritePath, string targetFileName)
     {
         //borrowing code from Unity Answers user RobertCigna: https://answers.unity.com/questions/1087159/reading-text-file-on-android.html
@@ -43,10 +67,12 @@ public static class fileUtility
         string tempPath = Path.Combine(Application.streamingAssetsPath, targetFileName);
 
         // Android only use WWW to read file
+        //UnityWebRequest reader = new UnityWebRequest(tempPath);
         WWW reader = new WWW(tempPath);   //www is obsolete, UnityWebReader is the same functionality I hope
         while (!reader.isDone) { }
 
         overwritePath = Application.persistentDataPath + "/db";
+        //File.WriteAllBytes(overwritePath, reader.downloadHandler.data);
         File.WriteAllBytes(overwritePath, reader.bytes);
     }
 
@@ -56,6 +82,7 @@ public static class fileUtility
     public static void Load()
     {
         Debug.Log("Loading");
+
         if (!_isInitialized) { InitializeLoadSettings(); }
 
         //SAVE_LOCATIOn is determined by the StateController.LoadFilePosition, which picks from our 4 predetermined locations
@@ -101,6 +128,7 @@ public static class fileUtility
     public static void Save()
     {
         Debug.Log("Saving");
+
         if (!_isInitialized) { InitializeLoadSettings(); }
 
         //assuming we have a SaveObject, update its SaveTime

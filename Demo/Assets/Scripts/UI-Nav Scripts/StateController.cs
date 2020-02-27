@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class StateController: MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class StateController: MonoBehaviour
     public static event Action<int> StateChanged = delegate { };
 
     [SerializeField] private Shop shop = null;
+    //[SerializeField] private Text _mobileDebug = null;
 
     private void Awake()
     {
-        if(fileUtility._shop == null)
+        if (fileUtility._shop == null)
+        {
             fileUtility._shop = shop;
+            //fileUtility._mobileDebug = _mobileDebug;
+        }
     }
 
     private void Start()
@@ -26,7 +31,14 @@ public class StateController: MonoBehaviour
     {
         //cause a save every time we try to change the state, might be too many??
         //ensures data is persistant between all scenes, and saves often so data is probably not lost on exit
-        fileUtility.Save();
+        try
+        {
+            fileUtility.Save();
+        }
+        catch (SystemException e)
+        {
+            Debug.Log("failedsave");
+        }
 
         State = stateIndex;
         StateChanged.Invoke(State);
