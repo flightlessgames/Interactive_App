@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _values: {x: 1, y: -1, z: 0}
   _name: Aloe
-  _image: {fileID: 21300000, guid: 372e5a9fa993ba54fb49cd9ac404d36e, type: 3}
+  _image: {fileID: 21300000, guid: 9247f5a13b60edf448f743fafbeed250, type: 3}
   _cost: 2
   _quantity: 1
