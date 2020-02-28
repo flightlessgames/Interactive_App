@@ -28,6 +28,9 @@ public class CraftingUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
+        //changing state either leaves the scene and wants to Reset the Pentagram, or crafts and also wants to Reset.
+        //clears away ingredients from pentagram, and updatesHotbar 
+        ResetScene();
 
         CraftingState enumState = (CraftingState)state;
 
@@ -36,12 +39,6 @@ public class CraftingUIController : MonoBehaviour
             case CraftingState.Crafting:
                 //hides results panel
                 _potionResultsUI.SetActive(false);
-
-                //clears away ingredients from pentagram, and updatesHotbar
-                ResetScene();
-
-                //update goldText
-                _goldText.text = fileUtility.SaveObject.gold.ToString();
                 break;
 
             case CraftingState.Achievements:
@@ -58,6 +55,12 @@ public class CraftingUIController : MonoBehaviour
 
             case CraftingState.PotionResult:
                 _potionResultsUI.SetActive(true);
+
+                //only Saving() after PotionResult, no other States in this scene update SaveFile data
+                fileUtility.Save();
+
+                //update goldText, after crafting and earning gold
+                _goldText.text = fileUtility.SaveObject.gold.ToString();
                 break;
 
             default:

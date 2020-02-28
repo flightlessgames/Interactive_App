@@ -43,6 +43,7 @@ public class MainMenuUIController : MonoBehaviour
                 break;
             case MenuState.BeginPlay:
                 //Begin Play Scene
+                fileUtility.InitializeLoadSettings();
                 SceneManager.LoadScene("CraftingTable");
                 break;
             case MenuState.LoadSaveData:

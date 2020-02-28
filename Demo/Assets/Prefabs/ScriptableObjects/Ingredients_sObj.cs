@@ -69,5 +69,14 @@ public class Ingredients_sObj : ScriptableObject
         _quantity -= value;
     }
 
+    /// <summary>
+    /// Only use in fileUtility.Load()
+    /// </summary>
+    /// <param name="value"></param>
+    public void SetQuantity(int value)
+    {
+        _quantity = value;
+    }
+
     #endregion
 }

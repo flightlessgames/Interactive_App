@@ -11,7 +11,6 @@ public class LoadButton : MonoBehaviour
     [SerializeField] private StateController _stateController = null;
 
     private Button _button = null;
-    public int _loadSetting { get; private set; } = 0;
 
     private void Awake()
     {

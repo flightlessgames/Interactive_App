@@ -17,6 +17,9 @@ public class ShopMenuUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
+        //only state change is leaving the scene, in all cases Save() after Shopping.
+        fileUtility.Save();
+
         _goldText.text = fileUtility.SaveObject.gold.ToString();
 
         ShopState enumState = (ShopState)state;

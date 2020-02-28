@@ -55,7 +55,8 @@ public static class fileUtility
         }
 
         _isInitialized = true;
-        //after initializing which file to pull from, do one pull
+
+        //after initializing which file to pull from, do initial pull
         Load();
     }
 
@@ -73,11 +74,9 @@ public static class fileUtility
         {
             Debug.Log("Could not load from Save File Location");
             return;
-
         }
 
         string saveString = File.ReadAllText(SAVE_LOCATION);
-
         JsonUtility.FromJsonOverwrite(saveString, SaveObject);
         
         //recall data from Ingredient Quantity
@@ -86,19 +85,8 @@ public static class fileUtility
             //if our saved quantity is DIFFERENT than the current reported quantity
             if(SaveObject.ingredientsQuantity[i] != _shop.Inventory[i].Quantity)
             {
-                //measure the difference
-                int diff = SaveObject.ingredientsQuantity[i] - _shop.Inventory[i].Quantity;
-
-                if (diff > 0)
-                {
-                    //if difference is positive (more in SaveData than Inventory), increase the difference
-                    _shop.Inventory[i].IncreaseQuantity(diff);
-                }
-                else
-                {
-                    //if negative, decrease
-                    _shop.Inventory[i].DecreaseQuantity(diff);
-                }
+                //declare new setting
+                _shop.Inventory[i].SetQuantity(SaveObject.ingredientsQuantity[i]);
             }
             
             //while still using loaded recall data we can unlock the jounral pages for ingredients with quantities >-2 (-1 is unlocked infifnite, and 0+ is unlocked finite)
@@ -113,7 +101,11 @@ public static class fileUtility
     /// </summary>
     public static void Save()
     {
-        if (!_isInitialized) { InitializeLoadSettings(); }
+        if (!_isInitialized)
+        {
+            InitializeLoadSettings();
+            return;
+        }
 
         if (File.Exists(SAVE_LOCATION))
         {
@@ -127,7 +119,12 @@ public static class fileUtility
                 SaveObject.ingredientsQuantity[i] = _shop.Inventory[i].Quantity;
             }
         }
-            //if file does not currently exist, use default SaveFile datavalues (i.e. -2 Qty)
+        //if Does Not Exist, then save a new SaveFile object
+        else
+        {
+            SaveObject = new SaveFile();
+        }
+
 
         string saveString = JsonUtility.ToJson(SaveObject, true);
 
@@ -138,8 +135,6 @@ public static class fileUtility
     /// <summary>
     /// Use Only for LoadData screen in MainMenu
     /// </summary>
-    /// <param name="FileToSearch"></param>
-    /// <returns></returns>
     public static SaveFile SearchForSaveData(int FileToSearch)
     {
         string searchPath = "...";
