@@ -6,10 +6,13 @@ public class CraftingUIController : MonoBehaviour
 {
     public Ingredients_sObj CurrIngredient { get; private set; } = null;
 
-    [SerializeField] GameObject _potionResultsUI = null;
-    [SerializeField] _devCrafting _crafing = null;
-    [SerializeField] private Gold _gold = null;
-    [SerializeField] Text _goldText = null;
+    [SerializeField] private GameObject _potionResultsUI = null;
+
+    [SerializeField] private _devCrafting _crafing = null;
+    [SerializeField] private hotbarGroupController _hotSlotsController = null;
+
+
+    [SerializeField] private Text _goldText = null;
 
     private Vector3 _clickDown = Vector3.zero;
 
@@ -25,14 +28,20 @@ public class CraftingUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
-        _goldText.text = _gold.currentGold.ToString();
+
         CraftingState enumState = (CraftingState)state;
 
         switch (enumState)
         {
             case CraftingState.Crafting:
+                //hides results panel
                 _potionResultsUI.SetActive(false);
-                _crafing.Clear();
+
+                //clears away ingredients from pentagram, and updatesHotbar
+                ResetScene();
+
+                //update goldText
+                _goldText.text = fileUtility.SaveObject.gold.ToString();
                 break;
 
             case CraftingState.Achievements:
@@ -49,8 +58,6 @@ public class CraftingUIController : MonoBehaviour
 
             case CraftingState.PotionResult:
                 _potionResultsUI.SetActive(true);
-                _gold.currentGold += 10;
-
                 break;
 
             default:
@@ -62,7 +69,13 @@ public class CraftingUIController : MonoBehaviour
     public void HoldIngredient(Ingredients_sObj ingredient)
     {
         //called from the HotBar script, tells the controller to remember the data passed from the HotBar's _ingred
-        Debug.Log("Set Held ingredient to: " + ingredient);
         CurrIngredient = ingredient;
+    }
+
+    private void ResetScene()
+    {
+        _crafing.Clear();
+
+        _hotSlotsController.UpdateHotbar();
     }
 }

@@ -5,6 +5,7 @@ public class AchievementsUIController : MonoBehaviour
 {
     [SerializeField] private GameObject _potionHistoryPanel = null;
     [SerializeField] private GameObject _unlocksPanel = null;
+    [SerializeField] private PotionHistoryController _historyController = null;
 
     private void OnEnable()
     {
@@ -25,6 +26,7 @@ public class AchievementsUIController : MonoBehaviour
         {
             case AchievementState.PotionHistory:
                 _potionHistoryPanel.SetActive(true);
+                _historyController.UpdateHistories();
                 break;
             case AchievementState.Unlocks:
                 _unlocksPanel.SetActive(true);

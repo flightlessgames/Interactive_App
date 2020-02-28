@@ -4,21 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(displayIngredient))]
 public class craftingSlotController : Selectable    //by using the Selectable parent object, we inherit the properties of a button.
 {
     //initialise with none/null, displayIngredient is Empty.
-    private displayIngredient _slotIngredient = null;
+    [SerializeField] private displayIngredient _slotIngredient = null;
+    [SerializeField] CraftingUIController _craftingController = null;
 
     //because displayIngredient is the _emptyIngredient_ingred object, we're saving that locally to re-use instead of null values
     private Ingredients_sObj _nullIngredient = null;
-
-    [SerializeField] CraftingUIController _craftingController = null;
+    public Ingredients_sObj Ingredient
+    {
+        get
+        {
+            return _slotIngredient.IngredientData;
+        }
+    }
+    
     
 
     override protected void Awake()
     {
-        _slotIngredient = GetComponent<displayIngredient>();
         _nullIngredient = _slotIngredient.IngredientData;
     }
 
@@ -31,7 +36,6 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     //using a generic OnClick() function to link the Button component's commands to this script. Useful for Computer & Touch Devices.
     public void OnClick()
     {
-        Debug.Log("OnClicked()");
 
         //if our current ingredient IS the ingredient held, do NOTHING
         if (_slotIngredient.IngredientData == _craftingController.CurrIngredient)
@@ -62,14 +66,12 @@ public class craftingSlotController : Selectable    //by using the Selectable pa
     //this is roughly the OnClick() functionality of a Button
     override public void OnSelect(BaseEventData eventData)
     {
-        Debug.Log("OnSelect");
         OnClick();
     }
 
     //this detects player input as HOVER or HIGHLIGHT, useful for drag/swirl crafting
     override public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("OnPointerEnter");
         //_debugText.text += "\nOnPointerEnter()";
         OnClick();
     }

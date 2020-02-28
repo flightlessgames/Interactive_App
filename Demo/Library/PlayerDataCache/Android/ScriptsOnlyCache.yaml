@@ -3,14 +3,14 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AchievementsUIController
     - CraftingUIController
-    - Gold
     - Ingredients_sObj
     - JournalButtonPress
-    - JournalMenuController
     - JournalMenuUIController
+    - LoadButton
     - MainMenuUIController
     - MenuOpener_Journal
     - PageManager
+    - PotionHistorySlot
     - Shop
     - ShopFunctionController
     - ShopMenuUIController
@@ -24,9 +24,6 @@ ScriptsOnlyBuild:
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
-    UnityEditor.UI.dll:
-    - UnityEditor.UI.ButtonEditor
-    - UnityEditor.UI.ImageEditor
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -75,25 +72,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9848}
     - Class: 114
+      Script: {instanceID: 10024}
+    - Class: 114
+      Script: {instanceID: 10122}
+    - Class: 114
       Script: {instanceID: 10172}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10598}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10686}
+      Script: {instanceID: 10620}
     - Class: 114
-      Script: {instanceID: 10810}
+      Script: {instanceID: 10680}
     - Class: 114
-      Script: {instanceID: 10946}
+      Script: {instanceID: 10690}
     - Class: 114
-      Script: {instanceID: 11066}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 11456}
+      Script: {instanceID: 10950}
     - Class: 114
-      Script: {instanceID: 11474}
+      Script: {instanceID: 11070}
+    - Class: 114
+      Script: {instanceID: 11430}
+    - Class: 114
+      Script: {instanceID: 11462}
+    - Class: 114
+      Script: {instanceID: 11480}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -142,33 +149,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10082}
     - Class: 114
+      Script: {instanceID: 10122}
+    - Class: 114
       Script: {instanceID: 10172}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10362}
+      Script: {instanceID: 10384}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10598}
+      Script: {instanceID: 10620}
     - Class: 114
-      Script: {instanceID: 10618}
+      Script: {instanceID: 10684}
     - Class: 114
-      Script: {instanceID: 10680}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 10810}
+      Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 10882}
+      Script: {instanceID: 11070}
     - Class: 114
-      Script: {instanceID: 11066}
+      Script: {instanceID: 11344}
     - Class: 114
-      Script: {instanceID: 11338}
+      Script: {instanceID: 11426}
     - Class: 114
-      Script: {instanceID: 11420}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11424}
-    - Class: 114
-      Script: {instanceID: 11474}
+      Script: {instanceID: 11480}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -221,39 +228,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9848}
     - Class: 114
-      Script: {instanceID: 9888}
-    - Class: 114
       Script: {instanceID: 9948}
     - Class: 114
       Script: {instanceID: 9966}
     - Class: 114
+      Script: {instanceID: 10024}
+    - Class: 114
       Script: {instanceID: 10048}
+    - Class: 114
+      Script: {instanceID: 10122}
     - Class: 114
       Script: {instanceID: 10148}
     - Class: 114
       Script: {instanceID: 10172}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10262}
+      Script: {instanceID: 10264}
     - Class: 114
-      Script: {instanceID: 10416}
+      Script: {instanceID: 10414}
     - Class: 114
-      Script: {instanceID: 10598}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10686}
+      Script: {instanceID: 10690}
     - Class: 114
-      Script: {instanceID: 10810}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 10978}
+      Script: {instanceID: 10982}
     - Class: 114
-      Script: {instanceID: 11066}
+      Script: {instanceID: 11070}
     - Class: 114
-      Script: {instanceID: 11306}
+      Script: {instanceID: 11312}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11456}
+      Script: {instanceID: 11462}
+    - Class: 114
+      Script: {instanceID: 11480}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -300,21 +311,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9900}
     - Class: 114
+      Script: {instanceID: 10024}
+    - Class: 114
+      Script: {instanceID: 10122}
+    - Class: 114
       Script: {instanceID: 10172}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10406}
+      Script: {instanceID: 10404}
     - Class: 114
-      Script: {instanceID: 10598}
+      Script: {instanceID: 10492}
     - Class: 114
-      Script: {instanceID: 10686}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 11066}
+      Script: {instanceID: 10690}
     - Class: 114
-      Script: {instanceID: 11424}
+      Script: {instanceID: 11070}
     - Class: 114
-      Script: {instanceID: 11474}
+      Script: {instanceID: 11430}
+    - Class: 114
+      Script: {instanceID: 11480}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -367,25 +384,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10172}
     - Class: 114
-      Script: {instanceID: 10238}
+      Script: {instanceID: 10240}
     - Class: 114
-      Script: {instanceID: 10362}
+      Script: {instanceID: 10600}
     - Class: 114
-      Script: {instanceID: 10598}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 10810}
+      Script: {instanceID: 10848}
     - Class: 114
-      Script: {instanceID: 10844}
+      Script: {instanceID: 11070}
     - Class: 114
-      Script: {instanceID: 11066}
+      Script: {instanceID: 11108}
     - Class: 114
-      Script: {instanceID: 11102}
+      Script: {instanceID: 11156}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 11424}
-    - Class: 114
-      Script: {instanceID: 11474}
+      Script: {instanceID: 11480}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -531,7 +546,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 0b0192a2238bf158b7f69058751d05f4
+      Hash: b7508a9999db1813485a5a60dee85496
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ingredients_sObj
@@ -561,7 +576,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: 332e8503a0f7d8f445a460e8684ec35e
+      Hash: 5e8aab405f615365766fab31ba217840
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: _devCrafting
@@ -573,7 +588,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: ce184b77b3558bd2f1dfa96feab95de4
+      Hash: 52585d386f7397622c8e162a585bee9f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shop
@@ -589,6 +604,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: e41256a04b0da5b805235b8c61129797
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ImportantDoNotTouch
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -627,13 +648,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: ff3e04a065c35384cdbf1b8f51d27787
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Gold
-  - hash:
-      serializedVersion: 2
-      Hash: aee0e0111b910d48d944e62448ebf056
+      Hash: fedfdaf97b7d944241eb58ec79ab9e82
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CraftingUIController
@@ -645,7 +660,7 @@ ScriptsOnlyBuild:
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: b9df43ed50323b7de3c6f2b0aa1f0ea2
+      Hash: ce34cbb0678babefd5e127b8d64bb87b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuUIController
@@ -667,6 +682,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 10bb53dc6c825f44b3b80e0d7e8e5d7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadButton
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -699,7 +720,13 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 9ce83bac8d68a3e647f3ff8e3f397f3c
+      Hash: 7096e392487eec4018505537c99741c0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PotionHistorySlot
+  - hash:
+      serializedVersion: 2
+      Hash: 21a3802bb2ab4355ec36806234195811
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: craftingSlotController
@@ -753,13 +780,13 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: f4eb81943ffa084732993f397bbddc7a
+      Hash: 88bcee3124bee5b4008bdbef88574810
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShopFunctionController
   - hash:
       serializedVersion: 2
-      Hash: 480b33c339b814b2e020b85dc95b7a16
+      Hash: 1534f1c069bca18ccad2d171614ad4c2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: displayIngredient
@@ -813,7 +840,7 @@ ScriptsOnlyBuild:
     className: ShopSlot
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 76e3eece3feffa9a308781d2e2dfeb8a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShopMenuUIController
@@ -849,7 +876,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 87b194bb4cf869565024d56605dca8ff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: hotbarGroupController
@@ -933,7 +960,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: e41256a04b0da5b805235b8c61129797
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StateController
@@ -950,4 +977,4 @@ ScriptsOnlyBuild:
   - Assets/_Scenes/Achievement.unity
   - Assets/_Scenes/Shop.unity
   - Assets/_Scenes/Journal.unity
-  playerPath: C:/Users/bdf170030/Desktop/Interactives/Builds/v0.2.2_ClassVersion.apk
+  playerPath: D:/College/20_Spring/4379 Topics/Builds/v0.2.6_SaveSlots.apk

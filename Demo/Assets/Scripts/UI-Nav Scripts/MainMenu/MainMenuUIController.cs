@@ -1,13 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUIController : MonoBehaviour
 {
     //in theory we would want to identify the particular panel and avoid mis-matching by having a custom script on "rootPanel" and assign RootPanel _rootPanel, etc.
-    [SerializeField] GameObject _rootPanel = null;
-    [SerializeField] GameObject _loadDataSelectPanel = null;
-    [SerializeField] GameObject _loadDataConfirmPanel = null;
-    [SerializeField] GameObject _creditsPanel = null;
+    [SerializeField] private GameObject _rootPanel = null;
+    [SerializeField] private GameObject _loadDataSelectPanel = null;
+    [SerializeField] private GameObject _loadDataConfirmPanel = null;
+    [SerializeField] private Text _confirmText = null;
+    [SerializeField] private GameObject _creditsPanel = null;
+
+    public int LoadFileSetting { get; private set; } = 0;
 
     private void OnEnable()
     {
@@ -31,7 +36,7 @@ public class MainMenuUIController : MonoBehaviour
         switch (enumState)
         //most switch statements can be solved with proper inheritance or interface properties
         {
-            case MenuState.Root:
+            case MenuState.Menu:
                 //TODO RootUI Script
                 _rootPanel.gameObject.SetActive(true);
                 //TODO Animations
@@ -44,6 +49,7 @@ public class MainMenuUIController : MonoBehaviour
                 _loadDataSelectPanel.gameObject.SetActive(true);
                 break;
             case MenuState.LoadDataConfirm:
+                StartCoroutine(AssignTextData());
                 _loadDataConfirmPanel.gameObject.SetActive(true);
                 break;
             case MenuState.Credits:
@@ -54,6 +60,39 @@ public class MainMenuUIController : MonoBehaviour
                 //all panels will become disabled and none will become enabled. Look into player lock-out
                 break;
         }
+    }
+
+    private IEnumerator AssignTextData()
+    {
+        if (fileUtility.SearchForSaveData(LoadFileSetting) != null)
+        {
+            int unlockCount = 0;
+            foreach(int ingred in fileUtility._searchObject.ingredientsQuantity)
+            {
+                if (ingred > -1)
+                    unlockCount++;
+            }
+            float AchievementPercent = unlockCount / fileUtility._searchObject.ingredientsQuantity.Length;
+            Debug.Log("found search data");
+
+            //needs to wait to update until reader has found SearchForSaveData, data. Leads to loaddata preview showing previous preview
+            yield return new WaitForEndOfFrame();
+
+            _confirmText.text =
+                "Load File Number " + LoadFileSetting + 
+           "\nFile Creation: " + fileUtility._searchObject.CreationTime +
+           "\nLast Save: " + fileUtility._searchObject.RecentSaveTime +
+           "\n" +
+           "\nCurrent $: " + fileUtility._searchObject.gold +
+           "\nAchievements: " + (int)(AchievementPercent*100) + "%";
+            Debug.Log(fileUtility._searchObject.gold);
+        }
+    }
+
+    public void ChangeLoadFile(int fileNum)
+    {
+        //temporary load setting, must be confirmed to move to StateController -> fileUtility
+        LoadFileSetting = fileNum;
     }
 
     private void DisablePanels()
