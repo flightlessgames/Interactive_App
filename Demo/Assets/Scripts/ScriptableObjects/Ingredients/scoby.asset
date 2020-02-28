@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 2, y: 1, z: 0}
   _name: Scoby
   _image: {fileID: 21300000, guid: 0c2a9da9bba7c7c499805b3008961fc9, type: 3}
-  _cost: 3
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

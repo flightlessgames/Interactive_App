@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -2, y: 1, z: 2}
   _name: Skittles Vodka
   _image: {fileID: 21300000, guid: d6bcc8f1342b366419783a585d992c7e, type: 3}
-  _cost: 5
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

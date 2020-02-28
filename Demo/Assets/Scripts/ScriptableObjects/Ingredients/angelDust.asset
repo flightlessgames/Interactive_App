@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 0, y: 2, z: -2}
   _name: Angel Dust
   _image: {fileID: 21300000, guid: ecf1e33654a515b4a96600caead40325, type: 3}
-  _cost: 4
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

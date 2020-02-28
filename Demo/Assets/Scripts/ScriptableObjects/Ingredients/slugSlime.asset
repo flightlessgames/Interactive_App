@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -2, y: 0, z: -1}
   _name: Slug Slime
   _image: {fileID: 21300000, guid: 547fc64286cd5024e88829fb68f8512b, type: 3}
-  _cost: 3
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

@@ -5,17 +5,18 @@ public class JournalMenuUIController : MonoBehaviour
 {
     private void OnEnable()
     {
-        JournalMenuController.StateChanged += OnStateChanged;
+        StateController.StateChanged += OnStateChanged;
     }
 
     private void OnDisable()
     {
-        JournalMenuController.StateChanged -= OnStateChanged;
+        StateController.StateChanged -= OnStateChanged;
     }
 
-    private void OnStateChanged(JournalState state)
+    private void OnStateChanged(int state)
     {
-        switch (state)
+        JournalState enumState = (JournalState)state;
+        switch (enumState)
         {
             case JournalState.Journal:
                 Debug.Log("Load Journal Pg 1");

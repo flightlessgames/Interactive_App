@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 1, y: -1, z: 0}
   _name: Aloe
   _image: {fileID: 21300000, guid: 9247f5a13b60edf448f743fafbeed250, type: 3}
-  _cost: 2
-  _quantity: 1
+  _description: '...'
+  _quantity: -2

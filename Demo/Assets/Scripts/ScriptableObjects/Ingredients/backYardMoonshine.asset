@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -2, y: 2, z: 0}
   _name: Backyard Moonshine
   _image: {fileID: 21300000, guid: d40e307020f21234d8b712004b4973ec, type: 3}
-  _cost: 4
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 1, y: 2, z: -2}
   _name: Absurd Acrylic Nails
   _image: {fileID: 21300000, guid: d5c3ca53516adf343a46df26a75fa4bd, type: 3}
-  _cost: 5
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

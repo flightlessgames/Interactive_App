@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: 0, z: 1}
   _name: Extra Wet Water
   _image: {fileID: 21300000, guid: 1615a33c87518a64992ddc0af9f9c759, type: 3}
-  _cost: 2
+  _description: '...'
   _quantity: -1

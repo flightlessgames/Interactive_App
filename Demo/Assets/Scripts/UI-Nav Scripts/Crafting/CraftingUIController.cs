@@ -39,6 +39,9 @@ public class CraftingUIController : MonoBehaviour
             case CraftingState.Crafting:
                 //hides results panel
                 _potionResultsUI.SetActive(false);
+
+                //save then Entering Scene to run Initializer Settings and update Hotbar needs
+                fileUtility.Save();
                 break;
 
             case CraftingState.Achievements:
@@ -56,7 +59,7 @@ public class CraftingUIController : MonoBehaviour
             case CraftingState.PotionResult:
                 _potionResultsUI.SetActive(true);
 
-                //only Saving() after PotionResult, no other States in this scene update SaveFile data
+                //only Saving() after PotionResult to update Hotbar Qty. and record PotionHistory
                 fileUtility.Save();
 
                 //update goldText, after crafting and earning gold

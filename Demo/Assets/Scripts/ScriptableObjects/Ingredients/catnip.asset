@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 2, y: -1, z: -2}
   _name: Catnip
   _image: {fileID: 21300000, guid: 02b0c5fb6395ec24d826fb1a3bb91453, type: 3}
-  _cost: 5
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

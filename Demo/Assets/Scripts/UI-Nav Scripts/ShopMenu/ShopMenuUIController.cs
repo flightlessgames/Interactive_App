@@ -2,9 +2,18 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(ShopFunctionController))]
 public class ShopMenuUIController : MonoBehaviour
 {
     [SerializeField] Text _goldText = null;
+
+    private ShopFunctionController _shopFunction = null;
+
+    private void Awake()
+    {
+        _shopFunction = GetComponent<ShopFunctionController>();
+    }
+
     private void OnEnable()
     {
         StateController.StateChanged += OnStateChanged;
@@ -27,7 +36,8 @@ public class ShopMenuUIController : MonoBehaviour
         switch (enumState)
         {
             case ShopState.Shop:
-                Debug.Log("Load Shop deals of the day");
+                Debug.Log("Load Shop Deals");
+                _shopFunction.RandomizeShop();
                 break;
             case ShopState.Crafting:
                 SceneManager.LoadScene("CraftingTable");

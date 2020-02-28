@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultIngredients:
-  - {fileID: 11400000, guid: ad86c86c2a4e6134dbcd8b50853d7cf1, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 890c02d9e34907d4292aaa853487e140, type: 2}
   - {fileID: 11400000, guid: cc12b7598ce615540ba28a7eff13ee0e, type: 2}
   - {fileID: 11400000, guid: 1dda168999b189e40b3faf3307a2cc1b, type: 2}
@@ -785,6 +785,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1604997993688995614}
     m_Modifications:
+    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
+        type: 3}
+      propertyPath: m_Name
+      value: HotbarSlotDefault_img (0)
+      objectReference: {fileID: 0}
     - target: {fileID: 7597507074778377805, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -890,11 +895,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
-        type: 3}
-      propertyPath: m_Name
-      value: HotbarSlotDefault_img (0)
-      objectReference: {fileID: 0}
     - target: {fileID: 6058285540004322336, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: _ingredientData
@@ -916,6 +916,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1604997993688995614}
     m_Modifications:
+    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
+        type: 3}
+      propertyPath: m_Name
+      value: HotbarSlotDefault_img (null)
+      objectReference: {fileID: 0}
     - target: {fileID: 7597507074778377805, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1021,16 +1026,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
-        type: 3}
-      propertyPath: m_Name
-      value: HotbarSlotDefault_img (null)
-      objectReference: {fileID: 0}
     - target: {fileID: 6058285540004322336, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: _ingredientData
       value: 
-      objectReference: {fileID: 11400000, guid: ad86c86c2a4e6134dbcd8b50853d7cf1,
+      objectReference: {fileID: 11400000, guid: ec3e9455834dee247b65d4b142b06813,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d12dc71a8cbb9034fba31e19538cd119, type: 3}
@@ -1059,6 +1059,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1604997993688995614}
     m_Modifications:
+    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
+        type: 3}
+      propertyPath: m_Name
+      value: HotbarSlotDefault_img (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7597507074778377805, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1179,11 +1184,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9999697
       objectReference: {fileID: 0}
-    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
-        type: 3}
-      propertyPath: m_Name
-      value: HotbarSlotDefault_img (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6058285540004322336, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: _ingredientData
@@ -1205,6 +1205,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1604997993688995614}
     m_Modifications:
+    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
+        type: 3}
+      propertyPath: m_Name
+      value: HotbarSlotDefault_img (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 7597507074778377805, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1325,11 +1330,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9999697
       objectReference: {fileID: 0}
-    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
-        type: 3}
-      propertyPath: m_Name
-      value: HotbarSlotDefault_img (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6058285540004322336, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: _ingredientData
@@ -1351,6 +1351,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1604997993688995614}
     m_Modifications:
+    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
+        type: 3}
+      propertyPath: m_Name
+      value: HotbarSlot_img (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7597507074778377805, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1455,16 +1465,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
-        type: 3}
-      propertyPath: m_Name
-      value: HotbarSlot_img (0)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4160418807717504199, guid: d12dc71a8cbb9034fba31e19538cd119,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6058285540004322336, guid: d12dc71a8cbb9034fba31e19538cd119,
         type: 3}

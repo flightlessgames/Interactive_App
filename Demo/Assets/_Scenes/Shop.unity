@@ -736,5 +736,35 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeState
       objectReference: {fileID: 0}
+    - target: {fileID: 2000439645752233999, guid: e5d129945ecdf3245aa0d72097c216c3,
+        type: 3}
+      propertyPath: m_Name
+      value: BotCent_pnl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320084181912657924, guid: e5d129945ecdf3245aa0d72097c216c3,
+        type: 3}
+      propertyPath: m_Name
+      value: BotLeft_pnl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960634346663919877, guid: e5d129945ecdf3245aa0d72097c216c3,
+        type: 3}
+      propertyPath: m_Name
+      value: BotRight_pnl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808826557135862253, guid: e5d129945ecdf3245aa0d72097c216c3,
+        type: 3}
+      propertyPath: m_Name
+      value: TopCent_pnl
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916515722073519778, guid: e5d129945ecdf3245aa0d72097c216c3,
+        type: 3}
+      propertyPath: m_Name
+      value: TopLeft_pnl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235476430432065024, guid: e5d129945ecdf3245aa0d72097c216c3,
+        type: 3}
+      propertyPath: m_Name
+      value: TopRight_pnl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d129945ecdf3245aa0d72097c216c3, type: 3}

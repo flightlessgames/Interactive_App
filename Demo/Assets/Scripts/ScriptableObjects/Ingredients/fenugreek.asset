@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: 0, z: 2}
   _name: Fenugreek
   _image: {fileID: 21300000, guid: 7d8b3a326a818134e8e82a5f99f9cb93, type: 3}
-  _cost: 3
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

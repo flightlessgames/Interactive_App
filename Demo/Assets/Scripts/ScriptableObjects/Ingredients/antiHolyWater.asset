@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 0, y: -1, z: 1}
   _name: Anti-Holy Water
   _image: {fileID: 21300000, guid: c9e9cd194a6663045ad7b98c21e881e8, type: 3}
-  _cost: 2
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

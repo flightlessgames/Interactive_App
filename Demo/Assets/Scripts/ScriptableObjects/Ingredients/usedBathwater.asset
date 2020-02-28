@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: -2, z: 2}
   _name: Used Bathwater
   _image: {fileID: 21300000, guid: ae67b7bebd7809043919c7e0a9a51127, type: 3}
-  _cost: 5
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: 0, z: -2}
   _name: Belladonna
   _image: {fileID: 21300000, guid: cf2fbeb5a4d725f40b6412f553627797, type: 3}
-  _cost: 3
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

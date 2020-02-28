@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 2, y: -2, z: 1}
   _name: Moldy Bread
   _image: {fileID: 21300000, guid: e0b6314c9b9dc9f4aa6022fee056ffe0, type: 3}
-  _cost: 5
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

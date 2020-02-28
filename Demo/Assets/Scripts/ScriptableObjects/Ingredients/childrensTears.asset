@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 0, y: -2, z: -1}
   _name: Children's Tears
   _image: {fileID: 21300000, guid: 61dade38b84bda947964be1dd8e61f04, type: 3}
-  _cost: 3
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

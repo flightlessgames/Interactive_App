@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 1, y: 0, z: 2}
   _name: Gladiator's Heart
   _image: {fileID: 21300000, guid: 520196d1e1fd1514e9a9e44bb5e77feb, type: 3}
-  _cost: 3
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

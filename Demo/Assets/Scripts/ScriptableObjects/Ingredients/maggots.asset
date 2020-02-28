@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -2, y: -1, z: 2}
   _name: Maggots
   _image: {fileID: 21300000, guid: d3abbeff37bb93a429798ec03f22de86, type: 3}
-  _cost: 5
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

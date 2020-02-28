@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 0, y: -1, z: -2}
   _name: Cat's Claw
   _image: {fileID: 21300000, guid: 9e349105f83385941ab33faf278aff46, type: 3}
-  _cost: 3
-  _quantity: 0
+  _description: '...'
+  _quantity: -2

@@ -80,6 +80,23 @@ public class _devCrafting : MonoBehaviour
             _inputIngredients.Add(slot.Ingredient);
         }
 
+        for(int i = 0; i < _inputIngredients.Count; i++)
+        {
+            int countOthers = 0;
+
+            for (int j = 0; j < _inputIngredients.Count; j++)
+            {
+                if (i == j) continue;
+
+                if (_inputIngredients[i] == _inputIngredients[j])
+                    countOthers++;
+            }
+
+            //cannot craft 5 same ingredients. Look into "JUICE" or "CONDENSED" of "ITEM"
+            if (countOthers == _inputIngredients.Count - 1)
+                return;
+        }
+
         ReadCSVFile();
 
         fileUtility.SaveObject.gold += 5;
