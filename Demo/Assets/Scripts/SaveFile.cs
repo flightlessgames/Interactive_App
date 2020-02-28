@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -33,7 +34,6 @@ public class SaveFile
     //default constructor, default starting game values
     public SaveFile()
     {
-
         CreationTime = Time.time;
 
         #region Recipe[]
@@ -55,12 +55,7 @@ public class SaveFile
          * if == -1,    infinite
          * if  < -1,    unlocked and read qty.
          */
-        ingredientsQuantity = new int[58];
-        foreach(int i in ingredientsQuantity)
-        {
-            i.Equals(-2);
-            //using .Equals because of foreach properties
-        }
+        ingredientsQuantity = Enumerable.Repeat(-2, 58).ToArray();
 
         //start with 100g
         gold = 100;

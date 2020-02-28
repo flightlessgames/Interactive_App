@@ -62,7 +62,7 @@ public class MainMenuUIController : MonoBehaviour
         }
     }
 
-    IEnumerator AssignTextData()
+    private IEnumerator AssignTextData()
     {
         if (fileUtility.SearchForSaveData(LoadFileSetting) != null)
         {
@@ -73,15 +73,19 @@ public class MainMenuUIController : MonoBehaviour
                     unlockCount++;
             }
             float AchievementPercent = unlockCount / fileUtility._searchObject.ingredientsQuantity.Length;
+            Debug.Log("found search data");
 
+            //needs to wait to update until reader has found SearchForSaveData, data. Leads to loaddata preview showing previous preview
             yield return new WaitForEndOfFrame();
 
             _confirmText.text =
-           "File Creation: " + fileUtility._searchObject.CreationTime +
+                "Load File Number " + LoadFileSetting + 
+           "\nFile Creation: " + fileUtility._searchObject.CreationTime +
            "\nLast Save: " + fileUtility._searchObject.RecentSaveTime +
            "\n" +
            "\nCurrent $: " + fileUtility._searchObject.gold +
            "\nAchievements: " + (int)(AchievementPercent*100) + "%";
+            Debug.Log(fileUtility._searchObject.gold);
         }
     }
 

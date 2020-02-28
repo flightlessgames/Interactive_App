@@ -16,6 +16,9 @@ public static class fileUtility
     public static Shop _shop = null;
     //public static Text _mobileDebug = null;
 
+    /// <summary>
+    /// Sets settings to ensure we're reading the right JSON.txt save file
+    /// </summary>
     public static void InitializeLoadSettings()
     {
         if (SystemInfo.deviceType == DeviceType.Handheld)
@@ -56,27 +59,11 @@ public static class fileUtility
         Load();
     }
 
-    //obsolete, but retained for posterity
-    public static void CreateAPKPath(string overwritePath, string targetFileName)
-    {
-        //borrowing code from Unity Answers user RobertCigna: https://answers.unity.com/questions/1087159/reading-text-file-on-android.html
-        //still using code from 2015, including outdated WWW object type, might look into UnityWebRequest type, but don't want to break system.
-        //for Android "Handheld" we need to use a URL path
-        string tempPath = Path.Combine(Application.streamingAssetsPath, targetFileName);
-
-        // Android only use WWW to read file
-        //UnityWebRequest reader = new UnityWebRequest(tempPath);
-        WWW reader = new WWW(tempPath);   //www is obsolete, UnityWebReader is the same functionality I hope
-        while (!reader.isDone) { }
-
-        overwritePath = Application.persistentDataPath + "/db";
-        //File.WriteAllBytes(overwritePath, reader.downloadHandler.data);
-        File.WriteAllBytes(overwritePath, reader.bytes);
-    }
-
-
     //code adapted from CodeMonkey on YouTube: https://www.youtube.com/watch?time_continue=44&v=6uMFEM-napE&feature=emb_logo
     //mostly standard utility code, but I needed a reference to figure it out
+    /// <summary>
+    /// Reads JSON.txt from assets and Constructs a SaveFile Object
+    /// </summary>
     public static void Load()
     {
         if (!_isInitialized) { InitializeLoadSettings(); }
@@ -121,19 +108,26 @@ public static class fileUtility
         Debug.Log("Loaded Save: " + StateController.LoadFilePosition);
     }
 
+    /// <summary>
+    /// Creates JSON string out of SaveObject Data
+    /// </summary>
     public static void Save()
     {
-
         if (!_isInitialized) { InitializeLoadSettings(); }
 
-        //assuming we have a SaveObject, update its SaveTime
-        SaveObject.RecentSaveTime = Time.time;
-
-        //save each ingredient's qty to the SaveObject's int[]
-        for (int i = 0; i < _shop.Inventory.Count; i++)
+        if (File.Exists(SAVE_LOCATION))
         {
-            SaveObject.ingredientsQuantity[i] = _shop.Inventory[i].Quantity;
+            //if file exists, run code to retain current dataset
+            //assuming we have a SaveObject, update its SaveTime
+            SaveObject.RecentSaveTime = Time.time;
+
+            //save each ingredient's qty to the SaveObject's int[]
+            for (int i = 0; i < _shop.Inventory.Count; i++)
+            {
+                SaveObject.ingredientsQuantity[i] = _shop.Inventory[i].Quantity;
+            }
         }
+            //if file does not currently exist, use default SaveFile datavalues (i.e. -2 Qty)
 
         string saveString = JsonUtility.ToJson(SaveObject, true);
 
@@ -141,23 +135,34 @@ public static class fileUtility
         File.WriteAllText(SAVE_LOCATION, saveString);
     }
 
-    //to use for LoadScreenConfirm preview data
+    /// <summary>
+    /// Use Only for LoadData screen in MainMenu
+    /// </summary>
+    /// <param name="FileToSearch"></param>
+    /// <returns></returns>
     public static SaveFile SearchForSaveData(int FileToSearch)
     {
         string searchPath = "...";
 
         //code taken from Initializer
         if (SystemInfo.deviceType == DeviceType.Handheld)
-        { CreateAPKPath(searchPath, "LoadFileData" + FileToSearch + ".txt"); }
+        {
+            string tempPath = Path.Combine(Application.streamingAssetsPath, FileToSearch + ".txt");
+            // Android only use WWW to read file
+            WWW reader = new WWW(tempPath);   //www is obsolete, UnityWebReader is the same functionality I hope
+            while (!reader.isDone) { }
 
+            searchPath = Application.persistentDataPath + FileToSearch + ".txt";
+            File.WriteAllBytes(searchPath, reader.bytes);
+        }
         else if (SystemInfo.deviceType == DeviceType.Desktop)
         { searchPath = Application.streamingAssetsPath + "/LoadFileData" + FileToSearch + ".txt"; }
+
 
         //code taken from loader
         if (File.Exists(searchPath))
         {
             string saveString = File.ReadAllText(searchPath);
-
             JsonUtility.FromJsonOverwrite(saveString, _searchObject);
         }
         else

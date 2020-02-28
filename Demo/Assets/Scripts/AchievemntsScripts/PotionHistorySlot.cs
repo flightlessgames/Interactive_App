@@ -8,7 +8,7 @@ public class PotionHistorySlot : MonoBehaviour
     [SerializeField] private _devCrafting.Recipe _recipe = null;
     [SerializeField] private Text _title = null;
     [SerializeField] private Text _description = null;
-    [SerializeField] private List<Image> _ingredientImages = new List<Image>();
+    [SerializeField] private List<displayIngredient> _displays = new List<displayIngredient>();
     [SerializeField] private RawImage _potionColor = null;
     
     public _devCrafting.Recipe Recipe { get { return _recipe; } }
@@ -24,17 +24,20 @@ public class PotionHistorySlot : MonoBehaviour
         _title.text = _recipe.recipeName;
         _potionColor.color = _recipe.color;
 
-        for(int i = 0; i < _recipe.ingredientList.Count; i++)
-        {
-            //if a recipe has a null ingredient (should be limited to List.Count size, debugging
-            if (_recipe.ingredientList[i] == null)
-            {
-                Debug.Log("ingredient is null");
-                continue;
-            }
+        if (_recipe.ingredientList == null)
+            return;
 
-            _ingredientImages[i].sprite = _recipe.ingredientList[i];
-            
+        Vector3 score = Vector3.zero;
+
+        for (int i=0; i<_recipe.ingredientList.Count; i++)
+        {
+            if (_recipe.ingredientList[i] == null)
+                continue;
+
+            _displays[i].SetIngredient(_recipe.ingredientList[i]);
+            score += _recipe.ingredientList[i].Values;
         }
+
+        _description.text = score.ToString();
     }
 }

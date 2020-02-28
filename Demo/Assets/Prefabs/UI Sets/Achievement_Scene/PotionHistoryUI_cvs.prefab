@@ -388,7 +388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 850, y: 0}
+  m_AnchoredPosition: {x: 800, y: 0}
   m_SizeDelta: {x: 1600, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669177146165631324
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 0
-    m_Right: 100
+    m_Right: 0
     m_Top: 50
     m_Bottom: 0
   m_ChildAlignment: 0
@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87fcdcc7036490c4d96589d8b2cbfc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _slotPrefab: {fileID: 0}
   _histories:
   - {fileID: 6842732626192778216}
   - {fileID: 4924179713683497970}
@@ -460,11 +461,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -533,7 +529,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -570,20 +566,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -612,11 +598,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -685,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -722,20 +703,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -764,11 +735,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -837,7 +803,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -874,20 +840,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -916,11 +872,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -989,7 +940,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -1026,20 +977,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -1068,11 +1009,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1141,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -1178,6 +1114,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!114 &6842732626192778216 stripped
@@ -1205,11 +1146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1278,7 +1214,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -1315,20 +1251,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -1357,11 +1283,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1430,7 +1351,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -1467,20 +1388,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -1509,11 +1420,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1582,7 +1488,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -1619,20 +1525,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -1661,11 +1557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1734,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -1771,20 +1662,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
@@ -1813,11 +1694,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1886,7 +1762,7 @@ PrefabInstance:
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1600
+      value: 1800
       objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
@@ -1923,20 +1799,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000341
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000341
+      propertyPath: m_Name
+      value: PotionHistory_pnl (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
