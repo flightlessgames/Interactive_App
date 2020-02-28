@@ -19,7 +19,6 @@ public class AchievementsUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
-        _historyController.UpdateHistories();
         DisablePanels();
         AchievementState enumState = (AchievementState)state;
 
@@ -27,6 +26,7 @@ public class AchievementsUIController : MonoBehaviour
         {
             case AchievementState.PotionHistory:
                 _potionHistoryPanel.SetActive(true);
+                _historyController.UpdateHistories();
                 break;
             case AchievementState.Unlocks:
                 _unlocksPanel.SetActive(true);

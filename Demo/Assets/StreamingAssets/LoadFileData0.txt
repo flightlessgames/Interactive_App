@@ -1,197 +1,197 @@
 {
     "CreationTime": 0.0,
-    "RecentSaveTime": 3.7373740673065187,
+    "RecentSaveTime": 43.78492736816406,
     "recentRecipes": [
         {
             "recipeName": "Mud",
             "color": {
-                "r": 0.75,
-                "g": 0.5,
-                "b": 0.25,
+                "r": 0.5,
+                "g": 0.4000000059604645,
+                "b": 0.30000001192092898,
                 "a": 1.0
             },
-            "input": [
+            "ingredientList": [
                 {
-                    "instanceID": 13458
+                    "instanceID": 13084
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13084
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13028
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13028
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13028
                 }
             ]
         },
         {
             "recipeName": "Nightmares",
             "color": {
-                "r": 0.25,
+                "r": 0.3499999940395355,
                 "g": 0.5,
-                "b": 0.75,
+                "b": 0.6499999761581421,
                 "a": 1.0
             },
-            "input": [
+            "ingredientList": [
                 {
-                    "instanceID": 13458
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13458
+                    "instanceID": 13312
                 }
             ]
         },
         {
             "recipeName": "Nightmares",
             "color": {
-                "r": 0.25,
+                "r": 0.3499999940395355,
                 "g": 0.5,
-                "b": 0.75,
+                "b": 0.6499999761581421,
                 "a": 1.0
             },
-            "input": [
+            "ingredientList": [
                 {
-                    "instanceID": 13412
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13412
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13412
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13412
+                    "instanceID": 13028
                 },
                 {
-                    "instanceID": 13412
+                    "instanceID": 13028
                 }
             ]
         },
         {
-            "recipeName": "More Interesting",
-            "color": {
-                "r": 0.800000011920929,
-                "g": 0.6499999761581421,
-                "b": 0.5,
-                "a": 1.0
-            },
-            "input": [
-                {
-                    "instanceID": 13324
-                },
-                {
-                    "instanceID": 13434
-                },
-                {
-                    "instanceID": 13434
-                },
-                {
-                    "instanceID": 13324
-                },
-                {
-                    "instanceID": 13324
-                }
-            ]
-        },
-        {
-            "recipeName": "Mud",
+            "recipeName": "Nightmares",
             "color": {
                 "r": 0.30000001192092898,
-                "g": 0.6499999761581421,
-                "b": 0.550000011920929,
+                "g": 0.5,
+                "b": 0.699999988079071,
                 "a": 1.0
             },
-            "input": [
+            "ingredientList": [
                 {
-                    "instanceID": 13326
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13434
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13434
+                    "instanceID": 13218
                 },
                 {
-                    "instanceID": 13434
+                    "instanceID": 13028
                 },
                 {
-                    "instanceID": 13316
+                    "instanceID": 13218
+                }
+            ]
+        },
+        {
+            "recipeName": "Nightmares",
+            "color": {
+                "r": 0.25,
+                "g": 0.5,
+                "b": 0.75,
+                "a": 1.0
+            },
+            "ingredientList": [
+                {
+                    "instanceID": 13218
+                },
+                {
+                    "instanceID": 13218
+                },
+                {
+                    "instanceID": 13218
+                },
+                {
+                    "instanceID": 13218
+                },
+                {
+                    "instanceID": 13218
                 }
             ]
         }
     ],
     "ingredientsQuantity": [
         -2,
+        1,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        0,
+        -2,
+        -2,
+        0,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        3,
+        2,
+        -2,
+        3,
+        3,
+        3,
+        -2,
+        -2,
+        -2,
+        -2,
+        3,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
         2,
         -2,
         -2,
         -2,
+        2,
+        2,
         -2,
-        -2,
-        -2,
-        -2,
-        0,
-        -2,
-        -2,
-        0,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        1,
-        0,
-        -2,
-        1,
-        1,
-        1,
-        -2,
-        -2,
-        -2,
-        -2,
-        1,
-        -2,
-        -2,
-        -2,
-        -2,
-        -2,
-        0,
-        -2,
-        -2,
-        -2,
-        0,
-        0,
-        -2,
-        0,
+        2,
         -2,
         -2,
         -2,
         -2,
         -2
     ],
-    "gold": 165
+    "gold": 155
 }

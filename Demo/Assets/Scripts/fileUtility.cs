@@ -117,6 +117,8 @@ public static class fileUtility
             //while still using loaded recall data we can unlock the jounral pages for ingredients with quantities >-2 (-1 is unlocked infifnite, and 0+ is unlocked finite)
             //TODO Jounral Scripts
         }
+
+        Debug.Log("Loaded Save: " + StateController.LoadFilePosition);
     }
 
     public static void Save()

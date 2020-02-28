@@ -47,12 +47,11 @@ public class PotionHistoryController : MonoBehaviour
             //if recipe is a REAL recipe
             if(recipe != null)
             {
-                Debug.Log("found recipe");
                 //find a slot in the pool
                 foreach(PotionHistorySlot slot in _histories)
                 {
-                    //if that slot is unused (not re-enabled)
-                    if (slot.isActiveAndEnabled)
+                    //if that slot is NOT active (not re-enabled)
+                    if (!slot.isActiveAndEnabled)
                     {
                         //set slot active and change its values to the REAL recipe
                         slot.gameObject.SetActive(true);

@@ -32,14 +32,18 @@ public class _devCrafting : MonoBehaviour
         //public for JsomUtility... not happy with this
         public string recipeName;
         public Color color;
-        public List<Ingredients_sObj> input;
+        public List<Sprite> ingredientList;
 
         //from _decraftingInput to serializable information
         public Recipe(string n, Color c, List<Ingredients_sObj> i)
         {
             recipeName = n;
             color = c;
-            input = i;
+            ingredientList = new List<Sprite>();
+            foreach(Ingredients_sObj ingred in i)
+            {
+                ingredientList.Add(ingred.Image);
+            }
         }
     }
 

@@ -33,7 +33,6 @@ public class SaveFile
     //default constructor, default starting game values
     public SaveFile()
     {
-        Debug.Log("Creating a NEW SaveFile");
 
         CreationTime = Time.time;
 
@@ -44,7 +43,8 @@ public class SaveFile
         _devCrafting.Recipe recipe = new _devCrafting.Recipe(
             "Baby's First Recipe",
             Color.white,
-            new List<Ingredients_sObj>());
+            new List<Ingredients_sObj>()
+            );
 
         AddRecipe(recipe);
         #endregion
@@ -81,7 +81,6 @@ public class SaveFile
     /// </summary>
     public void AddRecipe(_devCrafting.Recipe newRecipe)
     {
-        Debug.Log("new recipe");
         //counting backwards for posterity
         for (int i = recentRecipes.Length - 1; i >= 0; i--)
         {
