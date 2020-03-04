@@ -10,8 +10,8 @@ public class ShopSlot : MonoBehaviour
 {
     [Header("Required")]
     //TODO reference whole UI, add button reference to that UI, fill button here
-    [SerializeField] private Text title, price;
-    [SerializeField] private Image itemImage;
+    [SerializeField] private Text title = null, price = null;
+    [SerializeField] private Image itemImage = null;
 
     [Header("Settings")]
     [SerializeField] private int _sellFoundation = 10;
@@ -26,7 +26,7 @@ public class ShopSlot : MonoBehaviour
     private Ingredients_sObj selfIngredient; 
     public Ingredients_sObj Ingredient { get { return selfIngredient; } }
 
-    [SerializeField] private ShopFunctionController _shopController;
+    [SerializeField] private ShopFunctionController _shopController = null;
 
     //TODO see ShopUI script, can't pass current game object (panel/button/slot UI group that this script is attached to) into ShopUI current selection script
     public void OnClick()

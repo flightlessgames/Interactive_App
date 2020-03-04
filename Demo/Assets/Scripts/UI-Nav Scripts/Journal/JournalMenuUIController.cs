@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class JournalMenuUIController : MonoBehaviour
 {
+
+    [SerializeField] private PotionHistoryController _historyController = null;
     private void OnEnable()
     {
         StateController.StateChanged += OnStateChanged;
@@ -15,6 +17,8 @@ public class JournalMenuUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
+        _historyController.UpdateHistories();
+
         JournalState enumState = (JournalState)state;
         switch (enumState)
         {

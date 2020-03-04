@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ShopFunctionController : MonoBehaviour
 {
-    [SerializeField] private List<ShopSlot> _purchaseSlots;
+    [SerializeField] private List<ShopSlot> _purchaseSlots = new List<ShopSlot>();
     [SerializeField] Text _feedbackText = null;
 
     private List<Ingredients_sObj> _rareIngredients = new List<Ingredients_sObj>();

@@ -1,21 +1,39 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(VerticalLayoutGroup))]
+[RequireComponent(typeof(HorizontalOrVerticalLayoutGroup))]
 public class PotionHistoryController : MonoBehaviour
 {
-    private VerticalLayoutGroup _verticalGroup = null;
+    private HorizontalOrVerticalLayoutGroup _layoutGroup = null;
 
     [SerializeField] private PotionHistorySlot _slotPrefab = null;
     [SerializeField] private List<PotionHistorySlot> _histories = new List<PotionHistorySlot>();
-    
+
+    [SerializeField] private bool _needsAdjustment = false;
 
     private void Awake()
     {
-        _verticalGroup = GetComponent<VerticalLayoutGroup>();
+        _layoutGroup = GetComponent<HorizontalOrVerticalLayoutGroup>();
         StartCoroutine(FlickerLayoutGroup());
+        CreateHistorySlots();
+        AdjustSize();
+    }
+
+    private void AdjustSize()
+    {
+        if (_needsAdjustment)
+        {
+            int width = 0;
+            int number_of_children = GetComponentsInChildren<PotionHistorySlot>().Length;
+
+            //420 = 400 of width and 20 of gap
+            width = 420 * number_of_children;
+            GetComponent<RectTransform>().sizeDelta = new Vector2(width , 0);
+            Debug.Log("width " + width + ", number of children " + number_of_children);
+        }
     }
 
     private void CreateHistorySlots()
@@ -71,10 +89,10 @@ public class PotionHistoryController : MonoBehaviour
 
     IEnumerator FlickerLayoutGroup()
     {
-        _verticalGroup.enabled = true;
+        _layoutGroup.enabled = true;
 
         yield return new WaitForEndOfFrame();
 
-        _verticalGroup.enabled = false;
+        _layoutGroup.enabled = false;
     }
 }

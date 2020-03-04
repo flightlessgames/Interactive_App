@@ -12,6 +12,7 @@ public class displayIngredient : MonoBehaviour
     [Header("Optional")]
     [Tooltip("For Hotbar Use Primarily")]
     [SerializeField] private Text _qtyText = null;
+    [SerializeField] private Text _nameText = null;
 
     private Image _myImage = null;    
 
@@ -34,20 +35,20 @@ public class displayIngredient : MonoBehaviour
     private void UpdateDisplaySprite()
     {
         _myImage.sprite = _ingredientData.Image;
-        AdjustQuanttiy();
+        AdjustText();
     }
 
-    public void AdjustQuanttiy()
+    public void AdjustText()
     {
         //do NOT display non-active ingredient numbers, if 0 ingredient should be dynamically removed, if -1 it is infinite and should not display
         if (_ingredientData.Quantity > 0)
         {
             //if qtyText exists, we will display, but Text is optional so check for null first
-            if (_qtyText != null)
-            {
-                _qtyText.text = _ingredientData.Quantity.ToString();
-            }
+            _qtyText?.text.Equals(_ingredientData.Quantity.ToString());
         }
+
+        //if nameText exists, we will display, but it is optional
+        _nameText?.text.Equals(_ingredientData.Name);
 
     }
 }

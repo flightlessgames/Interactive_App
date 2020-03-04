@@ -6,41 +6,25 @@ using UnityEditor;
 
 public class PageDisplay : MonoBehaviour
 {
-    [SerializeField] private Ingredients_sObj _ingredient;
+    [SerializeField] private Ingredients_sObj _ingredient = null;
 
-    [SerializeField] private Text pageTitle;
-    [SerializeField] private Text pageDescription;
-    [SerializeField] private Image pageIcon;
+    [SerializeField] private Text _ingredientName = null;
+    [SerializeField] private Text _ingredientDescription = null;
+    [SerializeField] private Image _ingredientImage = null;
 
-    [SerializeField] private List<Ingredients_sObj> _defaults;
-    [SerializeField] private Shop _ShopList;
-    private List<Ingredients_sObj> _allIngredients = new List<Ingredients_sObj>();
-
-    private void Awake()
+    public void SetIngredient (Ingredients_sObj inputIngredient)
     {
-        _allIngredients.AddRange(_defaults);
-        _allIngredients.AddRange(_ShopList.Inventory);
-        _ingredient = _allIngredients[0];
-    }
+        _ingredient = inputIngredient;
 
-    private void Start()
-    {
+        Debug.Log("new ingredient: " + _ingredient.Name);
         Display();
-    }
-
-    public void setPage (int index)
-    {
-        _ingredient = _allIngredients[index];
-        Debug.Log(_ingredient.Name);
-        Display();
-
     }
 
     void Display()
     {
-        pageTitle.text = _ingredient.Name;
-        pageDescription.text = _ingredient.Description;
-        pageIcon.sprite = _ingredient.Image;
+        _ingredientName.text = _ingredient.Name;
+        _ingredientDescription.text = _ingredient.Description;
+        _ingredientImage.sprite = _ingredient.Image;
     }
 
 

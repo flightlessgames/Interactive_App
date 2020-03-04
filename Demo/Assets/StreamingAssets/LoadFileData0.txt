@@ -1,7 +1,93 @@
 {
     "CreationTime": 1.5295079946517945,
-    "RecentSaveTime": 9.608341217041016,
+    "RecentSaveTime": 12.458047866821289,
     "recentRecipes": [
+        {
+            "recipeName": "Nightmares",
+            "color": {
+                "r": 0.3499999940395355,
+                "g": 0.5,
+                "b": 0.6499999761581421,
+                "a": 1.0
+            },
+            "spriteList": [
+                {
+                    "instanceID": 13164
+                },
+                {
+                    "instanceID": 13164
+                },
+                {
+                    "instanceID": 13164
+                },
+                {
+                    "instanceID": 13164
+                },
+                {
+                    "instanceID": 13456
+                }
+            ],
+            "ingredientList": [
+                {
+                    "instanceID": 13734
+                },
+                {
+                    "instanceID": 13734
+                },
+                {
+                    "instanceID": 13734
+                },
+                {
+                    "instanceID": 13734
+                },
+                {
+                    "instanceID": 13764
+                }
+            ]
+        },
+        {
+            "recipeName": "Nightmares",
+            "color": {
+                "r": 0.3499999940395355,
+                "g": 0.5,
+                "b": 0.6499999761581421,
+                "a": 1.0
+            },
+            "spriteList": [
+                {
+                    "instanceID": 13164
+                },
+                {
+                    "instanceID": 13456
+                },
+                {
+                    "instanceID": 13164
+                },
+                {
+                    "instanceID": 13164
+                },
+                {
+                    "instanceID": 13164
+                }
+            ],
+            "ingredientList": [
+                {
+                    "instanceID": 13734
+                },
+                {
+                    "instanceID": 13764
+                },
+                {
+                    "instanceID": 13734
+                },
+                {
+                    "instanceID": 13734
+                },
+                {
+                    "instanceID": 13734
+                }
+            ]
+        },
         {
             "recipeName": "Nightmares",
             "color": {
@@ -29,19 +115,19 @@
             ],
             "ingredientList": [
                 {
-                    "instanceID": 11948
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 }
             ]
         },
@@ -72,19 +158,19 @@
             ],
             "ingredientList": [
                 {
-                    "instanceID": 11948
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 },
                 {
-                    "instanceID": 12290
+                    "instanceID": 0
                 }
             ]
         },
@@ -111,92 +197,6 @@
                 },
                 {
                     "instanceID": 12562
-                }
-            ],
-            "ingredientList": [
-                {
-                    "instanceID": 11948
-                },
-                {
-                    "instanceID": 12290
-                },
-                {
-                    "instanceID": 12290
-                },
-                {
-                    "instanceID": 12290
-                },
-                {
-                    "instanceID": 12290
-                }
-            ]
-        },
-        {
-            "recipeName": "Nightmares",
-            "color": {
-                "r": 0.25,
-                "g": 0.5,
-                "b": 0.75,
-                "a": 1.0
-            },
-            "spriteList": [
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
-                }
-            ],
-            "ingredientList": [
-                {
-                    "instanceID": 0
-                },
-                {
-                    "instanceID": 0
-                },
-                {
-                    "instanceID": 0
-                },
-                {
-                    "instanceID": 0
-                },
-                {
-                    "instanceID": 0
-                }
-            ]
-        },
-        {
-            "recipeName": "Nightmares",
-            "color": {
-                "r": 0.25,
-                "g": 0.5,
-                "b": 0.75,
-                "a": 1.0
-            },
-            "spriteList": [
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
-                },
-                {
-                    "instanceID": 12622
                 }
             ],
             "ingredientList": [
@@ -278,5 +278,5 @@
         -2,
         -2
     ],
-    "gold": 125
+    "gold": 135
 }

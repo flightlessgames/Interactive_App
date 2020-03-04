@@ -24,7 +24,7 @@ public class PotionHistorySlot : MonoBehaviour
         _title.text = _recipe.recipeName;
         _potionColor.color = _recipe.color;
 
-        if (_recipe.ingredientList == null)
+        if (_displays.Count == 0)
             return;
 
         Vector3 score = Vector3.zero;
@@ -38,6 +38,7 @@ public class PotionHistorySlot : MonoBehaviour
             score += _recipe.ingredientList[i].Values;
         }
 
-        _description.text = score.ToString();
+        //nullcheck ?? operator
+        _description.text?.Equals(score.ToString());
     }
 }
