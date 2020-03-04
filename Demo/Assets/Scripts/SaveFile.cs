@@ -13,7 +13,7 @@ public class SaveFile
     /// <summary>
     /// list of previous specific potions crafted, up to a limit for Achievement-History Page
     /// </summary>
-    public _devCrafting.Recipe[] recentRecipes;
+    public RecipeList[] recentRecipes;
 
     /// <summary>
     /// array of all 58 unlockable ingredients
@@ -38,7 +38,12 @@ public class SaveFile
 
         #region Recipe[]
         //new empty list of recipes
-        recentRecipes = new _devCrafting.Recipe[5];
+        recentRecipes = new RecipeList[61];
+        for (int i = 0; i < recentRecipes.Length; i++)
+        {
+            if (recentRecipes[i] == null)
+                recentRecipes[i] = new RecipeList();
+        }
 
         _devCrafting.Recipe recipe = new _devCrafting.Recipe(
             "Baby's First Recipe",
@@ -46,7 +51,7 @@ public class SaveFile
             new List<Ingredients_sObj>()
             );
 
-        AddRecipe(recipe);
+        InputNewRecipe(recipe);
         #endregion
 
         //double utility out of the ingredientsQty:
@@ -72,26 +77,74 @@ public class SaveFile
     }
 
     /// <summary>
-    /// Adds Recipe data as 1st slot, pushing all slots forwards and Popping 5th
+    /// Find the recipe[] assigned to each Ingredient in recipe.ingredientList, then assign recipe to that array
     /// </summary>
-    public void AddRecipe(_devCrafting.Recipe newRecipe)
+    public void InputNewRecipe(_devCrafting.Recipe newRecipe)
     {
-        //counting backwards for posterity
-        for (int i = recentRecipes.Length - 1; i >= 0; i--)
+        //identify each ingedient and check if it's UNIQUE in the recipe
+        
+        //by cycling through j=i, we don't ever compare backwards, so if [0] == [1], we skip 0, but then we never check if [1] == [0] and use 1, once, for uniqueness
+        for (int i=0; i < newRecipe.ingredientList.Count; i++)
         {
-            //move each slot to overwrite next slot in list
-            if (i != recentRecipes.Length-1)
+            bool unique = true;
+
+            //starting with ingredient i, and every ingredient AFTER i
+            for(int j=i; j < newRecipe.ingredientList.Count; j++)
             {
-                //eg, starting with [3], [4] = [3], then [2], [3] = [2], so on...
-                recentRecipes[i + 1] = recentRecipes[i];
+                //if i == j, we're comparing ingredient to itself, skip
+                //(guarantee on initialized j=i, but unsafe to declare j = i + 1, due to arrayLimit / bounds)
+                if (i == j) continue;
+
+                //if ingredient i is equals to ingredient j, then the ingredient is known to be Not-Unique
+                if(newRecipe.ingredientList[i] == newRecipe.ingredientList[j])
+                {
+                    unique = false;
+                    break;
+                }
             }
 
-            //ignore last (i == [4]) as it is overwritten by [3]
-
-            //set first recipe to new recipe
-            if (i == 0)
+            //if we never found an ingredient[i] == ingredient[j], this ingredient never repeated in our recipe
+            if (unique)
             {
-                recentRecipes[0] = newRecipe;
+                //find/assign the ingredient's recentRecipes[] in the recentRecipes List<>, and AddRecipeToArray
+
+                for (int j = 0; j < fileUtility.IngredList.Count; j++)
+                {
+                    //compare to FileUtility.IngredientList, the definitive list of all ingredients, to determine position in recentRecipes List<>
+                    if (newRecipe.ingredientList[i] == fileUtility.IngredList[j])
+                        recentRecipes[j].AddRecipeToArray(newRecipe);
+                }
+            }
+        }
+    }
+
+    [Serializable]
+    public class RecipeList
+    {
+        public _devCrafting.Recipe[] recipes = new _devCrafting.Recipe[5];
+
+        /// <summary>
+        /// Assigns newRecipe to first slot in recipe[], moves all other recipes down (deleting 5th)
+        /// </summary>
+        public void AddRecipeToArray(_devCrafting.Recipe newRecipe)
+        {
+            //counting backwards for convenience
+            for (int i = recipes.Length - 1; i >= 0; i--)
+            {
+                //move each slot to overwrite next slot in list
+                if (i != recipes.Length - 1)
+                {
+                    //eg, starting with [3], [4] = [3], then [2], [3] = [2], so on...
+                    recipes[i + 1] = recipes[i];
+                }
+
+                //ignore last (i == [4]) as it is overwritten by [3]
+
+                //set first recipe to new recipe
+                if (i == 0)
+                {
+                    recipes[0] = newRecipe;
+                }
             }
         }
     }

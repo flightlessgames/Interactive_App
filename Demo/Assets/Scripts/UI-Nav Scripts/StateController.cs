@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class StateController: MonoBehaviour
 {
@@ -10,15 +12,24 @@ public class StateController: MonoBehaviour
     public int State { get; private set; } = 0;
     public static event Action<int> StateChanged = delegate { };
 
-    [SerializeField] private Shop shop = null;
+    [SerializeField] private Shop _shop = null;
+    [SerializeField] private List<Ingredients_sObj> _defaultIngred = new List<Ingredients_sObj>();
     //[SerializeField] private Text _mobileDebug = null;
 
     private void Awake()
     {
-        if (fileUtility._shop == null)
+        if (fileUtility.IngredList == null)
         {
-            fileUtility._shop = shop;
-            //fileUtility._mobileDebug = _mobileDebug;
+            List<Ingredients_sObj> allIngred = new List<Ingredients_sObj>();
+            allIngred.AddRange(_defaultIngred);
+            allIngred.AddRange(_shop.Inventory);
+
+            fileUtility.IngredList = allIngred;
+        }
+
+        if(fileUtility.Shop == null)
+        {
+            fileUtility.Shop = _shop;
         }
     }
 

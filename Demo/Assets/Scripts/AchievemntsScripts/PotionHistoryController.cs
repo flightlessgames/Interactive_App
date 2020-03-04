@@ -9,39 +9,119 @@ public class PotionHistoryController : MonoBehaviour
 {
     private HorizontalOrVerticalLayoutGroup _layoutGroup = null;
 
+    [Header("Required")]
     [SerializeField] private PotionHistorySlot _slotPrefab = null;
+    
+    [Header("Optional Settings")]
     [SerializeField] private List<PotionHistorySlot> _histories = new List<PotionHistorySlot>();
-
     [SerializeField] private bool _needsAdjustment = false;
+    [SerializeField] private Ingredients_sObj _ingredientHistory = null;
+
+    private int _ingredientIndex = 0;
 
     private void Awake()
     {
         _layoutGroup = GetComponent<HorizontalOrVerticalLayoutGroup>();
-        StartCoroutine(FlickerLayoutGroup());
+        
+    }
+
+    private void Start()
+    {
+        SetIngredientHistory(_ingredientHistory);
+    }
+
+    public void SetIngredientHistory(Ingredients_sObj ingred)
+    {
+        _ingredientHistory = ingred;
         CreateHistorySlots();
-        AdjustSize();
+        UpdateHistories();
+    }
+
+    public void UpdateHistories()
+    {
+        //disable all slots to return to pool
+        foreach (PotionHistorySlot slot in _histories)
+        {
+            slot.gameObject.SetActive(false);
+        }
+
+        //if we do NOT have an ingredient to check
+        if (!_ingredientHistory)
+        {
+            //save off all recipes found in recentRecipe List<>
+
+            List<_devCrafting.Recipe> allRecipes = new List<_devCrafting.Recipe>();
+
+            foreach (SaveFile.RecipeList recipeArray in fileUtility.SaveObject.recentRecipes)
+            {
+                foreach (_devCrafting.Recipe recipe in recipeArray.recipes)
+                {
+                    foreach (_devCrafting.Recipe savedRecipe in allRecipes)
+                    {
+                        //do NOT display recipes with the same data
+                        if (recipe == savedRecipe) { continue; }
+                        allRecipes.Add(recipe);
+                    }
+                }
+            }
+
+            foreach (_devCrafting.Recipe recipe in allRecipes)
+            {
+                if(recipe != null)
+                    AssignRecipeToSlots(recipe);
+            }
+        }
+        else
+        {
+            for(int i = 0; i < fileUtility.IngredList.Count; i++)
+            {
+                if (_ingredientHistory == fileUtility.IngredList[i])
+                    _ingredientIndex = i;
+            }
+
+            //if we DO have an ingreidnet, only display recipes from that ingredient
+            foreach (_devCrafting.Recipe recipe in fileUtility.SaveObject.recentRecipes[_ingredientIndex].recipes)
+            {
+                if (recipe != null)
+                {
+                    AssignRecipeToSlots(recipe);
+                }
+            }
+        }
+
+        StartCoroutine(FlickerLayoutGroup());
     }
 
     private void AdjustSize()
     {
-        if (_needsAdjustment)
-        {
-            int width = 0;
-            int number_of_children = GetComponentsInChildren<PotionHistorySlot>().Length;
+        int width = 0;
+        int number_of_children = GetComponentsInChildren<PotionHistorySlot>().Length;
 
-            //420 = 400 of width and 20 of gap
-            width = 420 * number_of_children;
-            GetComponent<RectTransform>().sizeDelta = new Vector2(width , 0);
-            Debug.Log("width " + width + ", number of children " + number_of_children);
-        }
+        //420 = 400 of width and 20 of gap
+        width = 420 * number_of_children;
+        GetComponent<RectTransform>().sizeDelta = new Vector2(width, 0);
     }
 
     private void CreateHistorySlots()
     {
         int slotsToHave = 0;
-        foreach(_devCrafting.Recipe recipe in fileUtility.SaveObject.recentRecipes)
+
+        //if we do NOT have a Ingredient to Check, create slots for ALL Ingredients
+        if (!_ingredientHistory)
         {
-            if(recipe != null) { slotsToHave++; }
+            foreach (SaveFile.RecipeList recipeArray in fileUtility.SaveObject.recentRecipes)
+            {
+                foreach (_devCrafting.Recipe recipe in recipeArray.recipes)
+                {
+                    if (recipe != null) { slotsToHave++; }
+                }
+            }
+        }
+        else
+        {
+            //if we DO have an ingredient to Check, only create slots for that Ingredient
+            foreach (_devCrafting.Recipe recipe in fileUtility.SaveObject.recentRecipes[_ingredientIndex].recipes)
+                if(recipe!= null) { slotsToHave++; }
         }
 
         while (_histories.Count < slotsToHave)
@@ -51,39 +131,29 @@ public class PotionHistoryController : MonoBehaviour
         }
     }
 
-    public void UpdateHistories()
+    private void AssignRecipeToSlots(_devCrafting.Recipe recipe)
     {
-        //disable all slots to return to pool
-        foreach(PotionHistorySlot slot in _histories)
+        //if recipe is a REAL recipe
+        if (recipe != null)
         {
-            slot.gameObject.SetActive(false);
-        }
-
-        //for each recipe in our save file (all recent recipes)
-        foreach(_devCrafting.Recipe recipe in fileUtility.SaveObject.recentRecipes)
-        {
-            //if recipe is a REAL recipe
-            if(recipe != null)
+            //find a slot in the pool
+            foreach (PotionHistorySlot slot in _histories)
             {
-                //find a slot in the pool
-                foreach(PotionHistorySlot slot in _histories)
+                //if that slot is NOT active (not re-enabled)
+                if (!slot.isActiveAndEnabled)
                 {
-                    //if that slot is NOT active (not re-enabled)
-                    if (!slot.isActiveAndEnabled)
-                    {
-                        //set slot active and change its values to the REAL recipe
-                        slot.gameObject.SetActive(true);
-                        slot.SetRecipe(recipe);
+                    //set slot active and change its values to the REAL recipe
+                    slot.gameObject.SetActive(true);
+                    slot.SetRecipe(recipe);
 
-                        //do not grab more than one slot
-                        break;
-                    }
+                    //do not grab more than one slot
+                    break;
                 }
             }
-            else
-            {
-                Debug.Log("found NULL recipe");
-            }
+        }
+        else
+        {
+            //Debug.Log("found NULL recipe");
         }
     }
 

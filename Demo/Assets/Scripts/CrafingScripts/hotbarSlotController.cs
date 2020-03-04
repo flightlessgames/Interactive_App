@@ -55,10 +55,7 @@ public class hotbarSlotController : MonoBehaviour, IDragHandler, IEndDragHandler
 
         //when we start draging, if there's no ingredient we add ours
         if (_craftingController.CurrIngredient != _display.IngredientData)
-        {
-            Debug.Log("OnDrag() {CurrIngredient}");
             _craftingController.HoldIngredient(_display.IngredientData);
-        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

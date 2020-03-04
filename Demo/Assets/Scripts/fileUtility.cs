@@ -12,10 +12,11 @@ public static class fileUtility
     public static SaveFile SaveObject = new SaveFile();
     public static SaveFile _searchObject = new SaveFile();
 
-    private static bool _isInitialized = false;
-    public static Shop _shop = null;
-    //public static Text _mobileDebug = null;
+    public static Shop Shop = null;
+    public static List<Ingredients_sObj>IngredList = null;
 
+    //public static Text _mobileDebug = null;
+    private static bool _isInitialized = false;
     /// <summary>
     /// Sets settings to ensure we're reading the right JSON.txt save file
     /// </summary>
@@ -36,7 +37,7 @@ public static class fileUtility
             SAVE_LOCATION = Application.persistentDataPath + StateController.LoadFilePosition + ".txt";
             File.WriteAllBytes(SAVE_LOCATION, reader.bytes);
 
-            //not using CreateAPKPath because of Pointers/Reference
+            //not using CreateAPKPath() because of Pointers/Reference
             string potionTemp = Path.Combine(Application.streamingAssetsPath, "Potions.csv");
             // Android only use WWW to read file
             WWW potionReader = new WWW(potionTemp);   //www is obsolete, UnityWebReader is the same functionality I hope
@@ -60,14 +61,15 @@ public static class fileUtility
         Load();
     }
 
-    //code adapted from CodeMonkey on YouTube: https://www.youtube.com/watch?time_continue=44&v=6uMFEM-napE&feature=emb_logo
-    //mostly standard utility code, but I needed a reference to figure it out
     /// <summary>
     /// Reads JSON.txt from assets and Constructs a SaveFile Object
     /// </summary>
     public static void Load()
     {
         if (!_isInitialized) { InitializeLoadSettings(); }
+
+        //Load() code adapted from CodeMonkey on YouTube: https://www.youtube.com/watch?time_continue=44&v=6uMFEM-napE&feature=emb_logo
+        //mostly standard IO code, but I needed a reference to figure it out
 
         //SAVE_LOCATIOn is determined by the StateController.LoadFilePosition, which picks from our 4 predetermined locations
         if (!File.Exists(SAVE_LOCATION))
@@ -80,13 +82,13 @@ public static class fileUtility
         JsonUtility.FromJsonOverwrite(saveString, SaveObject);
         
         //recall data from Ingredient Quantity
-        for (int i = 0; i < _shop.Inventory.Count; i++)
+        for (int i = 0; i < Shop.Inventory.Count; i++)
         {
             //if our saved quantity is DIFFERENT than the current reported quantity
-            if(SaveObject.ingredientsQuantity[i] != _shop.Inventory[i].Quantity)
+            if(SaveObject.ingredientsQuantity[i] != Shop.Inventory[i].Quantity)
             {
                 //declare new setting
-                _shop.Inventory[i].SetQuantity(SaveObject.ingredientsQuantity[i]);
+                Shop.Inventory[i].SetQuantity(SaveObject.ingredientsQuantity[i]);
             }
             
             //while still using loaded recall data we can unlock the jounral pages for ingredients with quantities >-2 (-1 is unlocked infifnite, and 0+ is unlocked finite)
@@ -114,9 +116,9 @@ public static class fileUtility
             SaveObject.RecentSaveTime = Time.time;
 
             //save each ingredient's qty to the SaveObject's int[]
-            for (int i = 0; i < _shop.Inventory.Count; i++)
+            for (int i = 0; i < Shop.Inventory.Count; i++)
             {
-                SaveObject.ingredientsQuantity[i] = _shop.Inventory[i].Quantity;
+                SaveObject.ingredientsQuantity[i] = Shop.Inventory[i].Quantity;
             }
         }
         //if Does Not Exist, then save a new SaveFile object

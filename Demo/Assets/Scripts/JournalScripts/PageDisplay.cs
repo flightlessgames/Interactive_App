@@ -12,19 +12,22 @@ public class PageDisplay : MonoBehaviour
     [SerializeField] private Text _ingredientDescription = null;
     [SerializeField] private Image _ingredientImage = null;
 
+    [SerializeField] private PotionHistoryController _potionHistory = null;
+
     public void SetIngredient (Ingredients_sObj inputIngredient)
     {
         _ingredient = inputIngredient;
 
-        Debug.Log("new ingredient: " + _ingredient.Name);
         Display();
     }
 
-    void Display()
+    private void Display()
     {
         _ingredientName.text = _ingredient.Name;
         _ingredientDescription.text = _ingredient.Description;
         _ingredientImage.sprite = _ingredient.Image;
+
+        _potionHistory.SetIngredientHistory(_ingredient);
     }
 
 

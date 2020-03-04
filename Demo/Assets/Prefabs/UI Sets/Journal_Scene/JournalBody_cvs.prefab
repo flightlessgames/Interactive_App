@@ -1042,6 +1042,7 @@ MonoBehaviour:
   _histories:
   - {fileID: 7230901115636449615}
   _needsAdjustment: 1
+  _ingredientHistory: {fileID: 0}
 --- !u!1 &7430239781098200516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1209,7 @@ MonoBehaviour:
   _ingredientName: {fileID: 9035792775139026255}
   _ingredientDescription: {fileID: 2085513630674007997}
   _ingredientImage: {fileID: 56446125265004265}
+  _potionHistory: {fileID: 2190394570852313712}
 --- !u!1 &8896193619251107020
 GameObject:
   m_ObjectHideFlags: 0

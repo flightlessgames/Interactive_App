@@ -61,7 +61,7 @@ public class ShopFunctionController : MonoBehaviour
 
     private void RarifyIngredients()
     {
-        foreach(Ingredients_sObj ingred in fileUtility._shop.Inventory)
+        foreach(Ingredients_sObj ingred in fileUtility.Shop.Inventory)
         {
             //rare ingredients should push scores towards the corners, maximum magnitude
             //rare scores are (2,1,-2) or (2,-1,-2) etc

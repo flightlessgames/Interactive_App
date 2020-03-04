@@ -17,7 +17,6 @@ public class MenuOpener_Journal : MonoBehaviour
             {
                 bool isOpen = animator.GetBool("open");
                 animator.SetBool("open", !isOpen);
-                Debug.Log("ITS OPENING");
             }
         }
     }
@@ -31,7 +30,6 @@ public class MenuOpener_Journal : MonoBehaviour
             {
                 bool isOpen = animator.GetBool("moved");
                 animator.SetBool("moved", !isOpen);
-                Debug.Log("ITS OPENING");
 
                 if (isOpen == true)
                 {

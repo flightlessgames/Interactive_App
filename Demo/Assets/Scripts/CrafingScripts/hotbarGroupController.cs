@@ -35,7 +35,7 @@ public class hotbarGroupController : MonoBehaviour
     {
         //set ALL INGREDIENTS to include Defaults as [0][1][2][3] and add ALL shoppableIngredients afterwards [4]...[61]
         _allIngredients.AddRange(_defaultIngredients);
-        _allIngredients.AddRange(fileUtility._shop.Inventory);
+        _allIngredients.AddRange(fileUtility.Shop.Inventory);
 
         CreateSlotPool();
 

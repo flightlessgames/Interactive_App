@@ -9,7 +9,6 @@ public class JournalButtonPress : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log(display.IngredientData.Name + " is my ingredient that I'm changing the Page to Display");
         _pageDisplay.SetIngredient(display.IngredientData);
     }
 

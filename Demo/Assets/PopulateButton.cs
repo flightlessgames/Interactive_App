@@ -16,7 +16,7 @@ public class PopulateButton : MonoBehaviour
     {
         //waiting for StateController to run function in Awake()
         allIngredients.AddRange(defaultIngredients);
-        allIngredients.AddRange(fileUtility._shop.Inventory);
+        allIngredients.AddRange(fileUtility.Shop.Inventory);
 
         CreateButtons();
     }

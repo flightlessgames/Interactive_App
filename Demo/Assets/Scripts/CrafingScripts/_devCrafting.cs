@@ -32,7 +32,6 @@ public class _devCrafting : MonoBehaviour
         //public for JsomUtility... not happy with this
         public string recipeName;
         public Color color;
-        public List<Sprite> spriteList;
         public List<Ingredients_sObj> ingredientList;
 
         //from _decraftingInput to serializable information
@@ -41,13 +40,6 @@ public class _devCrafting : MonoBehaviour
             recipeName = n;
             color = c;
             ingredientList = i;
-
-            spriteList = new List<Sprite>();
-            foreach(Ingredients_sObj ingred in i)
-            {
-                spriteList.Add(ingred.Image);
-            }
-
         }
     }
 
@@ -161,7 +153,7 @@ public class _devCrafting : MonoBehaviour
 
             //for SaveFile and Achievements Page, updates the known recipes to this
             Recipe validRecipe = new Recipe(readPotion.Name, spriteColor, _inputIngredients);
-            fileUtility.SaveObject.AddRecipe(validRecipe);
+            fileUtility.SaveObject.InputNewRecipe(validRecipe);
         }
 
         _stateController?.ChangeState((int)CraftingState.PotionResult);
