@@ -15,5 +15,6 @@ MonoBehaviour:
   _values: {x: -1, y: 1, z: 0}
   _name: Vervain
   _image: {fileID: 21300000, guid: f31976efc86f9634993210139c418896, type: 3}
-  _description: '...'
+  _description: '"You this necklace? Yeah my boyfriend gave it to me. It''s supposed
+    to protect me or whatever"'
   _quantity: -1

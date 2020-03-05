@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 0, y: 2, z: -1}
   _name: Marigold
   _image: {fileID: 21300000, guid: 61f2330fe657a054fb2da7c94133ae59, type: 3}
-  _description: '...'
+  _description: Used in victorian etiquette bouquets to symbolize grief.
   _quantity: -2

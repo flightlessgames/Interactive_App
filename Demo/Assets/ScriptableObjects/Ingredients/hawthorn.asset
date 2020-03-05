@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: 1, z: 2}
   _name: Hawthorn
   _image: {fileID: 21300000, guid: c184d9079cd646347b72bc731f846026, type: 3}
-  _description: '...'
+  _description: Used to treat tapeworm and other infections.
   _quantity: -2

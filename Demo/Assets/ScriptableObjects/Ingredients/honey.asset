@@ -15,5 +15,6 @@ MonoBehaviour:
   _values: {x: -2, y: -1, z: 1}
   _name: Honey
   _image: {fileID: 21300000, guid: b959ec8224ccd194d92e0e8f5f6f724a, type: 3}
-  _description: '...'
+  _description: Sweet, viscus food substance made by bees with a variety of different
+    flavor profiles.
   _quantity: -2

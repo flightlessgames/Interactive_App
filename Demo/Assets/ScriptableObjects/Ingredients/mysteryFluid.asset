@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 0, y: -2, z: 1}
   _name: Mystery Fluid
   _image: {fileID: 21300000, guid: 80bf061c94999cd4ca5c70eac579e8ac, type: 3}
-  _description: '...'
+  _description: Who knows? Just use it.
   _quantity: -2

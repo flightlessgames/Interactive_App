@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 1, y: 0, z: -1}
   _name: Spoiled Millk
   _image: {fileID: 21300000, guid: e960700463611d84da55cc1688998432, type: 3}
-  _description: '...'
+  _description: It's only been left out for... 3 weeks?
   _quantity: -1

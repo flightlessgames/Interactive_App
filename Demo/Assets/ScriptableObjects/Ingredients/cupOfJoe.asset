@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 2, y: -2, z: 0}
   _name: Cup of Joe
   _image: {fileID: 21300000, guid: 62c52d38e4c60404cba54218e5df4422, type: 3}
-  _description: '...'
+  _description: We really miss Joe...
   _quantity: -2

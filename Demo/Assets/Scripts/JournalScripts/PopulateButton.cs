@@ -25,6 +25,9 @@ public class PopulateButton : MonoBehaviour
     {
         foreach(Ingredients_sObj ing in allIngredients)
         {
+            if (ing.Quantity == -2)
+                continue;
+
             //prefab of button, with known DisplayIngredient data and JournalButton script
             GameObject prefab = Instantiate(buttonPrefab, transform);
 

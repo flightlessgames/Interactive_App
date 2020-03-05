@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: -2, z: 1}
   _name: Lost Big Toe
   _image: {fileID: 21300000, guid: 4ff3855c5530c7247a39877ed9bfaaba, type: 3}
-  _description: '...'
+  _description: '"Where is my toe?" It''s right here. We have it. '
   _quantity: -2

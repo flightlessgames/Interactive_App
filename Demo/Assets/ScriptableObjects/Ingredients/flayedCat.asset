@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 1, y: -2, z: 2}
   _name: Flayed Cat
   _image: {fileID: 21300000, guid: 925422e766c555946a4de4dabff68a88, type: 3}
-  _description: '...'
+  _description: Stop this! Cruelty to animals is a sign of sociopathy.
   _quantity: -2

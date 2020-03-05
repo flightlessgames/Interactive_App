@@ -15,5 +15,6 @@ MonoBehaviour:
   _values: {x: 0, y: -2, z: 2}
   _name: Bronado Energy Drink
   _image: {fileID: 21300000, guid: 02d8385f4e864094a88783d8e9f05728, type: 3}
-  _description: '...'
+  _description: Prohibited for sale in 13 countries, this will keep you on the edge
+    of cardiac arrest.
   _quantity: -2

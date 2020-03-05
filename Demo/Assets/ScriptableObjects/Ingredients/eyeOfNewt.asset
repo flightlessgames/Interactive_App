@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -2, y: 1, z: 0}
   _name: Eye of Newt
   _image: {fileID: 21300000, guid: a38424da3b2ff4c4589c3299febb45ab, type: 3}
-  _description: '...'
+  _description: An actual eye. Not mustard seed.
   _quantity: -2

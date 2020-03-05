@@ -15,5 +15,7 @@ MonoBehaviour:
   _values: {x: 2, y: 2, z: 2}
   _name: '"CBD" Oil'
   _image: {fileID: 21300000, guid: cd8e06e978bfbf84084258adf0365595, type: 3}
-  _description: '...'
+  _description: 'Oh, you know...
+
+    ;)'
   _quantity: -2

@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 2, y: 0, z: -2}
   _name: Mugwort
   _image: {fileID: 21300000, guid: 5c2ea7bfac741fb47b84ac454616792c, type: 3}
-  _description: '...'
+  _description: An aromatic plant with the ugliest sounding name.
   _quantity: -2

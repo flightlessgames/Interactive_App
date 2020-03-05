@@ -15,5 +15,6 @@ MonoBehaviour:
   _values: {x: 1, y: -1, z: 0}
   _name: Aloe
   _image: {fileID: 21300000, guid: 9247f5a13b60edf448f743fafbeed250, type: 3}
-  _description: '...'
+  _description: Sweet, viscus food substance made by bees with a variety of different
+    flavor profiles.
   _quantity: -2

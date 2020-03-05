@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 1, y: -1, z: 2}
   _name: Rocky Mountain Oysters
   _image: {fileID: 21300000, guid: 93acb3cf8ea560c4fafc4bd647826d28, type: 3}
-  _description: '...'
+  _description: '"Is it supposed to be this salty?"'
   _quantity: -2

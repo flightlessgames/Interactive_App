@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: 2, z: 0}
   _name: Unsalted Butter
   _image: {fileID: 21300000, guid: f8e3c38c0a410014d8b90c389cd82c17, type: 3}
-  _description: '...'
+  _description: Unsalted butter is literally horrible to eat.
   _quantity: -2

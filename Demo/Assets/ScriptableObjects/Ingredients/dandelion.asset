@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 2, y: -1, z: 0}
   _name: Dandelion
   _image: {fileID: 21300000, guid: 5f197b849d84ea3449351888dd8d20c8, type: 3}
-  _description: '...'
+  _description: A common weed with mild magical properties. Make a wish!
   _quantity: -2

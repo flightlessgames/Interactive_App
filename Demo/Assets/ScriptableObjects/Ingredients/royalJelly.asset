@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 0, y: 2, z: 1}
   _name: Royal Jelly
   _image: {fileID: 21300000, guid: 59e9bc38699bba64599a004a063aba5d, type: 3}
-  _description: '...'
+  _description: The substance used to feed the queen bees!
   _quantity: -2

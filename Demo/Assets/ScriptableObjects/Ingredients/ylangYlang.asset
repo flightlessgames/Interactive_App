@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: -2, z: 0}
   _name: Ylang Ylang
   _image: {fileID: 21300000, guid: 1b7a448e7df3c6f408abbdc0fb7e7289, type: 3}
-  _description: '...'
+  _description: However you pronounced this in your head, it's probably wrong.
   _quantity: -2

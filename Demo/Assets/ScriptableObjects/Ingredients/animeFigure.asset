@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: 1, y: -2, z: -1}
   _name: Anime Figure
   _image: {fileID: 21300000, guid: 5442d50e5492e1f419dab47e1ee46dc9, type: 3}
-  _description: '...'
+  _description: Probably a figurine of a nice, respectable young lady.
   _quantity: -2

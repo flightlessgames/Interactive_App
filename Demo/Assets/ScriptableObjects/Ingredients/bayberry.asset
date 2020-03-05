@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -2, y: -1, z: 0}
   _name: Bayberry
   _image: {fileID: 21300000, guid: 15f965bcc166f9540849864bb6835557, type: 3}
-  _description: '...'
+  _description: Semi-evergreen dense shrub with leathery leaves and small waxy fruit.
   _quantity: -2

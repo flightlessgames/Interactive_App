@@ -15,5 +15,6 @@ MonoBehaviour:
   _values: {x: 2, y: 0, z: 1}
   _name: Chamomile
   _image: {fileID: 21300000, guid: 11cae1df61bc9be498c610942f3dad52, type: 3}
-  _description: '...'
+  _description: A daisy-like plant with used for many herbal infusions and in traditional
+    medicine.
   _quantity: -2

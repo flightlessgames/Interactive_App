@@ -15,5 +15,5 @@ MonoBehaviour:
   _values: {x: -1, y: 2, z: 1}
   _name: Dragon's Blood
   _image: {fileID: 21300000, guid: efede4be92cd8e748af54714366ea403, type: 3}
-  _description: '...'
+  _description: Not actually blood. Not actually from a dragon.
   _quantity: -2
