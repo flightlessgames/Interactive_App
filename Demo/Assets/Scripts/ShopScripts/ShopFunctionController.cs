@@ -10,6 +10,9 @@ public class ShopFunctionController : MonoBehaviour
     [SerializeField] private List<ShopSlot> _purchaseSlots = new List<ShopSlot>();
     [SerializeField] Text _feedbackText = null;
 
+    [SerializeField] AudioSource _purchaseAudio = null;
+    [SerializeField] AudioSource _cancelAudio = null;
+
     private List<Ingredients_sObj> _rareIngredients = new List<Ingredients_sObj>();
     private List<Ingredients_sObj> _uncomIngredients = new List<Ingredients_sObj>();
     private List<Ingredients_sObj> _commonIngredients = new List<Ingredients_sObj>();
@@ -22,7 +25,6 @@ public class ShopFunctionController : MonoBehaviour
 
     public void RandomizeShop()
     {
-        Debug.Log("Randomizing");
         RarifySlots();
         RarifyIngredients();
 
@@ -33,7 +35,6 @@ public class ShopFunctionController : MonoBehaviour
     {
         if (Time.time % 10 < 0.05)
         {
-            Debug.Log("clearing");
             ClearLockouts();
         }
     }
@@ -158,10 +159,15 @@ public class ShopFunctionController : MonoBehaviour
         if (_recentSlot.Ingredient != null) 
         {
             if (!_recentSlot.CanSell)
+            {
+                _cancelAudio?.Play();
                 return;
+            }
 
             if (fileUtility.SaveObject.gold >= _recentSlot.Ingredient.Cost)
             {
+                _purchaseAudio?.Play();
+
                 _recentSlot.Ingredient.IncreaseQuantity(1);
 
                 fileUtility.SaveObject.gold -= _recentSlot.Ingredient.Cost;
@@ -174,6 +180,8 @@ public class ShopFunctionController : MonoBehaviour
             }
             else
             {
+                _cancelAudio?.Play();
+
                 _feedbackText.text = "Cannot afford a " + _recentSlot.Ingredient.Name + "," +
                     "\nYou have: " + fileUtility.SaveObject.gold + " gold" +
                     "\nYou need: " + _recentSlot.Ingredient.Cost + " gold";

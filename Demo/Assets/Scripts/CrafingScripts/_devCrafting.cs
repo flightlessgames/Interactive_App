@@ -52,6 +52,8 @@ public class _devCrafting : MonoBehaviour
 
     [SerializeField] private List<craftingSlotController> _craftingSlots = new List<craftingSlotController>();
 
+    [SerializeField] AudioSource _cancelNoise = null;
+
     private Vector3 _targetPotion = Vector3.zero;
     private List<Ingredients_sObj> _inputIngredients = new List<Ingredients_sObj>();
     private Animator _anim = null;
@@ -95,7 +97,10 @@ public class _devCrafting : MonoBehaviour
 
             //cannot craft 5 same ingredients. Look into "JUICE" or "CONDENSED" of "ITEM"
             if (countOthers == _inputIngredients.Count - 1)
+            {
+                _cancelNoise?.Play();
                 return;
+            }
         }
 
         ReadCSVFile();

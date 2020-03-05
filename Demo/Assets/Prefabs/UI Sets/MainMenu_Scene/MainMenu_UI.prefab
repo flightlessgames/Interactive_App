@@ -52,6 +52,25 @@ MonoBehaviour:
   _loadDataConfirmPanel: {fileID: 5212257406548971504}
   _confirmText: {fileID: 5212257406579715663}
   _creditsPanel: {fileID: 5212257406638731943}
+--- !u!95 &254495945137772237
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5212257406638731943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc43ec35bba717c4f9203891515d5c76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1210090377449930428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -248,11 +267,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6385737824382351426, guid: 86616a6b3058c9e438b7b7e38b7d592a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86616a6b3058c9e438b7b7e38b7d592a, type: 3}
@@ -847,16 +861,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5212257405807486381}
     m_Modifications:
-    - target: {fileID: 2338008001864510787, guid: bd1ba416cc3ad1a4fa055372b12c3804,
-        type: 3}
-      propertyPath: m_Name
-      value: LoadDataConfirmUI_cnv
-      objectReference: {fileID: 0}
-    - target: {fileID: 2338008001864510787, guid: bd1ba416cc3ad1a4fa055372b12c3804,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2338008001864510783, guid: bd1ba416cc3ad1a4fa055372b12c3804,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -960,6 +964,16 @@ PrefabInstance:
     - target: {fileID: 2338008001864510783, guid: bd1ba416cc3ad1a4fa055372b12c3804,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338008001864510787, guid: bd1ba416cc3ad1a4fa055372b12c3804,
+        type: 3}
+      propertyPath: m_Name
+      value: LoadDataConfirmUI_cnv
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338008001864510787, guid: bd1ba416cc3ad1a4fa055372b12c3804,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2338008001864510785, guid: bd1ba416cc3ad1a4fa055372b12c3804,

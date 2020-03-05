@@ -61,7 +61,13 @@ public class PotionHistoryController : MonoBehaviour
         {
             //if we DO have an ingredient to Check, only create slots for that Ingredient
             foreach (_devCrafting.Recipe recipe in fileUtility.SaveObject.recentRecipes[_ingredientIndex].recipes)
-                if (recipe != null) { slotsToHave++; }
+            {
+                if (recipe == null || recipe.recipeName == "")
+                    continue;
+
+                slotsToHave++;
+
+            }
         }
 
         while (_histories.Count < slotsToHave)
@@ -106,13 +112,10 @@ public class PotionHistoryController : MonoBehaviour
 
                     if (isUnique)
                     {
-                        Debug.Log("new unique recipe");
                         allRecipes.Add(recipe);
                     }
                 }
             }
-
-            Debug.Log("As null, we have " + allRecipes.Count + " unique recipes");
 
             foreach (_devCrafting.Recipe recipe in allRecipes)
             {
@@ -133,7 +136,7 @@ public class PotionHistoryController : MonoBehaviour
             //if we DO have an ingreidnet, only display recipes from that ingredient
             foreach (_devCrafting.Recipe recipe in fileUtility.SaveObject.recentRecipes[_ingredientIndex].recipes)
             {
-                if (recipe != null)
+                if (recipe != null && recipe.recipeName != "" )
                 {
                     AssignRecipeToSlots(recipe);
                 }
@@ -154,8 +157,6 @@ public class PotionHistoryController : MonoBehaviour
                 //set slot active and change its values to the REAL recipe
                 slot.gameObject.SetActive(true);
                 slot.SetRecipe(recipe);
-
-                Debug.Log(recipe.recipeName + " gains a slot");
 
                 //do not grab more than one slot
                 break;
@@ -178,7 +179,6 @@ public class PotionHistoryController : MonoBehaviour
         if (!_needsAdjustment)
             return;
 
-        Debug.Log("Setting Size");
         int width = 0;
         int height = 0;
 
