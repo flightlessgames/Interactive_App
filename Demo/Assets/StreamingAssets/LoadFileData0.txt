@@ -1,58 +1,58 @@
 {
     "CreationTime": 1.1838884353637696,
-    "RecentSaveTime": 16.869068145751954,
+    "RecentSaveTime": 4.836122989654541,
     "recentRecipes": [
         {
             "recipes": [
                 {
                     "recipeName": "Mud",
                     "color": {
-                        "r": 0.3499999940395355,
-                        "g": 0.550000011920929,
+                        "r": 0.44999998807907107,
+                        "g": 0.5,
+                        "b": 0.550000011920929,
+                        "a": 1.0
+                    },
+                    "ingredientList": [
+                        {
+                            "instanceID": 12392
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        }
+                    ]
+                },
+                {
+                    "recipeName": "Mud",
+                    "color": {
+                        "r": 0.4000000059604645,
+                        "g": 0.5,
                         "b": 0.6000000238418579,
                         "a": 1.0
                     },
                     "ingredientList": [
                         {
-                            "instanceID": 13868
+                            "instanceID": 12392
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 12018
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 12018
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 12392
                         },
                         {
-                            "instanceID": 14132
-                        }
-                    ]
-                },
-                {
-                    "recipeName": "Nightmares",
-                    "color": {
-                        "r": 0.30000001192092898,
-                        "g": 0.5,
-                        "b": 0.699999988079071,
-                        "a": 1.0
-                    },
-                    "ingredientList": [
-                        {
-                            "instanceID": 13868
-                        },
-                        {
-                            "instanceID": 13868
-                        },
-                        {
-                            "instanceID": 13868
-                        },
-                        {
-                            "instanceID": 13868
-                        },
-                        {
-                            "instanceID": 14132
+                            "instanceID": 12018
                         }
                     ]
                 },
@@ -66,41 +66,73 @@
                     },
                     "ingredientList": [
                         {
-                            "instanceID": 13868
+                            "instanceID": 12392
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 12018
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 12018
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 12392
                         },
                         {
-                            "instanceID": 14132
+                            "instanceID": 12018
                         }
                     ]
                 },
                 {
-                    "recipeName": "",
+                    "recipeName": "Mud",
                     "color": {
-                        "r": 0.0,
-                        "g": 0.0,
-                        "b": 0.0,
-                        "a": 0.0
+                        "r": 0.44999998807907107,
+                        "g": 0.5,
+                        "b": 0.550000011920929,
+                        "a": 1.0
                     },
-                    "ingredientList": []
+                    "ingredientList": [
+                        {
+                            "instanceID": 12392
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        }
+                    ]
                 },
                 {
-                    "recipeName": "",
+                    "recipeName": "Mud",
                     "color": {
-                        "r": 0.0,
-                        "g": 0.0,
-                        "b": 0.0,
-                        "a": 0.0
+                        "r": 0.44999998807907107,
+                        "g": 0.5,
+                        "b": 0.550000011920929,
+                        "a": 1.0
                     },
-                    "ingredientList": []
+                    "ingredientList": [
+                        {
+                            "instanceID": 12392
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        },
+                        {
+                            "instanceID": 12018
+                        }
+                    ]
                 }
             ]
         },
@@ -116,19 +148,19 @@
                     },
                     "ingredientList": [
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 14132
+                            "instanceID": 0
                         }
                     ]
                 },
@@ -142,19 +174,19 @@
                     },
                     "ingredientList": [
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 14132
+                            "instanceID": 0
                         }
                     ]
                 },
@@ -168,19 +200,19 @@
                     },
                     "ingredientList": [
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 14132
+                            "instanceID": 0
                         }
                     ]
                 },
@@ -218,19 +250,19 @@
                     },
                     "ingredientList": [
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 14132
+                            "instanceID": 0
                         }
                     ]
                 },
@@ -244,19 +276,19 @@
                     },
                     "ingredientList": [
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 13868
+                            "instanceID": 0
                         },
                         {
-                            "instanceID": 14132
+                            "instanceID": 0
                         }
                     ]
                 },
@@ -3485,5 +3517,5 @@
         -2,
         -2
     ],
-    "gold": 125
+    "gold": 155
 }
