@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class AchievementsUIController : MonoBehaviour
 {
     [SerializeField] private GameObject _potionHistoryPanel = null;
-    [SerializeField] private GameObject _unlocksPanel = null;
     [SerializeField] private PotionHistoryController _historyController = null;
 
     private void OnEnable()
@@ -19,17 +18,12 @@ public class AchievementsUIController : MonoBehaviour
 
     private void OnStateChanged(int state)
     {
-        DisablePanels();
         AchievementState enumState = (AchievementState)state;
 
         switch (enumState)
         {
             case AchievementState.PotionHistory:
-                _potionHistoryPanel.SetActive(true);
                 _historyController.UpdateHistories();
-                break;
-            case AchievementState.Unlocks:
-                _unlocksPanel.SetActive(true);
                 break;
             case AchievementState.Return:
                 SceneManager.LoadScene("CraftingTable");
@@ -38,11 +32,5 @@ public class AchievementsUIController : MonoBehaviour
                 Debug.Log("invalid state");
                 break;
         }
-    }
-
-    private void DisablePanels()
-    {
-        _potionHistoryPanel.SetActive(false);
-        _unlocksPanel.SetActive(false);
     }
 }

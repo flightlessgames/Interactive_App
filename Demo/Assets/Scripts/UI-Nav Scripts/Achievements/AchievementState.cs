@@ -6,6 +6,5 @@ public enum AchievementState
 {
     None = 0,
     PotionHistory,
-    Unlocks,
     Return
 }
