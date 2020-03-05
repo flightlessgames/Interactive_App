@@ -151,7 +151,7 @@ public class ShopFunctionController : MonoBehaviour
     public void SelectItem(ShopSlot slot)
     {
         _recentSlot = slot;
-        _feedbackText.text = "You are trying to buy a: " + _recentSlot.Ingredient.Name;
+        _feedbackText.text = "You are trying to buy a(n): " + _recentSlot.Ingredient.Name;
     }
     
     public void BuyItem() 
