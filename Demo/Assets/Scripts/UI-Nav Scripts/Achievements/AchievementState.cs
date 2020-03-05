@@ -5,7 +5,7 @@ using UnityEngine;
 public enum AchievementState
 {
     None = 0,
-    Unlocks,
     PotionHistory,
+    Unlocks,
     Return
 }

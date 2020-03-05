@@ -17,11 +17,16 @@ public class ShopSlot : MonoBehaviour
     [SerializeField] private int _sellFoundation = 10;
     [SerializeField] private Sprite _soldOut = null;
 
-    private int _sellableLimit = 0;
-    public bool CanSell { get
+    private int _currentSold = 0;
+    private int _sellLimit = 0;
+
+    public bool CanSell
+    {
+        get
         {
-            return (_sellableLimit > 0);
-        } }
+            return (_currentSold < _sellLimit);
+        }
+    }
 
     private Ingredients_sObj selfIngredient; 
     public Ingredients_sObj Ingredient { get { return selfIngredient; } }
@@ -33,7 +38,7 @@ public class ShopSlot : MonoBehaviour
     {
         Debug.Log(gameObject);
 
-        if (_sellableLimit > 0)
+        if (_currentSold < _sellLimit)
         {
             _shopController.SelectItem(this);
         }
@@ -41,18 +46,20 @@ public class ShopSlot : MonoBehaviour
 
     public void SetIngredient(Ingredients_sObj ingredient)
     {
+        _currentSold = 0;
+
         title.text = ingredient.Name;
         price.text = ingredient.Cost.ToString();
         itemImage.sprite = ingredient.Image;
         selfIngredient = ingredient;
 
-        _sellableLimit = _sellFoundation - ingredient.Cost;
+        _sellLimit = _sellFoundation - ingredient.Cost;
     }
 
     public void BoughtItem()
     {
-        _sellableLimit--;
-        if(_sellableLimit < 1)
+        _currentSold++;
+        if(_currentSold >= _sellLimit)
         {
             itemImage.sprite = _soldOut;
         }

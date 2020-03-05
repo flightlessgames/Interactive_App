@@ -44,11 +44,16 @@ public class displayIngredient : MonoBehaviour
         if (_ingredientData.Quantity > 0)
         {
             //if qtyText exists, we will display, but Text is optional so check for null first
-            _qtyText?.text.Equals(_ingredientData.Quantity.ToString());
+            if(_qtyText != null)
+            {
+                _qtyText.text = _ingredientData.Quantity.ToString();
+            }
         }
 
         //if nameText exists, we will display, but it is optional
-        _nameText?.text.Equals(_ingredientData.Name);
-
+        if(_nameText != null)
+        {
+            _nameText.text = _ingredientData.Name;
+        }
     }
 }

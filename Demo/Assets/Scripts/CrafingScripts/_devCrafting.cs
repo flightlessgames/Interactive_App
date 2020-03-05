@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Animator))]
 public class _devCrafting : MonoBehaviour
 {
     public class Potion
@@ -52,6 +54,13 @@ public class _devCrafting : MonoBehaviour
 
     private Vector3 _targetPotion = Vector3.zero;
     private List<Ingredients_sObj> _inputIngredients = new List<Ingredients_sObj>();
+    private Animator _anim = null;
+
+    private void Awake()
+    {
+        _anim = GetComponent<Animator>();
+        _anim.enabled = false;
+    }
 
     private void Update()
     {
@@ -156,7 +165,7 @@ public class _devCrafting : MonoBehaviour
             fileUtility.SaveObject.InputNewRecipe(validRecipe);
         }
 
-        _stateController?.ChangeState((int)CraftingState.PotionResult);
+        StartCoroutine(CraftAnimation());
     }
     
     //code is here isntead of in a PentagramController because this script already houses a list of all craftinSlots, so might as well *shrug* :/
@@ -168,5 +177,16 @@ public class _devCrafting : MonoBehaviour
         {
             slot.ClearIngredients();
         }
+    }
+
+    private IEnumerator CraftAnimation()
+    {
+        _anim.enabled = true;
+
+        yield return new WaitForSeconds(2f);
+
+        _anim.enabled = false;
+
+        _stateController?.ChangeState((int)CraftingState.PotionResult);
     }
 }

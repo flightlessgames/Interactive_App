@@ -3,9 +3,12 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using System;
 
 public static class fileUtility
 {
+    public static event Action HasSaved = delegate { };
+
     public static string SAVE_LOCATION { get; private set; } = "...";
     public static string POTIONS_LOCATION { get; private set; } = "...";
 
@@ -103,6 +106,8 @@ public static class fileUtility
     /// </summary>
     public static void Save()
     {
+        HasSaved.Invoke();
+
         if (!_isInitialized)
         {
             InitializeLoadSettings();

@@ -354,7 +354,6 @@ GameObject:
   - component: {fileID: 1630002658742628690}
   - component: {fileID: 669177146165631324}
   - component: {fileID: 7847955791816157069}
-  - component: {fileID: 950713961858852567}
   m_Layer: 5
   m_Name: PotionHistoryGroup_pnl
   m_TagString: Untagged
@@ -386,10 +385,10 @@ RectTransform:
   m_Father: {fileID: 3986080174011094903}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 800, y: 0}
-  m_SizeDelta: {x: 1600, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669177146165631324
 MonoBehaviour:
@@ -408,7 +407,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 50
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
@@ -441,21 +440,8 @@ MonoBehaviour:
   - {fileID: 3592665992565461377}
   - {fileID: 6203928336014468439}
   - {fileID: 8572295918565984333}
-  _needsAdjustment: 0
---- !u!114 &950713961858852567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3141387007984741238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 1
+  _needsAdjustment: 1
+  _ingredientHistory: {fileID: 0}
 --- !u!1001 &117622807484198694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,6 +449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -568,11 +559,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!114 &4917097099874081898 stripped
@@ -600,6 +586,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -705,11 +696,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!224 &6040758499447455617 stripped
@@ -737,6 +723,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,11 +833,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (8)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!224 &4727620130931603748 stripped
@@ -874,6 +860,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -979,11 +970,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!224 &5102688860839810805 stripped
@@ -1011,6 +997,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1131,11 +1122,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000107
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!224 &5201270756438809348 stripped
@@ -1163,6 +1149,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1268,13 +1259,14 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
+--- !u!224 &5293246424686059419 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1975582164183363748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6842732626192778216 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5016139804477059916, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
@@ -1287,12 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02722b492e7aefa4da7f44e98d9b3b14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &5293246424686059419 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1975582164183363748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2973098624891917144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1300,6 +1286,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1405,11 +1396,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (6)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!224 &8889366124988824679 stripped
@@ -1437,6 +1423,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1542,11 +1533,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!224 &7022747058857481278 stripped
@@ -1574,6 +1560,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1679,11 +1670,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}
 --- !u!224 &1039964036445222891 stripped
@@ -1711,6 +1697,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1630002658742628690}
     m_Modifications:
+    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
+        type: 3}
+      propertyPath: m_Name
+      value: PotionHistory_pnl (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 5917675033378680639, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1815,11 +1806,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6303713557482289712, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3,
-        type: 3}
-      propertyPath: m_Name
-      value: PotionHistory_pnl (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d3c3a1d76c2c2b46b1baccafe9a60f3, type: 3}

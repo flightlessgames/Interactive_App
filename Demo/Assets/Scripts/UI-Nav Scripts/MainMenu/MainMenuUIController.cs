@@ -12,6 +12,8 @@ public class MainMenuUIController : MonoBehaviour
     [SerializeField] private Text _confirmText = null;
     [SerializeField] private GameObject _creditsPanel = null;
 
+    private GameObject previousPanel = null;
+
     public int LoadFileSetting { get; private set; } = 0;
 
     private void OnEnable()
@@ -28,9 +30,6 @@ public class MainMenuUIController : MonoBehaviour
 
     void OnStateChanged(int newState)
     {
-        //disable all, then turn on proper case.
-        DisablePanels();
-
         MenuState enumState = (MenuState)newState;
 
         switch (enumState)
@@ -38,7 +37,7 @@ public class MainMenuUIController : MonoBehaviour
         {
             case MenuState.Menu:
                 //TODO RootUI Script
-                _rootPanel.gameObject.SetActive(true);
+                StartCoroutine(ChangePanel(_rootPanel));
                 //TODO Animations
                 break;
             case MenuState.BeginPlay:
@@ -47,14 +46,14 @@ public class MainMenuUIController : MonoBehaviour
                 SceneManager.LoadScene("CraftingTable");
                 break;
             case MenuState.LoadSaveData:
-                _loadDataSelectPanel.gameObject.SetActive(true);
+                StartCoroutine(ChangePanel(_loadDataSelectPanel));
                 break;
             case MenuState.LoadDataConfirm:
                 StartCoroutine(AssignTextData());
-                _loadDataConfirmPanel.gameObject.SetActive(true);
+                StartCoroutine(ChangePanel(_loadDataConfirmPanel));
                 break;
             case MenuState.Credits:
-                _creditsPanel.gameObject.SetActive(true);
+                StartCoroutine(ChangePanel(_creditsPanel));
                 break;
             default:
                 Debug.Log("State not valid");
@@ -88,6 +87,17 @@ public class MainMenuUIController : MonoBehaviour
            "\nAchievements: " + (int)(AchievementPercent*100) + "%";
             Debug.Log(fileUtility._searchObject.gold);
         }
+    }
+
+    private IEnumerator ChangePanel(GameObject changePanel)
+    {
+        changePanel.SetActive(true);
+        yield return new WaitForSeconds(1);
+        previousPanel?.SetActive(false);
+
+        previousPanel = changePanel;
+        if (previousPanel == _rootPanel)
+            previousPanel = null;
     }
 
     public void ChangeLoadFile(int fileNum)

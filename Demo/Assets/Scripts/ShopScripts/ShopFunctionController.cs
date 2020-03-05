@@ -23,13 +23,49 @@ public class ShopFunctionController : MonoBehaviour
     public void RandomizeShop()
     {
         Debug.Log("Randomizing");
-        RariftSlots();
+        RarifySlots();
         RarifyIngredients();
 
         fillSlots();
     }
 
-    private void RariftSlots()
+    private void Update()
+    {
+        if (Time.time % 10 < 0.05)
+        {
+            Debug.Log("clearing");
+            ClearLockouts();
+        }
+    }
+
+    private void ClearLockouts()
+    {
+        foreach (ShopSlot slot in _rareSlots)
+        {
+            if(slot.CanSell == false)
+            {
+                AssignRarity(slot, _rareIngredients);
+            }
+        }
+
+        foreach (ShopSlot slot in _uncomSlots)
+        {
+            if (slot.CanSell == false)
+            {
+                AssignRarity(slot, _uncomIngredients);
+            }
+        }
+
+        foreach (ShopSlot slot in _commonSlots)
+        {
+            if (slot.CanSell == false)
+            {
+                AssignRarity(slot, _commonIngredients);
+            }
+        }
+    }
+
+    private void RarifySlots()
     {
         int countSlots = _purchaseSlots.Count;
 
@@ -89,24 +125,26 @@ public class ShopFunctionController : MonoBehaviour
     //TODO Timer Refresh?
     public void fillSlots()
     {
-        AssignRarity(_rareSlots, _rareIngredients);
-        AssignRarity(_uncomSlots, _uncomIngredients);
-        AssignRarity(_commonSlots, _commonIngredients);
+        foreach(ShopSlot slot in _rareSlots)
+            AssignRarity(slot, _rareIngredients);
+
+        foreach (ShopSlot slot in _uncomSlots)
+            AssignRarity(slot, _uncomIngredients);
+
+        foreach (ShopSlot slot in _commonSlots)
+            AssignRarity(slot, _commonIngredients);
+
     }
 
-    private void AssignRarity(List<ShopSlot> SlotList, List<Ingredients_sObj> IngredList)
+    private void AssignRarity(ShopSlot emptySlot, List<Ingredients_sObj> IngredList)
     {
-        foreach (ShopSlot slot in SlotList)
-        {
-            int shopIndex = UnityEngine.Random.Range(0, IngredList.Count); //INCLUSIVE random among IngredientList
+        int shopIndex = UnityEngine.Random.Range(0, IngredList.Count); //INCLUSIVE random among IngredientList
 
-            if (shopIndex == IngredList.Count)
-                shopIndex--; //cannot be EQUALS to COUNT, as COUNT13 cannot accept ingredient[13]
+        if (shopIndex == IngredList.Count)
+            shopIndex--; //cannot be EQUALS to COUNT, as COUNT13 cannot accept ingredient[13]
 
-            Debug.Log("random item is: " + shopIndex);
-
-            slot.SetIngredient(IngredList[shopIndex]);
-        }
+        Debug.Log("random item is: " + shopIndex);
+        emptySlot.SetIngredient(IngredList[shopIndex]);
     }
 
     public void SelectItem(ShopSlot slot)
