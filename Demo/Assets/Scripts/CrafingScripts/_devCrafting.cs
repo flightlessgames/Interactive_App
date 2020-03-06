@@ -168,6 +168,18 @@ public class _devCrafting : MonoBehaviour
             //for SaveFile and Achievements Page, updates the known recipes to this
             Recipe validRecipe = new Recipe(readPotion.Name, spriteColor, _inputIngredients);
             fileUtility.SaveObject.InputNewRecipe(validRecipe);
+
+            int toGold;
+            bool Gold = int.TryParse(data_values[7], out toGold);
+            if (Gold)
+            {
+                fileUtility.SaveObject.gold += (toGold/10);
+            }
+            else
+            {
+                fileUtility.SaveObject.gold += 10;
+            }
+            
         }
 
         StartCoroutine(CraftAnimation());

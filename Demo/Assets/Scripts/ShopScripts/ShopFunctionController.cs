@@ -177,6 +177,7 @@ public class ShopFunctionController : MonoBehaviour
                     "\nYou have: " + _recentSlot.Ingredient.Quantity + " " + _recentSlot.Ingredient.Name;
 
                 _recentSlot.BoughtItem();
+                fileUtility.Save();
             }
             else
             {

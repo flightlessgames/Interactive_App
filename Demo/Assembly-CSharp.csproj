@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\ScriptableObjects\Shop.cs" />
     <Compile Include="Assets\Scripts\ShopScripts\ShopFunctionController.cs" />
     <Compile Include="Assets\Scripts\ShopScripts\ShopSlot.cs" />
+    <Compile Include="Assets\Scripts\Spinner.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Achievements\AchievementsUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\Crafting\CraftingState.cs" />
@@ -94,7 +95,6 @@
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopMenuUIController.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\ShopMenu\ShopState.cs" />
     <Compile Include="Assets\Scripts\UI-Nav Scripts\StateController.cs" />
-    <Compile Include="Assets\Spinner.cs" />
     <None Include="Assets\StreamingAssets\LoadFileData3.txt" />
     <None Include="Assets\__ReadMe.txt.txt" />
     <Reference Include="Unity.Timeline.Editor">

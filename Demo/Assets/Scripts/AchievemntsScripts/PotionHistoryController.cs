@@ -41,18 +41,24 @@ public class PotionHistoryController : MonoBehaviour
     {
         int slotsToHave = 0;
 
+        Debug.Log(_ingredientHistory?.Name);
+
         //if we do NOT have a Ingredient to Check, create slots for ALL Ingredients
         if (_ingredientHistory == null)
         {
+            //for each ingredient
             for (int i = 0; i < fileUtility.SaveObject.recentRecipes.Length; i++)
             {
+                //grab the recipe array from recentrecipes that corresponds to that ingredient
                 _devCrafting.Recipe[] recipeArray = fileUtility.SaveObject.recentRecipes[i].recipes;
 
+                //for each recipe in the recipe array, check for "null"
                 foreach (_devCrafting.Recipe recipe in recipeArray)
                 {
                     if (recipe == null || recipe.recipeName == "")
                         continue;
 
+                    //if not null, count it.
                     slotsToHave++;
                 }
             }
@@ -91,14 +97,17 @@ public class PotionHistoryController : MonoBehaviour
             //save off all recipes found in recentRecipe List<>
             List<_devCrafting.Recipe> allRecipes = new List<_devCrafting.Recipe>();
 
+            //for EACH recipeArray in recentRecipes
             foreach (SaveFile.RecipeList recipeArray in fileUtility.SaveObject.recentRecipes)
             {
+                //for EACH recipe in the recipe array, check for "null"
                 foreach (_devCrafting.Recipe recipe in recipeArray.recipes)
                 {
                     if (recipe == null || recipe.recipeName == "")
                         continue;
 
                     bool isUnique = true;
+
                     //double check allRecipes and ignore redundancies
                     foreach (_devCrafting.Recipe savedRecipe in allRecipes)
                     {
